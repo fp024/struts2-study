@@ -513,9 +513,10 @@ basic-struts
     │
     ├─.mvn
     │  └─wrapper
-    │          maven-wrapper.jar
+    │          maven-wrapper.jar              
+    │                (.gitignore 처리, 없으면 mvnw 실행시점에 자동 다운로드된다, gradle의 경우, gradle-wrapper.jar를 삭제하면 오류남.)
     │          maven-wrapper.properties
-    │          MavenWrapperDownloader.java
+    │          MavenWrapperDownloader.java    (.gitignore 처리, 삭제)
     │
     ├─.settings (.gitignore 처리)
     │      .jsdtscope
