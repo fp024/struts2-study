@@ -13,7 +13,7 @@
 ### 예제
 
 * [Struts 2 웹 어플리케이션을 만드는 방법](./how-to-create-a-struts-2-web-application)
-* Struts 2를 사용한 Hello World
+* [Struts 2를 사용한 Hello World](hello-world-using-struts-2)
 * 테그 사용
 * 코딩 작업
 * 폼 처리
