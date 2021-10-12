@@ -21,7 +21,7 @@
 
 ## 설명
 
-Struts 2 웹 어플리케이션에서 하이퍼링크를 클릭하거나 HTML 양식을 제출하면 다른 서버 페이지로 전송되지 않고, 사용자가 제공하는 Java 클래스로 전송됩니다. 이러한 클래스들을 Action이라고 합니다. Action이 실행된 후 결과는 응답을 렌더링할 리소스를 선택합니다. 리소스는 일반적으로 서버 페이지이지만 PDF파일 Excel 스프레드시트 또는 Java 애플릿 창일 수도 있습니다.
+Struts 2 웹 어플리케이션에서 하이퍼링크를 클릭하거나 HTML 양식을 제출하면 다른 서버 페이지로 전송되지 않고, 사용자가 제공하는 Java 클래스로 전송됩니다. 이러한 클래스들을 Action이라고 합니다. Action이 실행된 후 Result는 응답을 렌더링할 리소스를 선택합니다. 리소스는 일반적으로 서버 페이지이지만 PDF파일 Excel 스프레드시트 또는 Java 애플릿 창일 수도 있습니다.
 
 환영 메시지를 표시하는 간단한 "Hello World" 예제를 만든다고 가정합시다.
 
@@ -29,7 +29,7 @@ Struts 2 웹 어플리케이션에서 하이퍼링크를 클릭하거나 HTML �
 
 1. 환영 메시지를 저장할 클래스를 만들기 (모델)
 2. 메시지를 표시하는 서버 페이지 만들기 (뷰)
-3. 사용자, 모델 및 뷰간의 상호작용을 제어하는 Action 클래스를 만들기 (컨트롤러)
+3. 사용자, 모델 및 뷰 간의 상호작용을 제어하는 Action 클래스를 만들기 (컨트롤러)
 4. Action 클래스와 뷰를 연결하는 매핑(struts.xml)을 만들기
 
 이러한 구성요소를 만들어서 작업 흐름을 3가지 잘 알려진 문제들로 분리합니다:  뷰, 모델, 컨트롤러<br>관심사를 분리하면 애플리케이션이 복잡해짐에 따라 관리하기가 더 쉬워집니다. 
@@ -43,7 +43,7 @@ Struts 2 웹 어플리케이션에서 하이퍼링크를 클릭하거나 HTML �
 
 ##  코드
 
-basic-struts 프로젝트에 다음을 추가하여 수정해봅시다. (실제 진행시에는 프로젝트명을 hello-world-struts 로 새로 만들어도 되겠다.)
+basic-struts 프로젝트에 다음을 추가하여 수정해봅시다. (실제 진행시에는 프로젝트명을 helloworld-struts 로 새로 만들어도 되겠다.)
 
 * 메시지를 저장하는 모델 클래스
 
@@ -83,7 +83,7 @@ public class MessageStore {
 }
 ```
 
-private String message 필드에 엑세스를 허용하기위해 getter 메서드를 사용하는 것을 참고하세요. Struts 2 프레임 워크에서는 뷰(helloworld.jsp)에 노출하려는 객체가 JavaBean 스타일 규칙을 따라야합니다.
+private String message 필드에 접근 허용을 위해 getter 메서드를 사용하는 것을 참고하세요. Struts 2 프레임 워크에서는 뷰(helloworld.jsp)에 노출하려는 객체가 JavaBean 스타일 규칙을 따라야합니다.
 
 
 
@@ -119,7 +119,7 @@ public class HelloWorldAction extends ActionSupport {
 }
 ```
 
-Struts 2 프레임워크는 `HelloWorldAction` 클래스의 객체를 생성하고  사용자의 동작에 대한 응답으로 실행 메서드를 호출합니다 (특정 URL을 서블릿 컨테이너로 보내는 하이퍼링크 클릭).
+Struts 2 프레임워크는 `HelloWorldAction` 클래스의 객체를 생성하고  사용자의 동작에 대한 응답으로 execute 메서드를 호출합니다 (특정 URL을 서블릿 컨테이너로 보내는 하이퍼링크 클릭).
 
 이 예제에서 execute 메서드는 `MessageStore` 클래스의 객체를 생성한 다음 String 상수 `SUCCESS` 를 반환합니다.
 
@@ -166,7 +166,7 @@ URL, `HelloWorldAction` 클래스(컨트롤러) 및 `HelloWorld.jsp`(뷰)를 함
 
 `struts.xml` 파일(Maven 프로젝트에서 해당 파일은 `src/main/resources` 폴더에 있음)을 편집하여 작업 매핑을 추가합니다.
 
-action 노드를  (action `name="hello"`)  package 노드 안쪽의  `name="index"` 인 action  매핑 이후에  위치시킵니다. 전체 struts.xml은 다음과 같습니다.  
+action 노드를  (action `name="hello"`)  package 노드를 열고 닫는 안쪽의  `name="index"` 인 action  매핑 이후에  위치시킵니다. 전체 struts.xml은 다음과 같습니다.  
 
 #### struts.xml
 
@@ -195,7 +195,7 @@ action 노드를  (action `name="hello"`)  package 노드 안쪽의  `name="inde
 
 ### 스텝 5 -  URL 액션 만들기
 
-사용자가 링크를 클릭하여 `HelloWorldAction` 클래스의 execute메서드를 실행하고 `HelloWorld.jsp` 뷰를 렌더링할 수 있도록 Struts 2 프레임워크에 지시할 수 있도록 `index.jsp` 내부에 Action URL을 추가해보겠습니다. (`src/main/webapp` 폴더 참조)
+사용자가 링크를 클릭하여 `HelloWorldAction` 클래스의 execute메서드를 실행하고 `HelloWorld.jsp` 뷰가 렌더링될 수 있게 Struts 2 프레임워크에 지시할 수 있도록 `index.jsp` 내부에 Action URL을 추가해보겠습니다. (`src/main/webapp` 폴더 참조)
 
 먼저 jsp 상단에 taglib 지시문을 추가합니다 `<%@ taglib prefix="s" uri="/struts-tags" %> `. 다음으로 `h1` 태그 뒤에 `p` 태그 `<p><a href="<s:url action='hello'/>">Hello World</a></p>`를 추가합니다. 새 index.jsp는 다음과 같아야 합니다.
 
@@ -264,7 +264,7 @@ Hello World 링크를 클릭하면 HelloWorld.jsp 페이지가 표시됩니다.
 ## 스텝 진행...
 
 * 약간의 변경사항
-  * 프로젝트명: helloworld-struts2
+  * 프로젝트명: helloworld-struts
   * 로깅
     * log4j-core, log4j-api 의 디펜던시를 명시하지 않고, log4j-slf4j-impl 하나만 디펜던시를 걸고 코드 상에서 slf4j로 사용한다. log4j-slf4j-impl 가 앞의 두 모듈의 디펜던시도 가져옴
   * lombok 추가하였는데, 특별히 문제는 보이지 않았다.
