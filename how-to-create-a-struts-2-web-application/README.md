@@ -341,6 +341,14 @@ http://localhost:8080/basic-struts/index.jsp 로 이동할 때와 동일한 페�
 
 
 
+
+
+### >  [Struts 2 스터디](../)로 돌아가기 또는 [Struts 2 를 사용한 Hello World](../hello-world-using-struts-2)로 이동
+
+---
+
+
+
 ## 스텝 진행...
 
 * [x] 아티펙트 관리와 어플리케이션 빌드를 위해 Maven을 사용하는 Struts 2 어플리케이션 만들기

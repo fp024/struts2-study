@@ -255,7 +255,7 @@ Hello World 링크를 클릭하면 HelloWorld.jsp 페이지가 표시됩니다.
 
 
 
-### >  [Struts 2 웹 어플리케이션을 만드는 방법](../how-to-create-a-struts-2-web-application)으로 돌아가기 또는 [Struts 2 태그 사용하기](https://struts.apache.org/getting-started/using-tags.html) 로 이동
+### >  [Struts 2 웹 어플리케이션을 만드는 방법](../how-to-create-a-struts-2-web-application)으로 돌아가기 또는 [Struts 2 태그 사용하기](https://struts.apache.org/getting-started/using-tags.html)로 이동
 
 
 

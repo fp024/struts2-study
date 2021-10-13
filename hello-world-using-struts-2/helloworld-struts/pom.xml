@@ -144,13 +144,16 @@
                 <configuration>
                     <webApp>
                         <contextPath>/${project.build.finalName}</contextPath>
+                        <sessionHandler>
+                            <sessionIdPathParameterName>none</sessionIdPathParameterName>
+                        </sessionHandler>
                     </webApp>
                     <stopKey>CTRL+C</stopKey>
                     <stopPort>8999</stopPort>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <scanTargets>
                         <scanTarget>src/main/webapp/WEB-INF/web.xml</scanTarget>
-                    </scanTargets>
+                    </scanTargets>                   
                 </configuration>
             </plugin>
         </plugins>
