@@ -10,7 +10,7 @@
 
 [Hello World](../hello-world-using-struts-2) 강의에서 Struts 2 url 태그를 `index.jsp`에 추가하여 `hello.action`에 대한 하이퍼링크를 생성했습니다. 이 튜토리얼에서는 url과 그외 Struts 2 태그들을 자세히 살펴볼 것입니다. 
 
-웹 어플리케이션은 웹 어플리션이 동적응답을 생성할 수 있다는 점에서 기존 웹 사이트와 다릅니다. 페이지에서 동적데이터를 더 쉽게 참조할 수 있도록 Struts 2 프레임워크는 태그 집합을 제공합니다. 일부 태그는 추가된 값을 제공하면서 표준 태그를 모방합니다. 다른 태그는 비표준이지만 유용한 컨트롤을 만듭니다.
+웹 어플리케이션은 동적응답을 생성할 수 있다는 점에서 기존 웹 사이트와 다릅니다. 페이지에서 동적데이터를 더 쉽게 참조할 수 있도록 Struts 2 프레임워크는 태그 집합을 제공합니다. 일부 태그는 추가된 값을 제공하면서 표준 태그를 모방합니다. 다른 태그는 비표준이지만 유용한 컨트롤을 만듭니다.
 
 뷰 페이지에서 Struts 2 태그를 사용하려면 태그 라이브러리 지시문을 포함해야합니다. 일반적으로 taglib 지시문은 `<%@ taglib prefix="s" uri="/struts-tags" %>` 입니다.  따라서 모든 Struts 2 태그의 접두사는 `s`가 됩니다. 실제로 Struts 2 태그 TLD 파일을 읽고 싶다면 Strut 2 코어 JAR 파일을 `META-INF`폴더에서 찾을 수 있습니다.
 
@@ -116,7 +116,7 @@ Struts form, textfield 및 submit 태그가 아래 HTML로 변환되었습니다
 #### HTML로 변환된 Struts 폼 태그
 
 ```html
-<form id="hello" name="hello" action="/using-tags/hello.action;jsessionid=6233ot11na1mtshbr292hu1w" method="post">
+<form id="hello" name="hello" action="/using-tags-struts/hello.action" method="post">
   <table class="wwFormTable">
     <tr>
       <td class="tdLabel"><label for="hello_userName" class="label">Your name:</label></td>
@@ -213,7 +213,7 @@ HelloWorldAction 클래스의 getMessageStore는 MessageStore 객체를 반환�
 
 
 
-### >  [Struts 2를 사용한 Hello World](hello-world-using-struts-2)으로 돌아가기 또는 [Struts 2 액션 코딩하기](https://struts.apache.org/getting-started/coding-actions.html)로 이동
+### >  [Struts 2를 사용한 Hello World](../hello-world-using-struts-2)으로 돌아가기 또는 [Struts 2 액션 코딩하기](https://struts.apache.org/getting-started/coding-actions.html)로 이동
 
 
 

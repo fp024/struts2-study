@@ -343,7 +343,7 @@ http://localhost:8080/basic-struts/index.jsp 로 이동할 때와 동일한 페�
 
 
 
-### >  [Struts 2 스터디](../)로 돌아가기 또는 [Struts 2 를 사용한 Hello World](../hello-world-using-struts-2)로 이동
+### >  [Struts 2 스터디](https://github.com/fp024/struts2-study/)로 돌아가기 또는 [Struts 2 를 사용한 Hello World](../hello-world-using-struts-2)로 이동
 
 ---
 
