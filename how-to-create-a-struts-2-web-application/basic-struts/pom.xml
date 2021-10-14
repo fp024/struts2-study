@@ -10,7 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>basic Struts 2 Study Maven Webapp</name>
+    <name>${project.artifactId} : Struts 2 Study Maven Webapp</name>
     <url>https://github.com/fp024/struts2-study/tree/master/how-to-create-a-struts-2-web-application</url>
 
     <properties>
