@@ -15,7 +15,7 @@
 * [Struts 2 웹 어플리케이션을 만드는 방법](how-to-create-a-struts-2-web-application)
 * [Struts 2를 사용한 Hello World](hello-world-using-struts-2)
 * [태그 사용하기](using-tags)
-* 액션 코딩하기
+* [액션 코딩하기](coding-actions)
 * 폼 처리
 * 폼 검증
 * 메시지 리소스 파일

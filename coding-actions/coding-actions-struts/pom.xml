@@ -6,11 +6,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.fp024.struts2.study</groupId>
-    <artifactId>using-tags-struts</artifactId>
+    <artifactId>coding-actions-struts</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>using-tags Struts 2 Study Maven Webapp</name>
+    <name>coding-actions Struts 2 Study Maven Webapp</name>
     <url>https://github.com/fp024/struts2-study/tree/master/using-tags</url>
 
     <properties>
@@ -158,7 +158,6 @@
             </plugin>
 
             <plugin>
-                <!-- https://www.eclipse.org/jetty/documentation/jetty-9/index.html#jetty-maven-plugin -->
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.4.44.v20210927</version>

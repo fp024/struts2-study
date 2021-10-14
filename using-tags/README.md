@@ -213,7 +213,7 @@ HelloWorldAction 클래스의 getMessageStore는 MessageStore 객체를 반환�
 
 
 
-### >  [Struts 2를 사용한 Hello World](../hello-world-using-struts-2)으로 돌아가기 또는 [Struts 2 액션 코딩하기](https://struts.apache.org/getting-started/coding-actions.html)로 이동
+### >  [Struts 2를 사용한 Hello World](../hello-world-using-struts-2)으로 돌아가기 또는 [Struts 2 액션 코딩하기](../coding-actions)로 이동
 
 
 
