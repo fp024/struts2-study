@@ -16,7 +16,7 @@
 * [Struts 2를 사용한 Hello World](hello-world-using-struts-2)
 * [태그 사용하기](using-tags)
 * [액션 코딩하기](coding-actions)
-* 폼 처리
+* [폼 처리](processing-forms)
 * 폼 검증
 * 메시지 리소스 파일
 * 예외 처리
@@ -31,8 +31,8 @@
 * 인터셉터 소개
 * 단위 테스트
 * HTTP 세션
-* 준비가능한 인터페이스
-* 매개변수 제외
+* Preparable 인터페이스
+* 파라미터 제외
 
 ### 추가 튜토리얼
 * JasperReports 튜토리얼

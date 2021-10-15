@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+
+    <package name="basicstruts2" extends="struts-default">
+
+        <!--
+            클래스 속성이 지정되지 않은 경우 프레임워크는 성공을 가정하고 result index.jsp를 랜더링합니다.
+            result 노드의 이름이 지정되지 않은 경우 success 값이 기본입니다.
+        -->
+        <action name="index">
+            <result>/index.jsp</result>
+        </action>
+
+        <action name="hello" class="org.fp024.struts2.study.helloworld.action.HelloWorldAction" method="execute">
+            <result name="success">/HelloWorld.jsp</result>
+        </action>
+
+        <action name="register" class="org.fp024.struts2.study.register.action.Register" method="execute">
+            <result name="success">/thankyou.jsp</result>
+        </action>
+    </package>
+
+</struts>
