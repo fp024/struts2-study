@@ -86,11 +86,11 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- jetty가 사용하는 apache-jstl이 Tomcat 8.5에서도 잘 동작한다. -->
+        <!-- jetty가 사용하는 apache-jstl에 디펜던시된 taglibs-standard-impl이 Tomcat 8.5에서도 잘 동작한다. -->
         <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>apache-jstl</artifactId>
-            <version>${jetty.version}</version>
+            <groupId>org.apache.taglibs</groupId>
+            <artifactId>taglibs-standard-impl</artifactId>
+            <version>1.2.5</version>
             <scope>runtime</scope>
         </dependency>
 
@@ -193,6 +193,7 @@
             </plugin>
 
             <plugin>
+				<!-- https://www.eclipse.org/jetty/documentation/jetty-9/index.html#jetty-maven-plugin -->
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>${jetty.version}</version>

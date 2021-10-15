@@ -22,6 +22,8 @@
         <log4j2.version>2.14.1</log4j2.version>
         <lombok.version>1.18.22</lombok.version>
         <junit.version>5.8.1</junit.version>
+		
+        <jetty.version>9.4.44.v20210927</jetty.version>
     </properties>
 
     <dependencyManagement>
@@ -83,11 +85,13 @@
             <version>2.3.3</version>
             <scope>provided</scope>
         </dependency>
+		
+        <!-- jetty가 사용하는 apache-jstl에 디펜던시된 taglibs-standard-impl이 Tomcat 8.5에서도 잘 동작한다. -->
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
-            <scope>provided</scope>
+            <groupId>org.apache.taglibs</groupId>
+            <artifactId>taglibs-standard-impl</artifactId>
+            <version>1.2.5</version>
+            <scope>runtime</scope>
         </dependency>
 
         <!-- Test -->
@@ -160,7 +164,7 @@
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.4.44.v20210927</version>
+                <version>${jetty.version}</version>
                 <configuration>
                     <webApp>
                         <contextPath>/${project.build.finalName}</contextPath>
@@ -175,6 +179,19 @@
                         <scanTarget>src/main/webapp/WEB-INF/web.xml</scanTarget>
                     </scanTargets>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.eclipse.jetty</groupId>
+                        <artifactId>apache-jstl</artifactId>
+                        <version>${jetty.version}</version>
+                        <exclusions>
+                            <exclusion>
+                                <groupId>org.apache.taglibs</groupId>
+                                <artifactId>taglibs-standard-impl</artifactId>
+                            </exclusion>
+                        </exclusions>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
