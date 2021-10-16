@@ -16,7 +16,7 @@
 
 ### 소개
 
-이 튜토리얼에서는 Struts 2를 사용하여 폼에 대한 사용자 입력의 유효성을 검사하는 방법을 살펴 보겠습니다. Struts 2를 사용하여 폼의 유효성 감사를 수행할 수 있는 방법에는 두가지가 있습니다. 이 튜토리얼은 Struts 2 Action 클래스에 유효성 검사가 포함된 보다 기본적인 방법을 다룰 것입니다.
+이 튜토리얼에서는 Struts 2를 사용하여 폼에 대한 사용자 입력의 유효성을 검사하는 방법을 살펴 보겠습니다. Struts 2를 사용하여 폼의 유효성 감사를 수행할 수 있는 방법에는 두가지가 있습니다. 이 튜토리얼은 Struts 2 액션 클래스에 유효성 검사가 포함된 보다 기본적인 방법을 다룰 것입니다.
 
 Struts 2 [사용자 메일링](http://struts.apache.org/mail.html) 리스트는 도움을 받을 수 있는 훌륭한 장소입니다. 튜토리얼 예제 애플리케이션을 작동시키는데 문제가 있는 경우 Struts 2 메일리스트를 검색하세요. 문제에 대한 답을 찾지 못한 경우 메일링 리스트에 질문을 게시하세요.
 
@@ -62,7 +62,7 @@ public void validate(){
 
 ### 반환되는 입력 처리
 
-그렇다면 Struts 2가 폼에 있는 사용자의 입력이 유효하지 않음을 나타내는 `input`을 반환하려면 어떻게 할까요? 대부분의 경우 폼이 있는 웹 페이지를 다시 표시하고, 폼에 오류 메시지를 포함하여 사용자에게 무엇이 잘못되었는지 알려주고자 합니다.
+그렇다면 Struts 2가 폼에 있는 사용자의 입력이 유효하지 않음을 나타내는 `input`을 반환하려면 어떻게해야 할까요? 대부분의 경우 폼이 있는 웹 페이지를 다시 표시하고, 폼에 오류 메시지를 포함하여 사용자에게 무엇이 잘못되었는지 알려주고자 합니다.
 
 `input`의 반환 값을 처리하려면 `struts.xml`의 action 노드에 다음 result를 추가해야합니다.
 
@@ -84,7 +84,7 @@ public void validate(){
 addFieldError("personBean.firstName", "First name is required.")
 ```
 
-폼의 `firstName` 필드 위해 *First name is required* 이 필요하다는 메시지가 표시됩니다.
+폼의 `firstName` 필드 위해 *First name is required* 이란 메시지가 표시됩니다.
 
 [폼 처리](../processing-forms) 튜토리얼에 위의 변경사항을 적용했거나 깃 허브의 [폼 검증](https://github.com/apache/struts-examples/tree/master/form-validation) 튜토리얼(프로젝트 루트 폴더의 README.txt 참조)을 다운로드한 경우 어플리케이션을 실행해봅니다. register 링크를 클릭해보세요. 등록 폼에서 Submit 버튼을 클릭하면 다음이 표시됩니다.
 
