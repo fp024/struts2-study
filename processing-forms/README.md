@@ -245,7 +245,7 @@ Struts 2 property 와 url 태그가 기억나지 않는다면 [Struts 2 태그 �
 
 
 
-### >  [액션 코딩하기](../coding-actions)로 돌아가기 또는 [폼 검증](https://struts.apache.org/getting-started/form-validation.html)으로 이동
+### >  [액션 코딩하기](../coding-actions)로 돌아가기 또는 [폼 유효성 검사](../form-validation)으로 이동
 
 
 

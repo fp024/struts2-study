@@ -128,7 +128,7 @@ if (userName != null) {
 
 
 
-### >  [Struts 2 태그 사용하기](../using-tags)로 돌아가기 또는 [폼 처리하기](../processing-forms)로 이동
+### >  [Struts 2 태그 사용하기](../using-tags)로 돌아가기 또는 [폼 처리](../processing-forms)로 이동
 
 
 
