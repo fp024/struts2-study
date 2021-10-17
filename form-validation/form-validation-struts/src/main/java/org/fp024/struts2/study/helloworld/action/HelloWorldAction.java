@@ -1,11 +1,9 @@
 package org.fp024.struts2.study.helloworld.action;
 
+import com.opensymphony.xwork2.ActionSupport;
+import lombok.Getter;
 import lombok.Setter;
 import org.fp024.struts2.study.helloworld.model.MessageStore;
-
-import com.opensymphony.xwork2.ActionSupport;
-
-import lombok.Getter;
 
 /**
  * ActionSupport가 Serializable를 구현해서 Eclipse에서는 아래 경고가 노출된다.
@@ -18,30 +16,31 @@ import lombok.Getter;
  * private static final long serialVersionUID = 1L;
  */
 public class HelloWorldAction extends ActionSupport {
-    private static final long serialVersionUID = 1L;
 
-    @Getter
-    private MessageStore messageStore;
+  private static final long serialVersionUID = 1L;
 
-    @Getter
-    @Setter
-    private String userName;
+  @Getter
+  private MessageStore messageStore;
 
-    private static int helloCount = 0;
+  @Getter
+  @Setter
+  private String userName;
 
-    public int getHelloCount() {
-        return helloCount;
+  private static int helloCount = 0;
+
+  public int getHelloCount() {
+    return helloCount;
+  }
+
+  @Override
+  public String execute() {
+    helloCount++;
+    messageStore = new MessageStore();
+
+    if (userName != null) {
+      messageStore.setMessage(messageStore.getMessage() + " " + userName);
     }
 
-    @Override
-    public String execute() {
-        helloCount++;
-        messageStore = new MessageStore();
-
-        if (userName != null) {
-            messageStore.setMessage(messageStore.getMessage() + " " + userName);
-        }
-
-        return SUCCESS;
-    }
+    return SUCCESS;
+  }
 }

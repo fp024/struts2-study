@@ -3,11 +3,9 @@ package org.fp024.struts2.study.helloworld.model;
 import lombok.Getter;
 
 public class MessageStore {
-	@Getter
-	private String message;
+  @Getter private String message;
 
-	public MessageStore() {
-		message = "Hello Struts User";
-	}
-
+  public MessageStore() {
+    message = "Hello Struts User";
+  }
 }

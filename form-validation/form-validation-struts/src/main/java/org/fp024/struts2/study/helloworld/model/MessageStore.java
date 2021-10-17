@@ -4,16 +4,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class MessageStore {
-	@Getter
-	@Setter
-	private String message;
+  @Getter @Setter private String message;
 
-	public MessageStore() {
-		message = "Hello Struts User";
-	}
+  public MessageStore() {
+    message = "Hello Struts User";
+  }
 
-	@Override
-	public String toString() {
-		return message + " (from toString)";
-	}
+  @Override
+  public String toString() {
+    return message + " (from toString)";
+  }
 }

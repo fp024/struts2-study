@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 class MessageStoreTest {
-	@Test
-	void testGetMessage() {
-		MessageStore messageStore = new MessageStore();
-		assertEquals("Hello Struts User", messageStore.getMessage());
-	}
+  @Test
+  void testGetMessage() {
+    MessageStore messageStore = new MessageStore();
+    assertEquals("Hello Struts User", messageStore.getMessage());
+  }
 }
