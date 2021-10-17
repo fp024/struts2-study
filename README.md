@@ -33,7 +33,7 @@
 * [액션 코딩하기](coding-actions)
 * [폼 처리](processing-forms)
 * [폼 유효성 검사](form-validation)
-* 메시지 리소스 파일
+* [메시지 리소스 파일](message-resource-files)
 * 예외 처리
 * Struts 디버깅
 * 폼 테그

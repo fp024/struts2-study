@@ -113,7 +113,7 @@ Struts 2 `s:head` 태그는 오류 메시지에 대한 스타일을 포함하는
 다음 튜토리얼에서는 메시지 리소스 파일을 사용하여 뷰 페이지에서 텍스트를 분리하는 방법을 다룰 것입니다.
 
 
-### >  [폼 처리](../processing-forms)로 돌아가기 또는 [메시지 리소스 파일](https://struts.apache.org/getting-started/message-resource-files.html)으로 이동
+### >  [폼 처리](../processing-forms)로 돌아가기 또는 [메시지 리소스 파일](../message-resource-files)으로 이동
 
 
 
