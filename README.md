@@ -6,7 +6,22 @@
 
 이전 회사에서 근무할 때, Legacy 프로젝트의 대부분은 Struts 2 와 비슷한 Lucy 프레임워크를 사용했었다.<br>Struts를 알아야할 일이 생겨서,  공식 홈페이지의 Getting Started 부터 하나씩 따라해보자.
 
+### 예제 실행하기
 
+1. [struts2-study-parent](struts2-study-parent) 을 먼저 로컬 Maven 레파지토리에 설치한다.
+
+   ```
+   cd struts2-study-parent
+   mvnw install
+   ```
+
+2.  각 개별 하위 프로젝트에서 프로젝트를 실행한다. (예: [Struts 2 웹 어플리케이션을 만드는 방법](how-to-create-a-struts-2-web-application)의 예제실행)
+
+   ```
+   cd how-to-create-a-struts-2-web-application
+   cd basic-struts
+   mvnw jetty:run
+   ```
 
 ## 시작하기
 
