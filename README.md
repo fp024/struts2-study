@@ -8,20 +8,31 @@
 
 ### 예제 실행하기
 
-1. [struts2-study-parent](struts2-study-parent) 을 먼저 로컬 Maven 레파지토리에 설치한다.
+* [struts2-study-parent](struts2-study-parent) 디렉토리 경로가 계층구조로 있지않고 상대적인 경로로 정의했습니다.
+* 실행방법은 두가지입니다.
+  * 개별 하위 프로젝트에서 들어가서 프로젝트를 실행 (예: [Struts 2 웹 어플리케이션을 만드는 방법](how-to-create-a-struts-2-web-application)의 예제실행)
 
-   ```
-   cd struts2-study-parent
-   mvnw install
-   ```
+    ```
+    cd how-to-create-a-struts-2-web-application
+    cd basic-struts
+    mvnw clean jetty:run
+    ```
+    
+  * struts2-study-parent 디렉토리에서 실행  (예: [메시지 리소스 파일](message-resource-files)의 예제실행)
 
-2.  각 개별 하위 프로젝트에서 프로젝트를 실행한다. (예: [Struts 2 웹 어플리케이션을 만드는 방법](how-to-create-a-struts-2-web-application)의 예제실행)
+    ```
+    cd struts2-study-parent
+    mvnw clean jetty:run -pl ../message-resource-files/message-resource-struts -am
+    ```
 
-   ```
-   cd how-to-create-a-struts-2-web-application
-   cd basic-struts
-   mvnw jetty:run
-   ```
+  * 모든 하위 프로젝트 테스트
+
+    ```
+    cd struts2-study-parent
+    mvnw clean test
+    ```
+
+     
 
 ## 시작하기
 
@@ -130,6 +141,20 @@
       
 
 * Maven을 실행하는 JAVA 환경은 11이어야함, toolchain을 적용하여, mvnw의 Java 실행환경이 JDK 8이라도 JDK 11을 통해 빌드가 되지만, Jetty는 toolchain의 설정으로 처리되지 않고, mvnw의 JAVA 실행환경을 따르므로 Unsupported major.minor version 예외가 발생할 수 있음.
+
+### Jetty의 변경 감지 자동 반영-재시작에 문제가 있음
+
+* 변경사항 자동감지(`<scan>` )에 의한 Jetty 자동반영-재시작시 web.xml에 정의된 `StrutsPrepareAndExecuteFilter` 를 제대로 못읽음
+
+    ```
+    java.lang.ClassNotFoundException: org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter
+    ...
+    javax.servlet.UnavailableException: Class loading error for holder struts2==org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter@1ddaa7db{inst=false,async=false,src=DESCRIPTOR:file:///C:/프로젝트_디렉토리/message-resource-struts/src/main/webapp/WEB-INF/web.xml}
+    ```
+* Spring 프로젝트에 Jetty 플러그인을 적용했을 때도 동일한 패턴의 문제가 있어서 자동 반영-재시작이 일어나지 않도록 `<scan>` 값을 -1로 정했었다.
+  * 자동반영-재시작시 ContextLoaderListener 를 정상적으로 못 읽음.
+  
+* 이 스터디 프로젝트도 `<scan>`값을 -1로 하자. 	
 
 
 

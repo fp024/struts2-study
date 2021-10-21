@@ -11,7 +11,7 @@ import org.fp024.struts2.study.helloworld.model.MessageStore;
  * 액션 클래스에 대해 직렬화/역직렬화가 일어나진 않을 것이여서, 무시하는 어노테이션을 붙여도 될 것 같은데...
  * IntelliJ 에서는 이런 경고를 노출하지 않는다.
  *
- * 그런데, struts-exampe의 helloworld 예제를 보면 아래 항목이 붙어있다.
+ * 그런데, struts-example의 helloworld 예제를 보면 아래 항목이 붙어있다.
  *  private static final long serialVersionUID = 1L;
  */
 public class HelloWorldAction extends ActionSupport {

@@ -9,6 +9,7 @@
         <groupId>org.fp024.struts2.study</groupId>
         <artifactId>struts2-study-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
+		<relativePath>../../struts2-study-parent/pom.xml</relativePath>
     </parent>
 
     <groupId>org.fp024.struts2.study</groupId>

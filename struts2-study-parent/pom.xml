@@ -23,8 +23,26 @@
         <lombok.version>1.18.22</lombok.version>
         <junit.version>5.8.1</junit.version>
 
-        <jetty.version>9.4.44.v20210927</jetty.version>
+        <jetty.version>10.0.7</jetty.version>
     </properties>
+
+    <!-- module에도 상대경로 접근 방식으로 접근할 수 있다.-->
+    <modules>
+        <!-- 1. Struts 2 웹 어플리케이션을 만드는 방법 -->
+        <module>../how-to-create-a-struts-2-web-application/basic-struts</module>
+        <!-- 2. Struts 2를 사용한 Hello World -->
+        <module>../hello-world-using-struts-2/helloworld-struts</module>
+        <!-- 3. 태그 사용하기 -->
+        <module>../using-tags/using-tags-struts</module>
+        <!-- 4. 액션 코딩하기 -->
+        <module>../coding-actions/coding-actions-struts</module>
+        <!-- 5. 폼 처리 -->
+        <module>../processing-forms/processing-forms-struts</module>
+        <!-- 6. 폼 유효성 검사 -->
+        <module>../form-validation/form-validation-struts</module>
+        <!-- 7. 메시지 리소스 파일 -->
+        <module>../message-resource-files/message-resource-struts</module>
+    </modules>
 
     <dependencyManagement>
         <dependencies>
@@ -64,7 +82,7 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
         </dependency>
-		
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -204,12 +222,28 @@
                             <sessionIdPathParameterName>none</sessionIdPathParameterName>
                         </sessionHandler>
                     </webApp>
+                    <deployMode>EMBED</deployMode>
                     <stopKey>CTRL+C</stopKey>
                     <stopPort>8999</stopPort>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <scanTargets>
-                        <scanTarget>src/main/webapp/WEB-INF/web.xml</scanTarget>
-                    </scanTargets>
+					<!-- 
+					    Spring 에서만 Jetty의 자동반영-재시작이 실패하는 줄 알았더니...
+					    Struts 2도 StrutsPrepareAndExecuteFilter을 정상적으로 못 읽어와서 Jetty의 자동반영-재시작이 실패한다.
+						오류 패턴이 Spring에서 봤던것과 같다. (Spring은 ContextLoaderListener 를 정상적으로 못 읽음)
+						-1로 설정하여 이 기능을 꺼놓도록 하자!
+					-->
+                    <scan>-1</scan>
+                    <scanTargetPatterns>
+                        <scanTargetPattern>
+                            <directory>src/main/webapp/WEB-INF</directory>
+                            <includes>
+                                <include>**/*.properties</include>
+                                <include>**/*.xml</include>
+                            </includes>
+                            <excludes>
+                                <exclude>**/*.jsp</exclude>
+                            </excludes>
+                        </scanTargetPattern>
+                    </scanTargetPatterns>
                 </configuration>
                 <dependencies>
                     <dependency>
