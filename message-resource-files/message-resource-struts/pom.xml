@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.fp024.struts2.study</groupId>
-        <artifactId>struts2-study-parent</artifactId>
-		<version>1.0-SNAPSHOT</version>
-		<relativePath>../../struts2-study-parent/pom.xml</relativePath>
-    </parent>
-
-    <artifactId>message-resource-struts</artifactId>
+  <parent>
+    <groupId>org.fp024.struts2.study</groupId>
+    <artifactId>struts2-study-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <relativePath>../../struts2-study-parent/pom.xml</relativePath>
+  </parent>
 
-    <name>${project.artifactId} : Struts 2 Study Maven Webapp</name>
-    <url>https://github.com/fp024/struts2-study/tree/master/message-resource-files</url>
+  <artifactId>message-resource-struts</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>${project.artifactId} : Struts 2 Study Maven Webapp</name>
+  <url>https://github.com/fp024/struts2-study/tree/master/message-resource-files</url>
 
 </project>

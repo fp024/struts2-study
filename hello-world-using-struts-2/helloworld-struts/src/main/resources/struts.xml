@@ -4,16 +4,16 @@
     "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
-    <constant name="struts.devMode" value="true" />
+  <constant name="struts.devMode" value="true"/>
 
-    <package name="basicstruts2" extends="struts-default">
-        <action name="index">
-            <result>/index.jsp</result>
-        </action>
+  <package name="basicstruts2" extends="struts-default">
+    <action name="index">
+      <result>/index.jsp</result>
+    </action>
 
-        <action name="hello" class="org.fp024.struts2.study.helloworld.action.HelloWorldAction" method="execute">
-            <result name="success">/HelloWorld.jsp</result>
-        </action>
-    </package>
+    <action name="hello" class="org.fp024.struts2.study.helloworld.action.HelloWorldAction" method="execute">
+      <result name="success">/HelloWorld.jsp</result>
+    </action>
+  </package>
 
 </struts>

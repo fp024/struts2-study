@@ -1,264 +1,264 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.fp024.struts2.study</groupId>
-    <artifactId>struts2-study-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+  <groupId>org.fp024.struts2.study</groupId>
+  <artifactId>struts2-study-parent</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
-    <name>${project.artifactId} : Struts 2 Study Maven Parent</name>
-    <url>https://github.com/fp024/struts2-study/struts2-study-parent</url>
+  <name>${project.artifactId} : Struts 2 Study Maven Parent</name>
+  <url>https://github.com/fp024/struts2-study/struts2-study-parent</url>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
 
-        <struts2.version>2.5.26</struts2.version>
-        <log4j2.version>2.14.1</log4j2.version>
-        <lombok.version>1.18.22</lombok.version>
-        <junit.version>5.8.1</junit.version>
+    <struts2.version>2.5.26</struts2.version>
+    <log4j2.version>2.14.1</log4j2.version>
+    <lombok.version>1.18.22</lombok.version>
+    <junit.version>5.8.1</junit.version>
 
-        <jetty.version>10.0.7</jetty.version>
-    </properties>
+    <jetty.version>10.0.7</jetty.version>
+  </properties>
 
-    <!-- module에도 상대경로 접근 방식으로 접근할 수 있다.-->
-    <modules>
-        <!-- 1. Struts 2 웹 어플리케이션을 만드는 방법 -->
-        <module>../how-to-create-a-struts-2-web-application/basic-struts</module>
-        <!-- 2. Struts 2를 사용한 Hello World -->
-        <module>../hello-world-using-struts-2/helloworld-struts</module>
-        <!-- 3. 태그 사용하기 -->
-        <module>../using-tags/using-tags-struts</module>
-        <!-- 4. 액션 코딩하기 -->
-        <module>../coding-actions/coding-actions-struts</module>
-        <!-- 5. 폼 처리 -->
-        <module>../processing-forms/processing-forms-struts</module>
-        <!-- 6. 폼 유효성 검사 -->
-        <module>../form-validation/form-validation-struts</module>
-        <!-- 7. 메시지 리소스 파일 -->
-        <module>../message-resource-files/message-resource-struts</module>
-    </modules>
+  <!-- module에도 상대경로 접근 방식으로 접근할 수 있다.-->
+  <modules>
+    <!-- 1. Struts 2 웹 어플리케이션을 만드는 방법 -->
+    <module>../how-to-create-a-struts-2-web-application/basic-struts</module>
+    <!-- 2. Struts 2를 사용한 Hello World -->
+    <module>../hello-world-using-struts-2/helloworld-struts</module>
+    <!-- 3. 태그 사용하기 -->
+    <module>../using-tags/using-tags-struts</module>
+    <!-- 4. 액션 코딩하기 -->
+    <module>../coding-actions/coding-actions-struts</module>
+    <!-- 5. 폼 처리 -->
+    <module>../processing-forms/processing-forms-struts</module>
+    <!-- 6. 폼 유효성 검사 -->
+    <module>../form-validation/form-validation-struts</module>
+    <!-- 7. 메시지 리소스 파일 -->
+    <module>../message-resource-files/message-resource-struts</module>
+  </modules>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.apache.struts</groupId>
-                <artifactId>struts2-bom</artifactId>
-                <version>${struts2.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-bom</artifactId>
-                <version>${log4j2.version}</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>org.junit</groupId>
-                <artifactId>junit-bom</artifactId>
-                <version>${junit.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
+  <dependencyManagement>
     <dependencies>
-        <!-- Struts 2 -->
-        <dependency>
-            <groupId>org.apache.struts</groupId>
-            <artifactId>struts2-core</artifactId>
-        </dependency>
-
-        <!-- Apache Log4j SLF4J Binding  -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- Servlet -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>javax.servlet.jsp-api</artifactId>
-            <version>2.3.3</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- jetty가 사용하는 apache-jstl에 디펜던시된 taglibs-standard-impl이 Tomcat 8.5에서도 잘 동작한다. -->
-        <dependency>
-            <groupId>org.apache.taglibs</groupId>
-            <artifactId>taglibs-standard-impl</artifactId>
-            <version>1.2.5</version>
-            <scope>runtime</scope>
-        </dependency>
-
-        <!-- Test -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <scope>test</scope>
-        </dependency>
+      <dependency>
+        <groupId>org.apache.struts</groupId>
+        <artifactId>struts2-bom</artifactId>
+        <version>${struts2.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-bom</artifactId>
+        <version>${log4j2.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>${junit.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
     </dependencies>
+  </dependencyManagement>
 
-    <build>
-        <finalName>${project.artifactId}</finalName>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.1.0</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.0.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.0</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.22.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>2.22.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>3.2.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-install-plugin</artifactId>
-                    <version>2.5.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <version>2.8.2</version>
-                </plugin>
-                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-                <plugin>
-                    <groupId>org.eclipse.m2e</groupId>
-                    <artifactId>lifecycle-mapping</artifactId>
-                    <version>1.0.0</version>
-                    <configuration>
-                        <lifecycleMappingMetadata>
-                            <pluginExecutions>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>
-                                            org.apache.maven.plugins
-                                        </groupId>
-                                        <artifactId>
-                                            maven-toolchains-plugin
-                                        </artifactId>
-                                        <versionRange>
-                                            [3.0.0,)
-                                        </versionRange>
-                                        <goals>
-                                            <goal>toolchain</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore></ignore> <!-- toolchain 동작 eclipse m2e에서 무시 처리 -->
-                                    </action>
-                                </pluginExecution>
-                            </pluginExecutions>
-                        </lifecycleMappingMetadata>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-toolchains-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>toolchain</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <toolchains>
-                        <jdk>
-                            <version>${maven.compiler.target}</version>
-                        </jdk>
-                    </toolchains>
-                </configuration>
-            </plugin>
+  <dependencies>
+    <!-- Struts 2 -->
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-core</artifactId>
+    </dependency>
 
-            <plugin>
-				<!-- https://www.eclipse.org/jetty/documentation/jetty-9/index.html#jetty-maven-plugin -->
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>${jetty.version}</version>
-                <configuration>
-                    <webApp>
-                        <contextPath>/${project.build.finalName}</contextPath>
-                        <sessionHandler>
-                            <sessionIdPathParameterName>none</sessionIdPathParameterName>
-                        </sessionHandler>
-                    </webApp>
-                    <deployMode>EMBED</deployMode>
-                    <stopKey>CTRL+C</stopKey>
-                    <stopPort>8999</stopPort>
-					<!-- 
-					    Spring 에서만 Jetty의 자동반영-재시작이 실패하는 줄 알았더니...
-					    Struts 2도 StrutsPrepareAndExecuteFilter을 정상적으로 못 읽어와서 Jetty의 자동반영-재시작이 실패한다.
-						오류 패턴이 Spring에서 봤던것과 같다. (Spring은 ContextLoaderListener 를 정상적으로 못 읽음)
-						-1로 설정하여 이 기능을 꺼놓도록 하자!
-					-->
-                    <scan>-1</scan>
-                    <scanTargetPatterns>
-                        <scanTargetPattern>
-                            <directory>src/main/webapp/WEB-INF</directory>
-                            <includes>
-                                <include>**/*.properties</include>
-                                <include>**/*.xml</include>
-                            </includes>
-                            <excludes>
-                                <exclude>**/*.jsp</exclude>
-                            </excludes>
-                        </scanTargetPattern>
-                    </scanTargetPatterns>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.eclipse.jetty</groupId>
-                        <artifactId>apache-jstl</artifactId>
-                        <version>${jetty.version}</version>
-                        <exclusions>
-                            <exclusion>
-                                <groupId>org.apache.taglibs</groupId>
-                                <artifactId>taglibs-standard-impl</artifactId>
-                            </exclusion>
-                        </exclusions>
-                    </dependency>
-                </dependencies>
-            </plugin>
-        </plugins>
-    </build>
+    <!-- Apache Log4j SLF4J Binding  -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j-impl</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Servlet -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>javax.servlet.jsp-api</artifactId>
+      <version>2.3.3</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- jetty가 사용하는 apache-jstl에 디펜던시된 taglibs-standard-impl이 Tomcat 8.5에서도 잘 동작한다. -->
+    <dependency>
+      <groupId>org.apache.taglibs</groupId>
+      <artifactId>taglibs-standard-impl</artifactId>
+      <version>1.2.5</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <!-- Test -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>${project.artifactId}</finalName>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>2.22.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+        <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>
+                      org.apache.maven.plugins
+                    </groupId>
+                    <artifactId>
+                      maven-toolchains-plugin
+                    </artifactId>
+                    <versionRange>
+                      [3.0.0,)
+                    </versionRange>
+                    <goals>
+                      <goal>toolchain</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore></ignore> <!-- toolchain 동작 eclipse m2e에서 무시 처리 -->
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-toolchains-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>toolchain</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <toolchains>
+            <jdk>
+              <version>${maven.compiler.target}</version>
+            </jdk>
+          </toolchains>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <!-- https://www.eclipse.org/jetty/documentation/jetty-9/index.html#jetty-maven-plugin -->
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>${jetty.version}</version>
+        <configuration>
+          <webApp>
+            <contextPath>/${project.build.finalName}</contextPath>
+            <sessionHandler>
+              <sessionIdPathParameterName>none</sessionIdPathParameterName>
+            </sessionHandler>
+          </webApp>
+          <deployMode>EMBED</deployMode>
+          <stopKey>CTRL+C</stopKey>
+          <stopPort>8999</stopPort>
+          <!--
+              Spring 에서만 Jetty의 자동반영-재시작이 실패하는 줄 알았더니...
+              Struts 2도 StrutsPrepareAndExecuteFilter을 정상적으로 못 읽어와서 Jetty의 자동반영-재시작이 실패한다.
+              오류 패턴이 Spring에서 봤던것과 같다. (Spring은 ContextLoaderListener 를 정상적으로 못 읽음)
+              -1로 설정하여 이 기능을 꺼놓도록 하자!
+          -->
+          <scan>-1</scan>
+          <scanTargetPatterns>
+            <scanTargetPattern>
+              <directory>src/main/webapp/WEB-INF</directory>
+              <includes>
+                <include>**/*.properties</include>
+                <include>**/*.xml</include>
+              </includes>
+              <excludes>
+                <exclude>**/*.jsp</exclude>
+              </excludes>
+            </scanTargetPattern>
+          </scanTargetPatterns>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>apache-jstl</artifactId>
+            <version>${jetty.version}</version>
+            <exclusions>
+              <exclusion>
+                <groupId>org.apache.taglibs</groupId>
+                <artifactId>taglibs-standard-impl</artifactId>
+              </exclusion>
+            </exclusions>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
 </project>
