@@ -42,6 +42,8 @@
     <module>../form-validation/form-validation-struts</module>
     <!-- 7. 메시지 리소스 파일 -->
     <module>../message-resource-files/message-resource-struts</module>
+    <!-- 8. 예외 처리 -->
+    <module>../exception-handling/exception-handling-struts</module>
   </modules>
 
   <dependencyManagement>

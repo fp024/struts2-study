@@ -250,7 +250,7 @@ thankyou=Gracias por registrarse, %{personBean.firstName}.
 
 
 
-### >  [폼 유효성 검사](../form-validation)로 돌아가기 또는 [예외 처리](https://struts.apache.org/getting-started/exception-handling.html)로 이동
+### >  [폼 유효성 검사](../form-validation)로 돌아가기 또는 [예외 처리](../exception-handling)로 이동
 
 
 

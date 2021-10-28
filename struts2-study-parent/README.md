@@ -45,7 +45,7 @@ apache의 struts-exampe은 부모 pom 하위에 모듈 프로젝트 디렉토리
 
   * 개별 하위 프로젝트에서 들어가서 프로젝트를 실행 (예: [Struts 2 웹 어플리케이션을 만드는 방법](../how-to-create-a-struts-2-web-application)의 예제실행)
 
-    ```
+    ```bash
     cd ..
     cd how-to-create-a-struts-2-web-application
     cd basic-struts
@@ -56,13 +56,13 @@ apache의 struts-exampe은 부모 pom 하위에 모듈 프로젝트 디렉토리
 
       * `-am`옵션(`--also-make`)은 해당 프로젝트를 빌드하는데 필요한 프로젝트까지 같이 빌드하는 옵션인데, 여기서는 struts2-study-parent를 같이 빌드하게 됨
 
-    ```
+    ```bash
     mvnw clean jetty:run -pl ../message-resource-files/message-resource-struts -am
     ```
 
   * 모든 하위 프로젝트 일괄 테스트
 
-    ```
+    ```bash
     mvnw clean test
     ```
 

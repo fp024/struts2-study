@@ -1,6 +1,7 @@
 # STRUTS 2 스터티
 
-
+> * Struts 2 - Getting Started
+>   * https://struts.apache.org/getting-started/
 
 ## 개요
 
@@ -8,11 +9,11 @@
 
 ### 예제 실행하기
 
-* [struts2-study-parent](struts2-study-parent) 디렉토리 경로가 계층구조로 있지않고 상대적인 경로로 정의했습니다.
+* [struts2-study-parent](struts2-study-parent) 디렉토리 경로를 계층구조로 대신 상대적인 경로로 정의했습니다.
 * 실행방법은 두가지입니다.
   * 개별 하위 프로젝트에서 들어가서 프로젝트를 실행 (예: [Struts 2 웹 어플리케이션을 만드는 방법](how-to-create-a-struts-2-web-application)의 예제실행)
 
-    ```
+    ```bash
     cd how-to-create-a-struts-2-web-application
     cd basic-struts
     mvnw clean jetty:run
@@ -20,14 +21,14 @@
     
   * struts2-study-parent 디렉토리에서 실행  (예: [메시지 리소스 파일](message-resource-files)의 예제실행)
 
-    ```
+    ```bash
     cd struts2-study-parent
     mvnw clean jetty:run -pl ../message-resource-files/message-resource-struts -am
     ```
 
   * 모든 하위 프로젝트 테스트
 
-    ```
+    ```bash
     cd struts2-study-parent
     mvnw clean test
     ```
@@ -45,7 +46,7 @@
 * [폼 처리](processing-forms)
 * [폼 유효성 검사](form-validation)
 * [메시지 리소스 파일](message-resource-files)
-* 예외 처리
+* [예외 처리](exception-handling)
 * Struts 디버깅
 * 폼 테그
 * XML을 사용하여 폼 검증
@@ -155,11 +156,4 @@
   * 자동반영-재시작시 ContextLoaderListener 를 정상적으로 못 읽음.
   
 * 이 스터디 프로젝트도 `<scan>`값을 -1로 하자. 	
-
-
-
-## 참조
-
-* Getting Started
-  * https://struts.apache.org/getting-started/
 
