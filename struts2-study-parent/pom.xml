@@ -44,6 +44,8 @@
     <module>../message-resource-files/message-resource-struts</module>
     <!-- 8. 예외 처리 -->
     <module>../exception-handling/exception-handling-struts</module>
+    <!-- 9. Struts 디버깅 -->
+    <module>../debugging-struts/debugging-struts</module>	
   </modules>
 
   <dependencyManagement>

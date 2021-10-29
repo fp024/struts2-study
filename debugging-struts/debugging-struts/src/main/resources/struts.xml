@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+  <constant name="struts.devMode" value="true"/>
+
+  <package name="basicstruts2" extends="struts-default">
+    <!--
+    setup the default-stack exception mapping interceptor
+    so that any exceptions not caught by this application
+    will be logged and then handled by the global exception
+    mapping
+
+    default-stack 예외 매핑 인터셉터를 설정하여, 애플리케이션에서 잡히지 않은,
+    모든 예외가 로깅된 후 전역 예외 매핑에의해 처리되도록 합니다.
+    -->
+    <interceptors>
+      <interceptor-stack name="appDefault">
+        <interceptor-ref name="defaultStack">
+          <param name="exception.logEnabled">true</param>
+          <param name="exception.logLevel">ERROR</param>
+        </interceptor-ref>
+      </interceptor-stack>
+    </interceptors>
+
+    <default-interceptor-ref name="appDefault"/>
+
+    <global-results>
+      <result name="error">/error.jsp</result>
+      <result name="securityerror">/securityerror.jsp</result>
+    </global-results>
+
+    <!-- 전역 예외 매핑 설정 -->
+    <global-exception-mappings>
+      <exception-mapping exception="org.fp024.struts2.study.register.exceptions.SecurityBreachException"
+                         result="securityerror"/>
+      <exception-mapping exception="java.lang.Exception" result="error"/>
+    </global-exception-mappings>
+
+    <!-- 이 액션을 호출하면 특정 예외가 발생하도록 설정 -->
+    <action name="causesecurityexception" class="org.fp024.struts2.study.register.action.Register"
+            method="throwSecurityException">
+      <result>/register.jsp</result>
+    </action>
+
+    <action name="causeexception" class="org.fp024.struts2.study.register.action.Register" method="throwException">
+      <result>/register.jsp</result>
+    </action>
+
+    <action name="causenullpointerexception" class="org.fp024.struts2.study.register.action.Register"
+            method="throwNullPointerException">
+      <result>/register.jsp</result>
+    </action>
+
+    <!-- 액션 단위에 예외 매핑을 설정 -->
+    <action name="actionspecificexception" class="org.fp024.struts2.study.register.action.Register"
+            method="throwSecurityException">
+      <exception-mapping exception="org.fp024.struts2.study.register.exceptions.SecurityBreachException"
+                         result="login"/>
+      <result>/register.jsp</result>
+      <result name="login">/login.jsp</result>
+    </action>
+
+    <!--
+        클래스 속성이 지정되지 않은 경우 프레임워크는 성공을 가정하고 result index.jsp를 랜더링합니다.
+        result 노드의 이름이 지정되지 않은 경우 success 값이 기본입니다.
+    -->
+    <action name="index">
+      <result>/index.jsp</result>
+    </action>
+
+    <action name="hello" class="org.fp024.struts2.study.helloworld.action.HelloWorldAction" method="execute">
+      <result name="success">/HelloWorld.jsp</result>
+    </action>
+
+    <action name="register" class="org.fp024.struts2.study.register.action.Register" method="execute">
+      <result name="success">/thankyou.jsp</result>
+      <result name="input">/register.jsp</result>
+    </action>
+  </package>
+
+</struts>

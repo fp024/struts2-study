@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!--
+    http://localhost:8080/debugging-struts/index.action?debug=browser 페이지 확인시에는
+    아래 주석을 풀고 Struts 2 버전을 잠시 낮추고 확인해보자!
+  -->
+  <!--
+  <properties>
+    <struts2.version>2.5</struts2.version>
+  </properties>
+  -->
+
+  <parent>
+    <groupId>org.fp024.struts2.study</groupId>
+    <artifactId>struts2-study-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../../struts2-study-parent/pom.xml</relativePath>
+  </parent>
+
+  <artifactId>debugging-struts</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-config-browser-plugin</artifactId>
+    </dependency>
+  </dependencies>
+
+  <name>${project.artifactId} : Struts 2 Study Maven Webapp</name>
+  <url>https://github.com/fp024/struts2-study/tree/master/debugging-struts</url>
+</project>
