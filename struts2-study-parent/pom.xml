@@ -45,7 +45,33 @@
     <!-- 8. 예외 처리 -->
     <module>../exception-handling/exception-handling-struts</module>
     <!-- 9. Struts 디버깅 -->
-    <module>../debugging-struts/debugging-struts</module>	
+    <module>../debugging-struts/debugging-struts</module>
+    <!-- 10. 폼 테그 -->
+    <!-- // TODO -->
+    <!-- 11. XML을 사용하여 폼 검증 -->
+    <!-- // TODO -->
+    <!-- 12. 제어 테그 -->
+    <!-- // TODO -->
+    <!-- 13. 와일드카드 메서드 선택 -->
+    <!-- // TODO -->
+    <!-- 14. 테마 -->
+    <!-- // TODO -->	
+    <!-- 15. 스프링과 Struts 2 -->
+    <module>../spring-and-struts-2/spring-struts</module>
+    <!-- 16. 어노테이션 -->
+    <!-- // TODO -->
+    <!-- 17. 인터셉터 소개 -->
+    <!-- // TODO -->
+    <!-- 18. 단위 테스트 -->
+    <!-- // TODO -->
+    <!-- 19. HTTP 세션 -->
+    <!-- // TODO -->
+    <!-- 20. Preparable 인터페이스 -->
+    <!-- // TODO -->
+    <!-- 21. 파라미터 제외 -->
+    <!-- // TODO -->
+    <!-- 22. JasperReports 튜토리얼 -->
+    <!-- // TODO -->
   </modules>
 
   <dependencyManagement>
