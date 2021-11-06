@@ -56,7 +56,7 @@
 * [스프링과 Struts 2](spring-and-struts-2)
 * 어노테이션
 * 인터셉터 소개
-* 단위 테스트
+* [단위 테스트](unit-testing)
 * HTTP 세션
 * Preparable 인터페이스
 * 파라미터 제외
