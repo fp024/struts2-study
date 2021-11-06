@@ -63,7 +63,7 @@
     <!-- 17. 인터셉터 소개 -->
     <!-- // TODO -->
     <!-- 18. 단위 테스트 -->
-    <!-- // TODO -->
+    <module>../unit-testing/unit-testing-struts</module>
     <!-- 19. HTTP 세션 -->
     <!-- // TODO -->
     <!-- 20. Preparable 인터페이스 -->

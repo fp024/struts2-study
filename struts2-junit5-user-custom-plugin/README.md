@@ -6,6 +6,9 @@
 
 Struts2 JUnit 플러그인 코드를 보니 JUnit 4 기준으로 되어있는데, 이것을 JUnit 5 기준으로 작동가능하도록 개선해보자!
 
+* Struts 2 JUnit Plugin
+  * https://github.com/apache/struts/tree/master/plugins/junit
+
 
 
 ## 진행
@@ -248,8 +251,8 @@ git에서 그냥 받으면 `2.6.0-SNAPSHOT` 버전이기 때문에, 최신 Curre
 Struts2 Getting Started의 Unit Testing 항목을 이 개조한 플러그인을 사용해서 진행해봐야겠다. ㅎㅎ
 
 * Maven 레파지토리에 올릴수는 없으니 로컬에 install 한후 진행 하자!
-
 * 그리고 pom.xml 오류가 있을 때, IntelliJ 가 정확하게 오류를 잡아내지 못하는 것 같다. 
   * `mvnw validate` 로 커맨드로 보는게 정확할 때가 있다.
 * IntelliJ에서 에러 아닌데 자꾸 JUnit 실행 실패하면 커멘드에서 직접 test 돌려보고 이상 없으면 .idea폴더 날리고 다시해보자~
+* 어떻게 보면.. [JUnit Vintage Engine](https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine) 모듈을 포함시켜서 JUnit 4 용 클래스를 그대로 남겨두고 5용으로 새로 추가하는게 나았을지도 모르겠다. 그런데, 스터디 프로젝트에서는 JUnit 4용 클래스를 사용할 일이 없어서 일단은 그대로 두자.
 

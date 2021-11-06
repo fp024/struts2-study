@@ -5,7 +5,7 @@
 
 ## 개요
 
-이전 회사에서 근무할 때, Legacy 프로젝트의 대부분은 Struts 2 와 비슷한 Lucy 프레임워크를 사용했었다.<br>Struts를 알아야할 일이 생겨서,  공식 홈페이지의 Getting Started 부터 하나씩 따라해보자.
+이전 회사에서 근무할 때, Legacy 프로젝트의 대부분은 Struts 2 와 비슷한 **Lucy 프레임워크**를 사용했었다.<br>**Lucy 프레임워크**에 대해서 잘 이해하지 못하고 지나간 부분을 알아가는데 도움이 되는 부분이 있고, 재미도 있는 편이여서<br>Struts 2 공식 홈페이지의 Getting Started 부터 하나씩 따라해보자.
 
 ### 예제 실행하기
 
@@ -63,6 +63,10 @@
 
 ### 추가 튜토리얼
 * JasperReports 튜토리얼
+
+### 플러그인 프로젝트
+
+* [Struts 2 JUnit 5 사용자 커스텀 플러그인](struts2-junit5-user-custom-plugin)
 
 
 
