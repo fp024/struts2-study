@@ -397,10 +397,10 @@ http://localhost:8080/basic-struts/index.jsp 로 이동할 때와 동일한 페�
 
         > Maven Wrapper는 특정 버전의 Maven이 필요한 프로젝트(또는 Maven 설치를 전혀 원하지 않는 사용자)에 탁월한 선택입니다. 운영체제에 여러 버전을 설치하는 대신 프로젝트별 래퍼 스크립트를 사용할 수 있습니다.
     
-      * 프로젝트 루트에서 아래 명령 수행 (Maven 버전을 3.8.2로 지정)
+      * 프로젝트 루트에서 아래 명령 수행 (Maven 버전을 3.8.3 으로 지정)
     
-        ```
-        mvn -N io.takari:maven:wrapper -Dmaven=3.8.2
+        ```bash
+        mvn -N io.takari:maven:wrapper -Dmaven=3.8.3
         ```
     
       * Wrapper 내용이 추가된 프로젝트 디렉토리/파일 구조
