@@ -3,13 +3,17 @@ package org.fp024.struts2.study.edit.service;
 import org.fp024.struts2.study.edit.model.Person;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
+
 /** 예제 원저자님이 In-Memory 형식으로 한 Person 객체의 조회와 수정을 보여주기 위해 만든 클래스 */
 @Service("editService")
 public class EditServiceInMemory implements EditService {
   private static Person person;
   private static String[] carModels = {"Ford", "Nissan"};
 
-  static {
+  @PostConstruct
+  @Override
+  public void initData() {
     person = new Person();
     person.setFirstName("Bruce");
     person.setLastName("Phillips");

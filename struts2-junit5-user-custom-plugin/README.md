@@ -9,6 +9,10 @@ Struts2 JUnit 플러그인 코드를 보니 JUnit 4 기준으로 되어있는데
 * Struts 2 JUnit Plugin
   * https://github.com/apache/struts/tree/master/plugins/junit
 
+* JUnit in Action 3rd의 맨 첫 페이지의 다이어그림이 이해하기 쉽고 맘에 들어서 Draw로 따라 그려봤다.
+
+  ![JUnit 5 Diagram](doc-resources/junit5.png)
+
 
 
 ## 진행

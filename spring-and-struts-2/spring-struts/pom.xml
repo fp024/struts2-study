@@ -54,5 +54,15 @@
       <artifactId>spring-test</artifactId>
       <scope>test</scope>
     </dependency>
+
+    <!-- JUnit 5를 사용하기 위해 https://github.com/apache/struts/tree/master/plugins/junit 프로젝트를 수정했다. -->
+    <dependency>
+      <groupId>org.fp024.struts2.study</groupId>
+      <artifactId>struts2-junit5-user-custom-plugin</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+      <scope>test</scope>
+    </dependency>
+
+
   </dependencies>
 </project>

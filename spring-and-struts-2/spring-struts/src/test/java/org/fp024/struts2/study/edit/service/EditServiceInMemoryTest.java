@@ -1,5 +1,6 @@
 package org.fp024.struts2.study.edit.service;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
@@ -11,6 +12,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class EditServiceInMemoryTest {
   @Resource(name = "editService")
   private EditService editService;
+
+  @BeforeEach
+  void beforeEach() {
+    editService.initData();
+  }
 
   @Test
   void testGetPerson() {

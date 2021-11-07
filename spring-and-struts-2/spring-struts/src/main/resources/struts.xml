@@ -7,7 +7,8 @@
 
   <package name="basicstruts2" extends="struts-default">
     <action name="index">
-      <result>/index.jsp</result>
+      <!--<result>/index.jsp</result>-->
+      <result type="freemarker">/index-template.ftl</result>
     </action>
 
     <action name="edit" class="editAction" method="input">
