@@ -16,7 +16,7 @@
 
 ## 소개
 
-Struts 2는 [Struts 2 JUnit 플러그인](https://struts.apache.org/plugins/junit/)을 사용하여 Struts 액션 클래스의 메서드에 대한 단위 테스트 실행을 지원합니다. JUnit 플러그인을 사용하면 Struts 2 프레임워크 내에서 액션 클래스의 메서드를 테스트할 수 있습니다. Struts Servlet -filter 및 인터셉터는 애플리케이션이 Servlet 컨테이너에서 실행 중인 것처럼 실행됩니다.
+Struts 2는 [Struts 2 JUnit 플러그인](https://struts.apache.org/plugins/junit/)을 사용하여 Struts 액션 클래스의 메서드에 대한 단위 테스트 실행을 지원합니다. JUnit 플러그인을 사용하면 Struts 2 프레임워크 내에서 액션 클래스의 메서드를 테스트할 수 있습니다. Struts Servlet 필터와 인터셉터는 애플리케이션이 Servlet 컨테이너에서 실행 중인 것처럼 실행됩니다.
 
 Struts 2 [사용자 메일링](http://struts.apache.org/mail.html) 리스트는 도움을 받을 수 있는 훌륭한 장소입니다. 튜토리얼 예제 애플리케이션을 작동시키는데 문제가 있는 경우 Struts 2 메일리스트를 검색하세요. 문제에 대한 답을 찾지 못한 경우 메일링 리스트에 질문을 게시하세요.
 
@@ -34,7 +34,7 @@ Struts 2 JUnit 플러그인 jar 파일은 애플리케이션의 클래스 경로
 
 Struts 2 플러그인을 사용하여 Strut 2 프레임워크가 테스트의 일부로 실행되도록 하려면 JUnit 테스트 클래스가 StrutsTestCase를 확장하도록 해야 합니다(예제 애플리케이션의 RegisterTest 클래스 참조).
 
-Struts 2 JUnit 플러그인은 입력 메서드와 같은 다른 액션 클래스 메서드의 단위 테스트를 설계하고 인터셉터 스택에 추가한 사용자 정의 인터셉터의 메서드를 테스트하는 데 사용할 수 있습니다. 또한 이 예에서 테스트는 [validate 메서드](../form-validation)에서 수행된 유효성 검증을 위한 것입니다. 그러나 [XML 파일 유효성 검사](https://struts.apache.org/getting-started/form-validation-using-xml.html)를 사용하여 유효성 검사를 수행한 경우에도 동일한 유형의 테스트가 작동합니다.
+Struts 2 JUnit 플러그인은 input 메서드와 같은 다른 액션 클래스 메서드의 단위 테스트를 설계하고 인터셉터 스택에 추가한 사용자 정의 인터셉터의 메서드를 테스트하는 데 사용할 수 있습니다. 또한 이 예에서 테스트는 [validate 메서드](../form-validation)에서 수행된 유효성 검증을 위한 것입니다. 그러나 [XML 파일 유효성 검사](https://struts.apache.org/getting-started/form-validation-using-xml.html)를 사용하여 유효성 검사를 수행한 경우에도 동일한 유형의 테스트가 작동합니다.
 
 validate 메서드를 테스트하기 위해 우리는 Struts가 Struts 액션을 호출하여 액션 클래스의 validate 및 execute 메서드가 실행되기를 원합니다. 예제 애플리케이션에서 이 액션은 register입니다. 유효성 검사 오류가 없으면 프레임워크는 execute 메서드를 호출하고 execute 메서드가 반환하는 문자열을 반환합니다.
 
@@ -80,7 +80,7 @@ public void testExecuteValidationPasses() throws Exception {
 }
 ```
 
-테스트 메서드의 첫 번째 명령문은 request 객체를 사용하여 request 파라미터의 값을 설정합니다. 이는 사용자가 폼 필드에 입력하는 값을 시뮬레이션합니다. setParameter에 대한 첫 번째 인수가 register.jsp 페이지의 Struts 텍스트 필드 태그에 있는 name 속성 값과 어떻게 동일한지 확인해보세요.
+테스트 메서드의 첫 번째 명령문은 request 객체를 사용하여 request 파라미터의 값을 설정합니다. 이는 사용자가 폼 필드에 입력한 값을 시뮬레이션합니다. setParameter에 대한 첫 번째 인수가 register.jsp 페이지의 Struts 텍스트 필드 태그에 있는 name 속성 값과 어떻게 동일한지 확인해보세요.
 
 이 테스트에서는 사용자가 올바른 정보를 제공하는 경우 유효성 검사 로직이 오류를 등록하지 않게 하기 위해 각 폼 필드에 대해 올바른 데이터를 제공하고 있습니다.
 
@@ -125,7 +125,7 @@ public void testExecuteValidationFailsMissingFirstName() throws Exception {
 
 ## 요약
 
-Struts 2 프레임워크와 함께 액션 클래스의 메서드를 테스트하는 데 도움이 되는 Struts 2 JUnit 플러그인으로 할 수 있는 일이 훨씬 더 많습니다. Struts 2 애플리케이션이 Spring을 사용하여 액션 클래스에 의존성을 주입하는 경우 Struts 2 JUnit 플러그인에는 테스트 클래스에다 상속해서 사용가능한 StrutsSpringTestCase가 있습니다. 자세한 내용은 [액션 테스트](https://struts.apache.org/plugins/junit/)를 참조하세요.
+Struts 2 프레임워크와 함께 액션 클래스의 메서드를 테스트하는 데 도움이 되는 Struts 2 JUnit 플러그인으로 할 수 있는 일이 훨씬 더 많습니다. Struts 2 애플리케이션이 Spring을 사용하여 액션 클래스에 의존성을 주입하는 경우 Struts 2 JUnit 플러그인에는 테스트 클래스에다가 상속해서 사용가능한 StrutsSpringTestCase가 있습니다. 자세한 내용은 [액션 테스트](https://struts.apache.org/plugins/junit/)를 참조하세요.
 
 
 
