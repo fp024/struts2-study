@@ -57,7 +57,7 @@
 * 어노테이션
 * 인터셉터 소개
 * [단위 테스트](unit-testing)
-* HTTP 세션
+* [HTTP 세션](http-session)
 * Preparable 인터페이스
 * 파라미터 제외
 

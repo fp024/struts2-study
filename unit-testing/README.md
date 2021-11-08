@@ -129,7 +129,7 @@ Struts 2 프레임워크와 함께 액션 클래스의 메서드를 테스트하
 
 
 
-### >  [인터셉터 소개](https://struts.apache.org/getting-started/introducing-interceptors.html)로 돌아가기 또는 [HTTP 세션](https://struts.apache.org/getting-started/http-session.html)으로 이동
+### >  [인터셉터 소개](https://struts.apache.org/getting-started/introducing-interceptors.html)로 돌아가기 또는 [HTTP 세션](../http-session)으로 이동
 
 ---
 
