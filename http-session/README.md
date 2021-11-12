@@ -2,7 +2,7 @@
 
 > 원문 : https://struts.apache.org/getting-started/http-session.html
 
-* 소개
+* 서문
 * SessionAware 인터페이스
 * 액션 클래스에서 HTTP 세션 객체 사용하기
 * 뷰에서 세션 객체에 접근하기
@@ -14,7 +14,7 @@
 
 
 
-## 소개
+## 서문
 
 여러분의 Struts 2 애플리케이션은 HTTP 세션 객체에 접근해야할 필요가 있을 수 있습니다. Struts 2는 HTTP 세션 객체에 대한 참조를 얻기 위해 액션 클래스가 구현해야 하는 SessionAware 인터페이스를 제공합니다.
 

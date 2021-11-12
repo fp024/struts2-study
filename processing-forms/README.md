@@ -2,7 +2,7 @@
 
 > 원문 : https://struts.apache.org/getting-started/processing-forms.html
 
-* 소개
+* 서문
 * 폼과 Java 모델 클래스
 * 폼 구조
 * 폼 제출을 처리하는 액션 클래스 만들기
@@ -16,7 +16,7 @@
 
 
 
-### 소개
+### 서문
 
 이 튜토리얼에서  Struts 2를 사용해서 좀 더 복잡한 폼 제출 처리를 수행하는 방법을 살펴보겠습니다.  Java 모델 클래스를 사용하여 폼 입력을 저장하는 방법과 해당 모델 클래스와 일치하도록 Struts 2 양식을 만드는 방법을 다룰 것입니다.
 
@@ -255,7 +255,7 @@ Struts 2 property 와 url 태그가 기억나지 않는다면 [Struts 2 태그 �
 
 * 변경사항
   * 프로젝트명: processing-forms-struts
-* [x] 소개
+* [x] 서문
 * [x] 폼과 Java 모델 클래스
 * [x] 폼 구조
 * [x] 폼 제출을 처리하는 액션 클래스 만들기

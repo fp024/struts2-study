@@ -60,8 +60,8 @@
     <module>../spring-and-struts-2/spring-struts</module>
     <!-- 16. 어노테이션 -->
     <!-- // TODO -->
-    <!-- 17. 인터셉터 소개 -->
-    <!-- // TODO -->
+    <!-- 17. 인터셉터 입문 -->
+    <module>../introducing-interceptors/interceptors-struts</module>
     <!-- 18. 단위 테스트 -->
     <module>../unit-testing/unit-testing-struts</module>
     <!-- 19. HTTP 세션 -->

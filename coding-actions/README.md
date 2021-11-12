@@ -2,7 +2,7 @@
 
 > 원문 : https://struts.apache.org/getting-started/coding-actions.html
 
-* 소개
+* 서문
 * Struts 2 액션 클래스
 * 액션 클래스에서 폼 입력 처리하기
 * 요약
@@ -11,7 +11,7 @@
 
 
 
-### 소개
+### 서문
 
 Struts 2 액션 코딩에는 다음과 같은 몇가지 부분이 포합됩니다.:
 
@@ -138,7 +138,7 @@ if (userName != null) {
 
 * 변경사항
   * 프로젝트명: coding-actions-struts
-* [x] 소개
+* [x] 서문
 * [x] Struts 2 액션 클래스
 * [x] 액션 클래스에서 폼 입력 처리하기
 * [x] 요약

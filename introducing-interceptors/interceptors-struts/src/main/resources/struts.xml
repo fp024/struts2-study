@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+  <constant name="struts.devMode" value="true"/>
+
+  <package name="basicstruts2" extends="struts-default">
+    <interceptors>
+      <interceptor name="simpleInterceptor" class="org.fp024.struts2.study.register.interceptor.SimpleInterceptor"></interceptor>
+    </interceptors>
+    <!-- 클래스 속성이 지정되지 않으면 프레임워크는 success로 가정하고 result로 index.jsp를 렌더링합니다.-->
+    <!-- result 노드의 name 값이 지정되지 않은 경우 success 값이 기본 값입니다. -->
+    <action name="index">
+      <result>/index.jsp</result>
+    </action>
+
+    <action name="register_input" class="registerAction" method="input">
+      <result name="input">register.jsp</result>
+    </action>
+
+    <!-- for logger interceptor see: https://struts.apache.org/core-developers/logging-interceptor.html -->
+    <!-- for timer interceptor see https://struts.apache.org/core-developers/timer-interceptor.html -->
+    <action name="register" class="registerAction" method="execute">
+      <interceptor-ref name="timer"/>
+      <interceptor-ref name="logger"/>
+      <interceptor-ref name="simpleInterceptor"/>
+      <interceptor-ref name="defaultStack">
+        <param name="exception.logEnabled">true</param>
+        <param name="exception.logLevel">ERROR</param>
+      </interceptor-ref>
+      <result name="success">thankyou.jsp</result>
+      <result name="input">register.jsp</result>
+    </action>
+
+  </package>
+
+</struts>

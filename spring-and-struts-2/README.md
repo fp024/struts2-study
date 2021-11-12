@@ -2,7 +2,7 @@
 
 > 원문 : https://struts.apache.org/getting-started/spring.html
 
-* 소개
+* 서문
 
 * Struts 2 스프링 플러그인
 
@@ -17,7 +17,7 @@
 
 
 
-## 소개
+## 서문
 
 Struts 2 ActionSupport 클래스의 많은 실행 메서드에는 객체를 생성한 다음 해당 객체가 필요한 작업을 실행하는 문장이 있습니다. 한 클래스가 다른 클래스의 객체를 만들 때마다 두 클래스 간의 의존성이 발생합니다. 스프링 프레임워크를 사용하면 애플리케이션 개발자가 이러한 의존성을 더 쉽게 관리할 수 있으며 애플리케이션을 보다 유연하게하고 유지 관리할 수 있도록 합니다. 이 튜토리얼에서는 Struts 2와 스프링을 함께 사용하여 ActionSupport 클래스와 어플리케이션의 다른 클래스 간의 의존성을 관리하는 방법을 보여줍니다.
 
@@ -164,7 +164,7 @@ public void setEditService(EditService editService) {
   * 단순 JUnit 5 테스트 코드 추가
   * 한국어 메시지 프로퍼티 파일 추가
   
-* [x] 소개
+* [x] 서문
 
 * [x] Struts 2 스프링 플러그인
 
