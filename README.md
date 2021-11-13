@@ -71,7 +71,7 @@
 ### 플러그인 프로젝트
 
 * [Struts 2 JUnit 5 사용자 커스텀 플러그인](struts2-junit5-user-custom-plugin)
-  * [JUnit 플러그인](https://struts.apache.org/plugins/junit/)  - `영문`
+  * [JUnit 플러그인](struts2-junit5-user-custom-plugin/junit-plugin.md)
 
 * [빈 유효성 검사 플러그인](https://struts.apache.org/plugins/bean-validation/) - `영문`
 * [JSON 플러그인](https://struts.apache.org/plugins/json/)  - `영문`
