@@ -8,6 +8,6 @@
 </head>
 <body>
 <h1>Welcome To Struts 2!</h1>
-<p><a href="<s:url action='register_input'  />">Please register</a> for our prize drawing.</p>
+<p>Please <a href="<s:url action='register_input'  />">register</a> for our prize drawing.</p>
 </body>
 </html>

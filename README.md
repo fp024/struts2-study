@@ -7,6 +7,8 @@
 
 이전 회사에서 근무할 때, Legacy 프로젝트의 대부분은 Struts 2 와 비슷한 **Lucy 프레임워크**를 사용했었다.<br>**Lucy 프레임워크**에 대해서 잘 이해하지 못하고 지나간 부분을 알아가는데 도움이 되는 부분이 있고, 재미도 있는 편이여서<br>Struts 2 공식 홈페이지의 Getting Started 부터 하나씩 따라해보자.
 
+
+
 ### 예제 실행하기
 
 * [struts2-study-parent](struts2-study-parent) 디렉토리 경로를 계층구조로 대신 상대적인 경로로 정의했습니다.
@@ -55,7 +57,9 @@
 * 테마
 * [스프링과 Struts 2](spring-and-struts-2)
 * 어노테이션
-* 인터셉터 소개
+* [인터셉터 입문](introducing-interceptors)
+  * [인터셉터 작성하기](introducing-interceptors/writing-interceptors.md)
+
 * [단위 테스트](unit-testing)
 * [HTTP 세션](http-session)
 * Preparable 인터페이스
@@ -67,6 +71,10 @@
 ### 플러그인 프로젝트
 
 * [Struts 2 JUnit 5 사용자 커스텀 플러그인](struts2-junit5-user-custom-plugin)
+  * [JUnit 플러그인](https://struts.apache.org/plugins/junit/)  - `영문`
+
+* [빈 유효성 검사 플러그인](https://struts.apache.org/plugins/bean-validation/) - `영문`
+* [JSON 플러그인](https://struts.apache.org/plugins/json/)  - `영문`
 
 
 
