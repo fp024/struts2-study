@@ -137,7 +137,7 @@ Struts 2 프레임워크와 함께 액션 클래스의 메서드를 테스트하
 
 공식 [struts2-junit-plugin](https://github.com/apache/struts/tree/master/plugins/junit)이 JUnit 5를 지원하지 않아서, JUnit 5를 지원하도록 플러그인을 수정해서 커스텀 프로젝트를 만들었다. 
 
-* [struts2-junit5-user-custom-plugin](../struts2-junit5-user-custom-plugin) 프로젝트
+* [struts2-junit5-user-custom-plugin](../plugins/struts2-junit5-user-custom-plugin) 프로젝트
 
   * Maven 레파지토리에 올리지않고 로컬에서 테스트로만 사용하므로 Maven 로컬 레파지토리에 설치하고 예제를 돌리도록 하자!
 
