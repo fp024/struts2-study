@@ -74,7 +74,7 @@
   * [JUnit 플러그인](plugins/struts2-junit5-user-custom-plugin/junit-plugin.md)
 
 * [빈 유효성 검사 플러그인](https://struts.apache.org/plugins/bean-validation/) - `영문`
-* [JSON 플러그인](https://struts.apache.org/plugins/json/)  - `영문`
+* [JSON 플러그인](plugins/json-plugin/)
 
 
 
