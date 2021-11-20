@@ -21,6 +21,7 @@
 
   <properties>
     <jackson.version>2.13.0</jackson.version>
+    <spring.platformVersion>5.2.18.RELEASE</spring.platformVersion>
   </properties>
 
   <dependencies>
@@ -68,6 +69,17 @@
       <groupId>org.fp024.struts2.study</groupId>
       <artifactId>struts2-junit5-user-custom-plugin</artifactId>
       <version>1.0.0-SNAPSHOT</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!--
+      MockHttpServletResponse.setContentType() 실행시
+      spring-web에 있는 MediaType 클래스를 사용하기 때문에, 테스트를 위해 추가해줄 필요가 있다.
+     -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${spring.platformVersion}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
