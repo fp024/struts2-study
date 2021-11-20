@@ -48,7 +48,8 @@ public class FlexJSONWriter implements JSONWriter {
       serializer = serializer.transform(new DateTransformer(dateFormatter), Date.class);
     }
     try {
-      return serializer.serialize(object);
+      //return serializer.serialize(object);
+      return serializer.deepSerialize(object);
     } catch (Exception exception) {
       throw new JSONException(exception);
     }

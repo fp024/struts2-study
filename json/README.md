@@ -267,7 +267,11 @@ struts.xml에서 아래와 같이 설정이 되어있어서, addresses 속성은
 ```xml
     <action name="produce" class="org.fp024.struts2.study.demo.action.ProduceAction">
       <result type="json">
-        <!-- flexJSON은 도메인 안의 객체형 필드를 포함설정해주지 않으면 직렬화 대상에 포함하지 않는다. -->
+        <!--
+          flexJSON의 serializer.serialize(object) 는 
+          도메인 안의 객체형 필드를 포함설정해주지 않으면 직렬화 대상에 포함하지 않는다.
+          객체형 필드까지 모두 직렬화하려면 serializer.deepSerialize(object) 를 사용하자!
+        -->
         <param name="includeProperties">
           addresses,
           addresses.zipcodes,
@@ -342,7 +346,18 @@ JSONSerializer serializer = new JSONSerializer().exclude("*.class");
 
 
 
-처음에 객체형 필드들이 안보여서 상속관계에 있는 것이 안보이나 했는데... 객체형 필드는 포함 규칙에 넣어줘야 직렬화 대상이 포함된 점이 정말 동작이 특이하단 느낌이 들었다.
+처음에 객체형 필드들이 안보여서 상속관계에 있는 것이 안보이나 했는데... 객체형 필드는 포함 규칙에 넣어줘야 직렬화 대상이 포함된 점이 정말 동작이 특이하단 느낌이 들었는데...
+
+따로 메서드가 있었다.  serialize 메서드 대신에 deepSerialize 메서드를 쓰면 객채형 필드까지 직렬화 대상이 된다.
+
+```java
+try {
+  //return serializer.serialize(object);
+  return serializer.deepSerialize(object);
+} catch (Exception exception) {
+  throw new JSONException(exception);
+}
+```
 
 
 

@@ -21,12 +21,18 @@
 
     <action name="produce" class="org.fp024.struts2.study.demo.action.ProduceAction">
       <result type="json">
-        <!-- flexJSON은 도메인 안의 객체형 필드를 포함설정해주지 않으면 직렬화 대상에 포함하지 않는다. -->
+        <!--
+          flexJSON의 serializer.serialize(object) 는
+          도메인 안의 객체형 필드를 포함설정해주지 않으면 직렬화 대상에 포함하지 않는다.
+          객체형 필드까지 모두 직렬화하려면 serializer.deepSerialize(object) 를 사용하자!
+        -->
+        <!--
         <param name="includeProperties">
           addresses,
           addresses.zipcodes,
           phoneNumbers
         </param>
+        -->
         <param name="excludeProperties">
           addresses.name
         </param>
