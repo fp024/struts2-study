@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+  <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+  <constant name="struts.devMode" value="true"/>
+
+  <bean type="org.apache.struts2.json.JSONWriter" name="jacksonJSONWriter" class="org.fp024.struts2.study.demo.json.JacksonJSONWriter"
+        scope="prototype"/>
+  <constant name="struts.json.writer" value="jacksonJSONWriter"/>
+  <constant name="struts.json.dateformat" value="MM/dd/yyyy"/>
+
+  <package name="default" namespace="/" extends="json-default">
+
+    <default-action-ref name="index"/>
+
+    <action name="index">
+      <result>/WEB-INF/index.jsp</result>
+    </action>
+
+    <action name="produce" class="org.fp024.struts2.study.demo.action.ProduceAction">
+      <result type="json">
+        <!-- Jackson에서 아래 기능을 어떻게 표현해야할지 잘 모르겠음, 설정하면 UnsupportedOperationException 예외가 던져지는 상태 -->
+        <!-- 그런데 필요성이 있는지도 좀 해깔린다. -->
+        <!--<param name="includeProperties">addresses</param>-->
+        <!-- Jackson에서 아래 기능을 어떻게 표현해야할지 잘 모르겠음, 설정하면 UnsupportedOperationException 예외가 던져지는 상태 -->
+        <!--<param name="excludeProperties">addresses.name</param>-->
+        <param name="excludeNullProperties">true</param>
+        <param name="root">user</param>
+      </result>
+    </action>
+
+  </package>
+  <!-- Add addition packages and configuration here. -->
+</struts>
