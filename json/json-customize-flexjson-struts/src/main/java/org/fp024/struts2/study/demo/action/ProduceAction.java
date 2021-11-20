@@ -9,7 +9,9 @@ import org.fp024.struts2.study.demo.domain.Zipcode;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ProduceAction extends ActionSupport {
@@ -17,7 +19,6 @@ public class ProduceAction extends ActionSupport {
 
   public String execute() throws Exception {
     user = new User();
-
     user.setName("William Shakespeare");
 
     SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
@@ -54,14 +55,8 @@ public class ProduceAction extends ActionSupport {
     user.setLogin("WillShak");
     user.setHashedPassword("9e107d9d372bb6826bd81d3542a419d6");
 
-    /**
-     * Java 8 date/time type `java.time.LocalDateTime` not supported by default:<br>
-     * add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" to enable handling
-     *
-     * <p>Jackson에서 JavaTimeModule 추가 및 설정 없이 Java 8 이상의 LocalDateTime을 사용하면 위의 오류가 발생한다.<br>
-     * 설정 참고는 {@link org.fp024.struts2.study.demo.json.JacksonJSONWriter} 을 확인하자.
-     */
-    user.setLastLogin(LocalDateTime.now());
+    // https://howtodoinjava.com/java/date-time/localdatetime-to-date/
+    user.setLastLogin(Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant()));
     user.setPassword("will123shak456");
 
     return SUCCESS;

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.fp024.struts2.study</groupId>
+    <artifactId>struts2-study-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../../struts2-study-parent/pom.xml</relativePath>
+  </parent>
+
+  <artifactId>json-customize-flexjson-struts</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>${project.artifactId} : Struts 2 Study Maven Webapp</name>
+  <url>https://github.com/fp024/struts2-study/tree/master/json</url>
+
+  <properties>
+    <flexjson.version>3.3</flexjson.version>
+  </properties>
+
+  <dependencies>
+    <!--
+      https://struts.apache.org/plugins/config-browser/
+      * 로드된 설정의 탐색 가능한 뷰
+      * 모든 접근 가능한 액션 URL들을 보여줌
+     -->
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-config-browser-plugin</artifactId>
+    </dependency>
+
+    <!--
+      이 예제 프로젝트의 주제가 되는 Struts2 JSON 플러그인
+      https://github.com/fp024/struts2-study/tree/master/plugins/json-plugin
+    -->
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-json-plugin</artifactId>
+    </dependency>
+
+    <!-- 
+      원본 예제 프로젝트 그대로 flexjson을 사용
+      http://flexjson.sourceforge.net/
+      https://mvnrepository.com/artifact/net.sf.flexjson/flexjson/3.3
+      
+    -->
+    <dependency>
+      <groupId>net.sf.flexjson</groupId>
+      <artifactId>flexjson</artifactId>
+      <version>${flexjson.version}</version>
+    </dependency>
+
+    <!-- JUnit 5를 사용하기 위해 https://github.com/apache/struts/tree/master/plugins/junit 프로젝트를 수정했다. -->
+    <dependency>
+      <groupId>org.fp024.struts2.study</groupId>
+      <artifactId>struts2-junit5-user-custom-plugin</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

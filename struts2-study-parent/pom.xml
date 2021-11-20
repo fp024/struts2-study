@@ -72,6 +72,11 @@
     <!-- // TODO -->
     <!-- 22. JasperReports 튜토리얼 -->
     <!-- // TODO -->
+    <!-- 23. JSON 튜토리얼 - FlexJSON 예제 -->
+    <module>../json/json-customize-flexjson-struts</module>
+    <!-- 24. JSON 튜토리얼 - Jackson 예제 -->
+    <module>../json/json-customize-jackson-struts</module>
+    
   </modules>
 
   <dependencyManagement>

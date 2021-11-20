@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+  <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+  <constant name="struts.devMode" value="true"/>
+
+  <bean type="org.apache.struts2.json.JSONWriter" name="flexJSONWriter" class="org.fp024.struts2.study.demo.json.FlexJSONWriter"
+        scope="prototype"/>
+  <constant name="struts.json.writer" value="flexJSONWriter"/>
+  <constant name="struts.json.dateformat" value="MM/dd/yyyy"/>
+
+  <package name="default" namespace="/" extends="json-default">
+
+    <default-action-ref name="index"/>
+
+    <action name="index">
+      <result>/WEB-INF/index.jsp</result>
+    </action>
+
+    <action name="produce" class="org.fp024.struts2.study.demo.action.ProduceAction">
+      <result type="json">
+        <!-- flexJSON은 도메인 안의 객체형 필드를 포함설정해주지 않으면 직렬화 대상에 포함하지 않는다. -->
+        <param name="includeProperties">
+          addresses,
+          addresses.zipcodes,
+          phoneNumbers
+        </param>
+        <param name="excludeProperties">
+          addresses.name
+        </param>
+        <param name="excludeNullProperties">true</param>
+        <param name="root">user</param>
+      </result>
+    </action>
+
+  </package>
+  <!-- Add addition packages and configuration here. -->
+</struts>
