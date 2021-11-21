@@ -366,3 +366,32 @@ try {
 * FlexJSON에서 null 값 필드 제외 방법
   * https://stackoverflow.com/questions/7886709/how-to-exclude-null-value-fields-when-using-flexjson
 
+
+
+---
+
+## Strtus 2 JSON Plugin 을 그대로 사용하는 프로젝트 진행
+
+* 프로젝트: [json-struts](json-struts)
+
+JSON 으로 요청을 보내고, 결과를 받아보는 예를 볼 수 있었다.
+
+
+
+### 기타문제: Jetty에서 html, js 등이 euc-kr로 처리되는 문제 
+
+이 예제의 주제와는 관련 없지만, 그동안 예제 프로젝트에 일반 html 파일이나 js등을 사용하지 않아서 모르고 있던 내용인데...
+
+기본 상태에서 Jetty 웹서버에 올려진 일반 HTML 파일에 한글이 들어갈 경우, 한글 Windows의 기본 상태에서 한글이 깨지게 된다.
+
+Embedded Jetty가 운영환경 기본 인코딩으로 response 에 Character Encoding을 설정해서 그런 것 같은데... 
+
+이부분은 web.xml에 사용자 정의 필터를 추가해서 해결했다.
+
+* [CharacterEncodingFilter 클래스](json-struts/src/main/java/org/fp024/struts2/study/demo/filter/CharacterEncodingFilter.java)
+* [web.xml](json-struts/src/main/webapp/WEB-INF/web.xml)
+
+그런데 프로젝트에 Spring 이 이미 통합되어있다면,  org.springframework.web.filter.CharacterEncodingFilter 을 설정해서 사용하는 것이 나을 것 같다.
+
+그래도 통합되지 않은 상태라면, Spring의 CharacterEncodingFilter 를 사용하기 위해서, spring-web, spring-context 의 디펜던시를 pom.xml에 정의할 필요가 있고, 이것에 연관되어 의존되는 spring-core, spring-aop 등등 덩달아 의존되는 것이  많아서 이때는 사용자 정의 필터를 추가해서 처리 하는 것이 나을 것 같다.
+

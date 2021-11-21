@@ -18,7 +18,7 @@ import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 class LocalDateTimeTransformerTest {
-  /** JSON 문자열을 역직렬화하여 인스턴스화 */
+  /** JSON 문자열을 역직렬화하여 LocalDateTime 객체로 인스턴스화 */
   @Test
   void testInstantiate(@Mock ObjectBinder objectBinder) {
     String dateFormat = "yyyy-MM-dd HH:mm:ss";
@@ -28,7 +28,7 @@ class LocalDateTimeTransformerTest {
     assertEquals(LocalDateTime.of(2021, 11, 21, 15, 53, 50, 0), object);
   }
 
-  /** JSON 문자열을 직렬화하여 문자열로 만듦. */
+  /** LocalDateTime 객체를 직렬화하여 JSON 문자열로 만듦. */
   @Test
   void testTransform(@Mock JSONContext context) {
     String dateFormat = "yyyy-MM-dd HH:mm:ss";

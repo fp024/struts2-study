@@ -12,7 +12,7 @@
     <relativePath>../../struts2-study-parent/pom.xml</relativePath>
   </parent>
 
-  <artifactId>json-customize-jackson-struts</artifactId>
+  <artifactId>json-struts</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
@@ -20,7 +20,7 @@
   <url>https://github.com/fp024/struts2-study/tree/master/json</url>
 
   <properties>
-    <jackson.version>2.13.0</jackson.version>
+    <flexjson.version>3.3</flexjson.version>
     <spring.platformVersion>5.2.18.RELEASE</spring.platformVersion>
     <mockito.version>4.1.0</mockito.version>
   </properties>
@@ -45,25 +45,18 @@
       <artifactId>struts2-json-plugin</artifactId>
     </dependency>
 
-    <!--
-      flexjson 대신 jackson-databind를 사용해보자!
-      https://github.com/FasterXML/jackson-databind
+    <!-- 
+      원본 예제 프로젝트 그대로 flexjson을 사용
+      http://flexjson.sourceforge.net/
+      https://mvnrepository.com/artifact/net.sf.flexjson/flexjson/3.3
+      
     -->
     <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>${jackson.version}</version>
+      <groupId>net.sf.flexjson</groupId>
+      <artifactId>flexjson</artifactId>
+      <version>${flexjson.version}</version>
     </dependency>
 
-    <!--
-      Java 8 date/time 처리를 위해서는 아래 모듈 추가 후 등록해야한다.
-      JacksonJSONWriter 클래스 참조
-    -->
-    <dependency>
-      <groupId>com.fasterxml.jackson.datatype</groupId>
-      <artifactId>jackson-datatype-jsr310</artifactId>
-      <version>${jackson.version}</version>
-    </dependency>
 
     <!-- JUnit 5를 사용하기 위해 https://github.com/apache/struts/tree/master/plugins/junit 프로젝트를 수정했다. -->
     <dependency>
@@ -76,13 +69,20 @@
     <!--
       MockHttpServletResponse.setContentType() 실행시
       spring-web에 있는 MediaType 클래스를 사용하기 때문에, 테스트를 위해 추가해줄 필요가 있다.
-     -->
+    -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
       <version>${spring.platformVersion}</version>
       <scope>test</scope>
     </dependency>
+    <!--
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.platformVersion}</version>
+    </dependency>
+    -->
 
     <dependency>
       <groupId>org.mockito</groupId>
@@ -97,5 +97,7 @@
       <version>${mockito.version}</version>
       <scope>test</scope>
     </dependency>
+
+
   </dependencies>
 </project>

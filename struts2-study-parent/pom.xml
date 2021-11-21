@@ -76,6 +76,8 @@
     <module>../json/json-customize-flexjson-struts</module>
     <!-- 24. JSON 튜토리얼 - Jackson 예제 -->
     <module>../json/json-customize-jackson-struts</module>
+    <!-- 25. JSON 튜토리얼 - Struts 2 JSON Plugin 예제 -->
+    <module>../json/json-struts</module>
     
   </modules>
 
@@ -246,7 +248,7 @@
       </plugin>
 
       <plugin>
-        <!-- https://www.eclipse.org/jetty/documentation/jetty-9/index.html#jetty-maven-plugin -->
+        <!-- https://www.eclipse.org/jetty/documentation/jetty-10/programming-guide/index.html#jetty-maven-plugin -->
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-maven-plugin</artifactId>
         <version>${jetty.version}</version>
