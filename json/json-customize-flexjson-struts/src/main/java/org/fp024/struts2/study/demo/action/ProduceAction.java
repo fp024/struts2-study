@@ -56,7 +56,8 @@ public class ProduceAction extends ActionSupport {
     user.setHashedPassword("9e107d9d372bb6826bd81d3542a419d6");
 
     // https://howtodoinjava.com/java/date-time/localdatetime-to-date/
-    user.setLastLogin(Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant()));
+    // user.setLastLogin(Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant()));
+    user.setLastLogin(LocalDateTime.now());
     user.setPassword("will123shak456");
 
     return SUCCESS;

@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.struts2.json.JSONException;
 import org.apache.struts2.json.JSONWriter;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Date;
 import java.util.regex.Pattern;
@@ -27,7 +28,7 @@ public class FlexJSONWriter implements JSONWriter {
       Collection<Pattern> includeProperties,
       boolean excludeNullProperties)
       throws JSONException {
-    // *.class를 struts.xml로 전달해줄 수 없다.
+    // *.class를 struts.xml로 패턴 모양 그대로 전달해줄 수 없다.
     JSONSerializer serializer = new JSONSerializer().exclude("*.class");
     if (excludeProperties != null) {
       for (Pattern p : excludeProperties) {
@@ -45,10 +46,13 @@ public class FlexJSONWriter implements JSONWriter {
       serializer = serializer.transform(new ExcludeTransformer(), void.class);
     }
     if (dateFormatter != null) {
-      serializer = serializer.transform(new DateTransformer(dateFormatter), Date.class);
+      serializer =
+          serializer
+              .transform(new DateTransformer(dateFormatter), Date.class)
+              .transform(new TemporalTransformer(dateFormatter), LocalDateTime.class);
     }
     try {
-      //return serializer.serialize(object);
+      // return serializer.serialize(object);
       return serializer.deepSerialize(object);
     } catch (Exception exception) {
       throw new JSONException(exception);

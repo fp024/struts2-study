@@ -6,7 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.fp024.struts2.study.demo.json.PasswordTransformer;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -18,7 +18,7 @@ public class User extends Person {
   @Getter(onMethod = @__({@JSON(include = false)}))
   private String hashedPassword;
 
-  private Date lastLogin;
+  private LocalDateTime lastLogin;
 
   @Getter(onMethod = @__({@JSON(transformer = PasswordTransformer.class)}))
   private String password;
