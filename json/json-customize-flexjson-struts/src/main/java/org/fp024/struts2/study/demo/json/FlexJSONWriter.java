@@ -49,7 +49,7 @@ public class FlexJSONWriter implements JSONWriter {
       serializer =
           serializer
               .transform(new DateTransformer(dateFormatter), Date.class)
-              .transform(new TemporalTransformer(dateFormatter), LocalDateTime.class);
+              .transform(new LocalDateTimeTransformer(dateFormatter), LocalDateTime.class);
     }
     try {
       // return serializer.serialize(object);

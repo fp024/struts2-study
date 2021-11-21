@@ -6,11 +6,12 @@ import flexjson.ObjectFactory;
 import flexjson.transformer.AbstractTransformer;
 
 import java.lang.reflect.Type;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.Temporal;
 
 /** flexjson.transformer.DateTransformer 을 참고해서 변환기를 만들어봤다. */
-public class TemporalTransformer extends AbstractTransformer implements ObjectFactory {
+public class LocalDateTimeTransformer extends AbstractTransformer implements ObjectFactory {
   private final String dateFormat;
   /**
    * DateTransformer에서는 SimpleDateFormat을 ThreadLocal에 넣어서 사용하는 부분이 있었는데,<br>
@@ -20,7 +21,7 @@ public class TemporalTransformer extends AbstractTransformer implements ObjectFa
    */
   private final DateTimeFormatter formatter;
 
-  public TemporalTransformer(String dateFormat) {
+  public LocalDateTimeTransformer(String dateFormat) {
     this.dateFormat = dateFormat;
     this.formatter = DateTimeFormatter.ofPattern(dateFormat);
   }
@@ -44,7 +45,7 @@ public class TemporalTransformer extends AbstractTransformer implements ObjectFa
   public Object instantiate(
       ObjectBinder context, Object value, Type targetType, Class targetClass) {
     try {
-      return formatter.parse(value.toString());
+      return LocalDateTime.parse(value.toString(), formatter);
     } catch (Exception e) {
       throw new JSONException(
           String.format(
