@@ -1,7 +1,5 @@
 package org.fp024.struts2.study.demo.filter;
 
-import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.Filter;
@@ -17,7 +15,7 @@ public class CharacterEncodingFilter implements Filter {
   private String encoding = "UTF-8";
 
   @Override
-  public void init(FilterConfig filterConfig) throws ServletException {
+  public void init(FilterConfig filterConfig) {
     encoding = filterConfig.getInitParameter("encoding");
   }
 
