@@ -32,7 +32,7 @@
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <struts2.version>2.5.26</struts2.version>
+    <struts2.version>2.5.27</struts2.version>
     <spring.platformVersion>5.2.18.RELEASE</spring.platformVersion>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>5.8.1</junit.version>
