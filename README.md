@@ -77,6 +77,10 @@
 * [빈 유효성 검사 플러그인](https://struts.apache.org/plugins/bean-validation/) - `영문`
 * [JSON 플러그인](plugins/json-plugin/)
 
+### 보안
+
+* [보안 가이드](security-guide)
+
 
 
 ## 기타
