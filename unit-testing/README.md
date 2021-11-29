@@ -16,7 +16,7 @@
 
 ## 서문
 
-Struts 2는 [Struts 2 JUnit 플러그인](../struts2-junit5-user-custom-plugin/junit-plugin.md)을 사용하여 Struts 액션 클래스의 메서드에 대한 단위 테스트 실행을 지원합니다. JUnit 플러그인을 사용하면 Struts 2 프레임워크 내에서 액션 클래스의 메서드를 테스트할 수 있습니다. Struts Servlet 필터와 인터셉터는 애플리케이션이 Servlet 컨테이너에서 실행 중인 것처럼 실행됩니다.
+Struts 2는 [Struts 2 JUnit 플러그인](../plugins/struts2-junit5-user-custom-plugin/junit-plugin.md)을 사용하여 Struts 액션 클래스의 메서드에 대한 단위 테스트 실행을 지원합니다. JUnit 플러그인을 사용하면 Struts 2 프레임워크 내에서 액션 클래스의 메서드를 테스트할 수 있습니다. Struts Servlet 필터와 인터셉터는 애플리케이션이 Servlet 컨테이너에서 실행 중인 것처럼 실행됩니다.
 
 Struts 2 [사용자 메일링](http://struts.apache.org/mail.html) 리스트는 도움을 받을 수 있는 훌륭한 장소입니다. 튜토리얼 예제 애플리케이션을 작동시키는데 문제가 있는 경우 Struts 2 메일리스트를 검색하세요. 문제에 대한 답을 찾지 못한 경우 메일링 리스트에 질문을 게시하세요.
 
@@ -125,7 +125,7 @@ public void testExecuteValidationFailsMissingFirstName() throws Exception {
 
 ## 요약
 
-Struts 2 프레임워크와 함께 액션 클래스의 메서드를 테스트하는 데 도움이 되는 Struts 2 JUnit 플러그인으로 할 수 있는 일이 훨씬 더 많습니다. Struts 2 애플리케이션이 Spring을 사용하여 액션 클래스에 의존성을 주입하는 경우 Struts 2 JUnit 플러그인에는 테스트 클래스에다가 상속해서 사용가능한 StrutsSpringTestCase가 있습니다. 자세한 내용은 [액션 테스트](../struts2-junit5-user-custom-plugin/junit-plugin.md)를 참조하세요.
+Struts 2 프레임워크와 함께 액션 클래스의 메서드를 테스트하는 데 도움이 되는 Struts 2 JUnit 플러그인으로 할 수 있는 일이 훨씬 더 많습니다. Struts 2 애플리케이션이 Spring을 사용하여 액션 클래스에 의존성을 주입하는 경우 Struts 2 JUnit 플러그인에는 테스트 클래스에다가 상속해서 사용가능한 StrutsSpringTestCase가 있습니다. 자세한 내용은 [액션 테스트](../plugins/struts2-junit5-user-custom-plugin/junit-plugin.md)를 참조하세요.
 
 
 
