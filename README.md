@@ -50,9 +50,9 @@
 * [메시지 리소스 파일](message-resource-files)
 * [예외 처리](exception-handling)
 * [Struts 디버깅](debugging-struts)
-* 폼 테그
-* XML을 사용하여 폼 검증
-* 제어 테그
+* [폼 태그](form-tags)
+* XML을 사용한 폼 검증
+* 제어 태그
 * 와일드카드 메서드 선택
 * 테마
 * [스프링과 Struts 2](spring-and-struts-2)

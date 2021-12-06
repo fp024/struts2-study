@@ -21,7 +21,7 @@
     <struts2.version>2.5.27</struts2.version>
     <log4j2.version>2.14.1</log4j2.version>
     <lombok.version>1.18.22</lombok.version>
-    <junit.version>5.8.1</junit.version>
+    <junit.version>5.8.2</junit.version>
 
     <jetty.version>10.0.7</jetty.version>
   </properties>
@@ -47,7 +47,7 @@
     <!-- 9. Struts 디버깅 -->
     <module>../debugging-struts/debugging-struts</module>
     <!-- 10. 폼 테그 -->
-    <!-- // TODO -->
+    <module>../form-tags/form-tags-struts</module>
     <!-- 11. XML을 사용하여 폼 검증 -->
     <!-- // TODO -->
     <!-- 12. 제어 테그 -->
