@@ -33,7 +33,7 @@ Apache Struts 2는 어떠한 보안 메커니즘도 제공하지 않습니다 - 
 
 
 
-### Config Browser 플러그인 대한 접근을 제한할 것
+### Config Browser 플러그인에 대한 접근을 제한할 것
 
 [Config Browser Plugin](https://struts.apache.org/plugins/config-browser/)은 내부 구성을 노출하며 개발 단계에서만 사용해야 합니다. 프로덕션 사이트에서 사용해야 하는 경우 엑세스를 제한하는 것이 좋습니다. - 기본 인증 또는 기타 보안 메커니즘을 사용할 수 있습니다. (예: [Apache Shiro](https://shiro.apache.org/))
 
