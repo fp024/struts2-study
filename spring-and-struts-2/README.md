@@ -52,7 +52,7 @@ private EditService editService;
 
 ## Struts 2 스프링 플러그인
 
-Struts 2는 스프링 설정 파일에서 지정한 의존 객체를 ActionSupport 클래스에 주입할 수 있도록 하는 플러그인을 제공합니다. 플러그인 작동 방식에 대한 자세한 내용은 [스프링 플러그인 문서](https://struts.apache.org/plugins/spring/)를 참조하세요.
+Struts 2는 스프링 설정 파일에서 지정한 의존 객체를 ActionSupport 클래스에 주입할 수 있도록 하는 플러그인을 제공합니다. 플러그인 작동 방식에 대한 자세한 내용은 [스프링 플러그인 문서](../plugins/spring-plugin/)를 참조하세요.
 
 Maven 애플리케이션의 경우 struts2-spring-plugin jar 의존성을 추가해야 합니다(이 튜토리얼의 Maven 예제 애플리케이션 참조). 플러그인의 pom.xml에는 스프링 jar 파일(beans, core, context, web)에 대한 전이적 의존성이 포함되어 있습니다.
 
@@ -99,7 +99,7 @@ public void setEditService(EditService editService) {
 </beans>
 ```
 
-위의 id 값에 유의하세요. 기본적으로 스프링 플러그인은 스프링과 함께 작동하여 `name`으로 액션 클래스의 의존성을 autowire 합니다. 스프링은 EditServiceMemory 클래스의 객체를 생성하고 EditService 타입의 인수를 가진 setEditService 메서드가 있는 모든 ActionSupport 클래스에 해당 객체를 제공합니다. 기본 autowire 방법을 변경하는 방법은 [스프링 플러그인](https://struts.apache.org/plugins/spring/) 문서를 참조하세요.
+위의 id 값에 유의하세요. 기본적으로 스프링 플러그인은 스프링과 함께 작동하여 `name`으로 액션 클래스의 의존성을 autowire 합니다. 스프링은 EditServiceMemory 클래스의 객체를 생성하고 EditService 타입의 인수를 가진 setEditService 메서드가 있는 모든 ActionSupport 클래스에 해당 객체를 제공합니다. 기본 autowire 방법을 변경하는 방법은 [스프링 플러그인](../plugins/spring-plugin/) 문서를 참조하세요.
 
 스프링에 의해 생성된 editService 빈은 default 스코프이기 때문에 singleton 스코프를 가질 것입니다. 다른 스코프(예: request 또는 session)를 사용하도록 빈 정의를 구성하는 방법에 대해서는 [스프링 문서](https://spring.io/docs)의 섹션 3.5를 참조하십시오.
 
