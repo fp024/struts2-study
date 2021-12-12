@@ -36,7 +36,7 @@
     <spring.platformVersion>5.2.18.RELEASE</spring.platformVersion>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>5.8.1</junit.version>
-    <log4j2.version>2.14.1</log4j2.version>
+    <log4j2.version>2.15.0</log4j2.version>
   </properties>
 
   <!-- struts2-spring-plugin 에 의해 의존성이 걸리는 Spring 모듈들의 버전관리를 위해 추가 -->
