@@ -71,7 +71,7 @@ git에서 그냥 받으면 `2.6.0-SNAPSHOT` 버전이기 때문에, 최신 Curre
        <spring.platformVersion>5.2.18.RELEASE</spring.platformVersion>
        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
        <junit.version>5.8.1</junit.version>
-       <log4j2.version>2.14.1</log4j2.version>
+       <log4j2.version>2.15.0</log4j2.version>
    </properties>
    ...
    ...
