@@ -62,5 +62,8 @@ class EditActionTest extends StrutsJUnit5TestCase<EditAction> {
     request.setParameter("personBean.residency", "FL");
     request.setParameter("personBean.over21", "true");
     request.setParameter("personBean.carModels", "Ford", "Nissan");
+    request.setParameter("personBean.email", "noreply@apache.org");
+    request.setParameter("personBean.phoneNumber", "012-123-1234"); // [\d{3}-\d{3}-\d{4}]
+    request.setParameter("personBean.age", "35");
   }
 }

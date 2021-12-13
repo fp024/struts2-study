@@ -72,7 +72,7 @@ Struts 2 프레임워크는 사용하기 쉬운 유효성 검증 방법론을 �
 
 
 
-### >  [폼 태그](../form-tags)로 돌아가기 또는 [제어 테그](https://struts.apache.org/getting-started/control-tags.html)으로 이동
+### >  [폼 태그](../form-tags)로 돌아가기 또는 [제어 태그](https://struts.apache.org/getting-started/control-tags.html)으로 이동
 
 ---
 
@@ -88,5 +88,4 @@ Struts 2 프레임워크는 사용하기 쉬운 유효성 검증 방법론을 �
 * [ ] 정규 표현식을 사용한 사용자 입력 유효성 검증
 * [ ] OGNL 표현식을 사용한 사용자 입력 유효성 검증
 * [x] 요약
-
 
