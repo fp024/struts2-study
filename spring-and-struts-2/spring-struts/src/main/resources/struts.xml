@@ -6,6 +6,11 @@
   <constant name="struts.devMode" value="true"/>
 
   <package name="basicstruts2" extends="struts-default">
+    <!--
+        클래스 속성이 지정되지 않은 경우 프레임워크는 성공을 가정하고 result index.jsp를 랜더링합니다.
+    -->
+    <default-action-ref name="index" />
+  
     <action name="index">
       <!--<result>/index.jsp</result>-->
       <result type="freemarker">/index-template.ftl</result>

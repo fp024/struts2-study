@@ -245,7 +245,7 @@ checkboxlist 태그의 key 속성 값은 Struts 2 프레임워크에 체크된(c
 
 
 
-### >  [Struts 디버깅](../debugging-struts)로 돌아가기 또는 [XML을 사용한 폼 검증](https://struts.apache.org/getting-started/form-validation-using-xml.html)으로 이동
+### >  [Struts 디버깅](../debugging-struts)로 돌아가기 또는 [XML을 사용한 폼 유효성 검증](../form-validation-using-xml)으로 이동
 
 ---
 

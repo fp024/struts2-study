@@ -12,8 +12,10 @@
 
     <!--
         클래스 속성이 지정되지 않은 경우 프레임워크는 성공을 가정하고 result index.jsp를 랜더링합니다.
-        result 노드의 이름이 지정되지 않은 경우 success 값이 기본입니다.
     -->
+    <default-action-ref name="index" />
+    
+    <!-- result 노드의 이름이 지정되지 않은 경우 success 값이 기본입니다. -->
     <action name="index">
       <result>/index.jsp</result>
     </action>

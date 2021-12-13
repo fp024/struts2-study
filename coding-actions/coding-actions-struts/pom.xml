@@ -13,7 +13,6 @@
   </parent>
 
   <artifactId>coding-actions-struts</artifactId>
-  <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
   <name>${project.artifactId} : Struts 2 Study Maven Webapp</name>

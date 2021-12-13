@@ -51,7 +51,7 @@
 * [예외 처리](exception-handling)
 * [Struts 디버깅](debugging-struts)
 * [폼 태그](form-tags)
-* XML을 사용한 폼 검증
+* [XML을 사용한 폼 유효성 검증](form-validation-using-xml)
 * 제어 태그
 * 와일드카드 메서드 선택
 * 테마
