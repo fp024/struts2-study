@@ -1,18 +1,21 @@
 package org.fp024.struts2.study.edit.action;
 
-import com.opensymphony.xwork2.Action;
-import com.opensymphony.xwork2.ActionProxy;
-import org.apache.struts2.StrutsJUnit5TestCase;
-import org.apache.struts2.dispatcher.mapper.ActionMapping;
-import org.junit.jupiter.api.Test;
-
-import javax.servlet.ServletException;
-import java.io.UnsupportedEncodingException;
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.io.UnsupportedEncodingException;
+
+import javax.servlet.ServletException;
+
+import org.apache.struts2.StrutsJUnit5TestCase;
+import org.apache.struts2.dispatcher.mapper.ActionMapping;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import com.opensymphony.xwork2.Action;
+import com.opensymphony.xwork2.ActionProxy;
 
 /** StrutsJUnit5TestCase<테스트할 액션 클래스> 를 상속 받아 테스트 클래스를 만듦. */
 class EditActionTest extends StrutsJUnit5TestCase<EditAction> {
@@ -44,6 +47,26 @@ class EditActionTest extends StrutsJUnit5TestCase<EditAction> {
     assertEquals("FL", action.getPersonBean().getResidency());
     assertTrue(action.getPersonBean().isOver21());
     assertArrayEquals(new String[] {"Ford", "Nissan"}, action.getPersonBean().getCarModels());
+    assertEquals("noreply@apache.org", action.getPersonBean().getEmail());
+    assertEquals("012-123-1234", action.getPersonBean().getPhoneNumber());
+    assertEquals(35, action.getPersonBean().getAge());
+  }
+
+  @DisplayName("필수 입력값인 email만 제거해서 검증이 실패하도록 함")
+  @Test
+  void getActionProxy_MissingEmail() throws Exception {
+    // getActionProxy() 호출 전에 파라미터 설정
+    initRequestParameter();
+    request.removeParameter("personBean.email");
+
+    ActionProxy proxy = getActionProxy("/save.action");
+    assertNotNull(proxy);
+
+    EditAction action = (EditAction) proxy.getAction();
+    assertNotNull(action);
+
+    String result = proxy.execute();
+    assertEquals(Action.INPUT, result);
   }
 
   @Test
