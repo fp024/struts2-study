@@ -10,7 +10,7 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>${project.artifactId} : Struts 2 Study Maven Parent</name>
+  <name>${project.artifactId} - Struts 2 Study Maven Parent</name>
   <url>https://github.com/fp024/struts2-study/struts2-study-parent</url>
 
   <properties>

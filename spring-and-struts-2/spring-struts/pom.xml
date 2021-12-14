@@ -15,7 +15,7 @@
   <artifactId>spring-struts</artifactId>
   <packaging>war</packaging>
 
-  <name>${project.artifactId} : Struts 2 Study Maven Webapp</name>
+  <name>${project.artifactId} - Struts 2 Study Maven Webapp</name>
   <url>https://github.com/fp024/struts2-study/tree/master/spring-and-struts-2</url>
 
   <properties>

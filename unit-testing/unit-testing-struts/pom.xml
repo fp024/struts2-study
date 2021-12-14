@@ -15,7 +15,7 @@
   <artifactId>unit-testing-struts</artifactId>
   <packaging>war</packaging>
 
-  <name>${project.artifactId} : Struts 2 Study Maven Webapp</name>
+  <name>${project.artifactId} - Struts 2 Study Maven Webapp</name>
   <url>https://github.com/fp024/struts2-study/tree/master/unit-testing</url>
 
 <dependencies>
