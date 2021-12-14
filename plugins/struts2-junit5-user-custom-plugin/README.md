@@ -268,6 +268,54 @@ Struts2 Getting Started의 Unit Testing 항목을 이 개조한 플러그인을 
 
 # Struts 2 버전업
 
+
+
+## STRUTS 2의 2.5.28 버전업 대응
+
+2.5.27에서 2.5.28 변경 사항에서 크게 바뀐 내용 없는 것 같다.
+
+* 근래에 Log4j2 취약점 문제가 있었는데, 이와 관련해서 메인 pom.xml의 `log4j2.version` 업그레이드가 되어있진 않았다.
+
+  `<log4j2.version>2.12.1</log4j2.version>`
+
+* `plugin/junit` 디렉토리이하 변경내용
+
+  struts2-plugins 버전 변경 내용만 있었다.
+
+  ```bash
+  $ git diff 26e1535 plugins/junit
+  diff --git a/plugins/junit/pom.xml b/plugins/junit/pom.xml
+  index 4dc8ac4fb..ecdc96629 100644
+  --- a/plugins/junit/pom.xml
+  +++ b/plugins/junit/pom.xml
+  @@ -24,7 +24,7 @@
+       <parent>
+           <groupId>org.apache.struts</groupId>
+           <artifactId>struts2-plugins</artifactId>
+  -        <version>2.5.27</version>
+  +        <version>2.5.28</version>
+       </parent>
+  
+       <artifactId>struts2-junit-plugin</artifactId>
+  
+  $
+  ```
+
+* `XWorkJUnit4TestCase` 클래스 변경 내용
+
+  변경 내용이 없었다.
+
+  ```bash
+  $ git diff 26e1535 core/src/main/java/com/opensymphony/xwork2/XWorkJUnit4TestCase.java
+  
+  $
+  ```
+
+
+
+
+
+
 ## STRUTS 2의 2.5.27 버전업 대응
 
 플러그인 코드를 2.5.26 기준으로 작성한 것이여서, 2.5.27 버전업이 되면서 junit 플러그인에 무언가 바뀐점이 있는지 확인해보았다.
@@ -370,4 +418,8 @@ $
 junit 플러그인 관련해서 변경사항이 코어 모듈 버전업 외에는 없어서 다시 빌드하고 로컬에 install만 해두면 될 것 같다.
 
 SNAPSHOT 버전은 올리지 말고 전체 프로젝트를 parent pom을 통해 전체 빌드 테스트를 하면 되겠다.
+
+
+
+
 
