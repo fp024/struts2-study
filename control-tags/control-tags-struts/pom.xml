@@ -12,11 +12,11 @@
     <relativePath>../../struts2-study-parent/pom.xml</relativePath>
   </parent>
 
-  <artifactId>form-xml-validation-struts</artifactId>
+  <artifactId>control-tags-struts</artifactId>
   <packaging>war</packaging>
 
   <name>${project.artifactId} - Struts 2 Study Maven Webapp</name>
-  <url>https://github.com/fp024/struts2-study/tree/master/form-validation-using-xml</url>
+  <url>https://github.com/fp024/struts2-study/tree/master/control-tags</url>
 
   <properties>
     <spring.platformVersion>5.2.18.RELEASE</spring.platformVersion>

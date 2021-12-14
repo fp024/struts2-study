@@ -51,7 +51,7 @@
     <!-- 11. XML을 사용하여 폼 검증 -->
     <module>../form-validation-using-xml/form-xml-validation-struts</module>
     <!-- 12. 제어 테그 -->
-    <!-- // TODO -->
+    <module>../control-tags/control-tags-struts</module>
     <!-- 13. 와일드카드 메서드 선택 -->
     <!-- // TODO -->
     <!-- 14. 테마 -->
