@@ -105,7 +105,7 @@ Struts 2 문서에서는 Struts 구성에서 `struts.enable.DynamicMethodInvocat
 
 
 
-### >  [XML을 사용한 폼 유효성 검증](../form-validation-using-xml)로 돌아가기 또는 [테마](https://struts.apache.org/getting-started/themes.html)으로 이동
+### >  [XML을 사용한 폼 유효성 검증](../form-validation-using-xml)로 돌아가기 또는 [테마](../themes)으로 이동
 
 ---
 

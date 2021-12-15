@@ -55,7 +55,7 @@
     <!-- 13. 와일드카드 메서드 선택 -->
     <module>../wildcard-method-selection/wildcard-method-selection-struts</module>
     <!-- 14. 테마 -->
-    <!-- // TODO -->	
+    <module>../themes/themes-struts</module>
     <!-- 15. 스프링과 Struts 2 -->
     <module>../spring-and-struts-2/spring-struts</module>
     <!-- 16. 어노테이션 -->

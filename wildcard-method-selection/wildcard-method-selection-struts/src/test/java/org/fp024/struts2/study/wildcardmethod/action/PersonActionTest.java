@@ -30,7 +30,6 @@ class PersonActionTest extends StrutsSpringJUnit5TestCase<PersonAction> {
       strings = {
         "Person",
         "createPerson",
-        "person!runCreateThis",
         "editPerson",
         "saveOrUpdatePerson",
         "deletePerson"
