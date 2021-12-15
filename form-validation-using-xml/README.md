@@ -164,7 +164,7 @@ Struts 2 프레임워크는 사용하기 쉬운 유효성 검증 방법론을 �
 
 
 
-### >  [폼 태그](../form-tags)로 돌아가기 또는 [제어 태그](https://struts.apache.org/getting-started/control-tags.html)으로 이동
+### >  [폼 태그](../form-tags)로 돌아가기 또는 [제어 태그](../control-tags)으로 이동
 
 ---
 
