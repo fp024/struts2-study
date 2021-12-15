@@ -19,7 +19,7 @@ Struts2 JUnit 플러그인 코드를 보니 JUnit 4 기준으로 되어있는데
 
 ### 1. 플러그인 소스 받기
 
-git에서 그냥 받으면 `2.6.0-SNAPSHOT` 버전이기 때문에, 최신 Current 버전인 2.5.26 현재 버전 태깅으로 브랜치를 만든다
+git에서 그냥 받으면 `2.6.0-SNAPSHOT` 버전이기 때문에, 최신 Current 버전인 2.5.28 현재 버전 태깅으로 브랜치를 만든다
 
 * **실행시점 최신 RELEASE 버전으로 태깅을 따서 브랜치로 만들어 주면 되겠다.**
 
@@ -28,14 +28,14 @@ git에서 그냥 받으면 `2.6.0-SNAPSHOT` 버전이기 때문에, 최신 Curre
  $ git tag -l
  STRUTS_2_0_0
  ...
- STRUTS_2_5_26
+ STRUTS_2_5_28
  ...
  
  USER@HOSTNAME MINGW64 /c/git-others/apache/struts (master)
- $ git checkout tags/STRUTS_2_5_26 -b STRUTS_2_5_26
- Switched to a new branch 'STRUTS_2_5_26'
+ $ git checkout tags/STRUTS_2_5_28 -b STRUTS_2_5_28
+ Switched to a new branch 'STRUTS_2_5_28'
  
- USER@HOSTNAME MINGW64 /c/git-others/apache/struts (STRUTS_2_5_26)
+ USER@HOSTNAME MINGW64 /c/git-others/apache/struts (STRUTS_2_5_28)
  $
  ```
 
@@ -67,11 +67,11 @@ git에서 그냥 받으면 `2.6.0-SNAPSHOT` 버전이기 때문에, 최신 Curre
    <properties>
        <maven.compiler.source>11</maven.compiler.source>
        <maven.compiler.target>11</maven.compiler.target>
-       <struts2.version>2.5.26</struts2.version>
+       <struts2.version>2.5.28</struts2.version>
        <spring.platformVersion>5.2.18.RELEASE</spring.platformVersion>
        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-       <junit.version>5.8.1</junit.version>
-       <log4j2.version>2.15.0</log4j2.version>
+       <junit.version>5.8.2</junit.version>
+       <log4j2.version>2.16.0</log4j2.version>
    </properties>
    ...
    ...
