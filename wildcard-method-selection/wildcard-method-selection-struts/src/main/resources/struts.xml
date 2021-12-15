@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+  <constant name="struts.devMode" value="true" />
+  <!-- 보안문제로 기본값은 false 인데, 테스트를 위해 true로 변경해보자. -->
+  <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+
+  <package name="wildcardmethodexample" extends="struts-default">
+    <!--
+        클래스 속성이 지정되지 않은 경우 프레임워크는 성공을 가정하고 result index.jsp를 랜더링합니다.
+    -->
+    <default-action-ref name="index" />
+    
+    <!-- result 노드의 이름이 지정되지 않은 경우 success 값이 기본입니다. -->
+    <action name="index">
+      <result>/index.jsp</result>
+    </action>
+
+    <action name="register_input" class="registerAction" method="input">
+      <result name="input">register.jsp</result>
+    </action>
+
+    <!--
+      액션의 이름에 대해 Person 앞에 값이 무엇이든 간에 PersonAction 클래스에서 호출할 메서드의 이름이 됩니다.
+      예를 들어 createPerson 작업은 PersonAction 클래스에서 create라는 메서드를 호출합니다.
+    -->
+    <action name="*Person" class="org.fp024.struts2.study.wildcardmethod.action.PersonAction" method="{1}">
+      <result name="success">view.jsp</result>
+      <result name="input">input.jsp</result>
+      <allowed-methods>create,edit,saveOrUpdate,delete</allowed-methods>
+    </action>
+
+    <action name="person!*" class="org.fp024.struts2.study.wildcardmethod.action.PersonAction" method="run{1}This">
+      <result name="success">view.jsp</result>
+      <result name="input">input.jsp</result>
+      <allowed-methods>runCreateThis</allowed-methods>
+    </action>
+
+
+  </package>
+
+</struts>

@@ -53,7 +53,7 @@
     <!-- 12. 제어 테그 -->
     <module>../control-tags/control-tags-struts</module>
     <!-- 13. 와일드카드 메서드 선택 -->
-    <!-- // TODO -->
+    <module>../wildcard-method-selection/wildcard-method-selection-struts</module>
     <!-- 14. 테마 -->
     <!-- // TODO -->	
     <!-- 15. 스프링과 Struts 2 -->

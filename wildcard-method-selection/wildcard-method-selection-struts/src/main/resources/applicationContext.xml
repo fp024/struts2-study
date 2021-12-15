@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+  <!-- component-scan으로 검색을 할 수 있다. -->
+  <context:component-scan base-package="org.fp024.struts2.study"></context:component-scan>
+
+  <context:property-placeholder location="classpath:database.properties"/>
+
+  <tx:annotation-driven transaction-manager="jpaTransactionManager" proxy-target-class="true"/>
+
+  <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+    <property name="driverClassName" value="${jdbc.driver}"/>
+    <property name="jdbcUrl" value="${jdbc.url}"/>
+    <property name="username" value="${jdbc.username}"/>
+    <property name="password" value="${jdbc.password}"/>
+  </bean>
+
+  <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+    <constructor-arg name="configuration" ref="hikariConfig"/>
+  </bean>
+
+  <bean id="jpaTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <property name="entityManagerFactory" ref="entityManagerFactory"/>
+  </bean>
+
+  <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+
+  <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    <property name="dataSource" ref="dataSource"></property>
+    <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
+
+    <property name="packagesToScan">
+      <array>
+        <value>org.fp024.struts2.study.wildcardmethod.model</value>
+      </array>
+    </property>
+
+    <property name="jpaProperties">
+      <props>
+        <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+        <prop key="hibernate.show_sql">true</prop>
+        <prop key="hibernate.format_sql">true</prop>
+        <prop key="hibernate.use_sql_comments">false</prop>
+        <prop key="hibernate.id.new_generator_mappings">true</prop>
+
+        <!-- JPA 사양에 스크립트 실행 관련해서, 인코딩을 정해주는 부분이 없었는데, hibernate 설정으로 추가된 것 같다.   -->
+        <!-- https://github.com/hibernate/hibernate-orm/pull/1486 -->
+        <!-- https://stackoverflow.com/questions/57462619/encoding-utf-8-problem-while-jpa-hibernate-execute-sql-script-with-intelli-j -->
+        <prop key="hibernate.hbm2ddl.charset_name">UTF-8</prop> <!-- 이것을 지정해야 sql 스크립트의 한글이 깨진채로 DB에 저장되지않음. -->
+
+        <!-- SQL 스크립트의 다중 라인 처리가 안되서 아래 내용 추가 -->
+        <!-- https://softwarecave.org/2017/02/12/database-schema-creation-in-jpa-using-sql-scripts/ -->
+        <prop key="hibernate.hbm2ddl.import_files_sql_extractor">
+          org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor
+        </prop>
+
+        <!-- https://docs.oracle.com/javaee/7/tutorial/persistence-intro005.htm -->
+        <prop key="javax.persistence.schema-generation.database.action">drop-and-create</prop>
+
+        <prop key="javax.persistence.schema-generation.drop-source">script</prop>
+        <prop key="javax.persistence.schema-generation.drop-script-source">init-sql/drop-table.sql</prop>
+
+        <prop key="javax.persistence.schema-generation.create-source">script</prop>
+        <prop key="javax.persistence.schema-generation.create-script-source">init-sql/create-table.sql</prop>
+
+        <prop key="javax.persistence.sql-load-script-source">init-sql/insert-data.sql</prop>
+      </props>
+    </property>
+  </bean>
+</beans>

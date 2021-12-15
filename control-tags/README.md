@@ -100,7 +100,7 @@ Struts 2 iterator 태그에는 iterator 태그가 컬렉션의 일부에 대해�
 
 
 
-### >  [XML을 사용한 폼 유효성 검증](../form-validation-using-xml)로 돌아가기 또는 [와일드카드 메서드 선택](https://struts.apache.org/getting-started/wildcard-method-selection.html)으로 이동
+### >  [XML을 사용한 폼 유효성 검증](../form-validation-using-xml)로 돌아가기 또는 [와일드카드 메서드 선택](../wildcard-method-selection)으로 이동
 
 ---
 

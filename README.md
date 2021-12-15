@@ -53,7 +53,7 @@
 * [폼 태그](form-tags)
 * [XML을 사용한 폼 유효성 검증](form-validation-using-xml)
 * [제어 태그](control-tags)
-* 와일드카드 메서드 선택
+* [와일드카드 메서드 선택](wildcard-method-selection)
 * 테마
 * [스프링과 Struts 2](spring-and-struts-2)
 * 어노테이션
