@@ -56,7 +56,7 @@
 * [와일드카드 메서드 선택](wildcard-method-selection)
 * [테마](themes)
 * [스프링과 Struts 2](spring-and-struts-2)
-* 어노테이션
+* [어노테이션](annotations)
 * [인터셉터 입문](introducing-interceptors)
   * [인터셉터 작성하기](introducing-interceptors/writing-interceptors.md)
 

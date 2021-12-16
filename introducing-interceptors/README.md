@@ -125,7 +125,7 @@ INFO: Executed action /register!execute took 177 ms.
 
 
 
-### >  [어노테이션](https://struts.apache.org/getting-started/annotations.html)으로 돌아가기 또는 [단위 테스트](../unit-testing)로 이동
+### >  [어노테이션](../annotations)으로 돌아가기 또는 [단위 테스트](../unit-testing)로 이동
 
 ---
 

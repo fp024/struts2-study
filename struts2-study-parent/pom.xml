@@ -59,7 +59,7 @@
     <!-- 15. 스프링과 Struts 2 -->
     <module>../spring-and-struts-2/spring-struts</module>
     <!-- 16. 어노테이션 -->
-    <!-- // TODO -->
+    <module>../annotations/annotations-struts</module>
     <!-- 17. 인터셉터 입문 -->
     <module>../introducing-interceptors/interceptors-struts</module>
     <!-- 18. 단위 테스트 -->

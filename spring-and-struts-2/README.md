@@ -148,7 +148,7 @@ public void setEditService(EditService editService) {
 
 
 
-### >  [테마](../themes)로 돌아가기 또는 [어노테이션](https://struts.apache.org/getting-started/annotations.html)으로 이동
+### >  [테마](../themes)로 돌아가기 또는 [어노테이션](../annotations)으로 이동
 
 ---
 
