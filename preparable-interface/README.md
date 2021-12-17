@@ -32,6 +32,12 @@ Struts 2는 이러한 문제를 극복하기 위해 [Preparable 인터페이스]
 
 `prepare` 메서드를 자동으로 실행하는 것 외에도 prepare 인터셉터는 `prepare<ActionMethodName>`이라는 메서드도 호출합니다. 예를 들어, `Preparable`을 구현하는 액션 클래스에서 `prepare` 메서드와 `prepareInput` 메서드를 정의해보세요. Struts 2 프레임워크가 input 메서드를 호출할 때 prepare 인터셉터는 input 메서드를 호출하기 전에 prepareInput 및 prepare 메서드를 호출합니다.
 
+
+
+
+
+## 예제 애플리케이션
+
 예제 애플리케이션에서 EditAction 클래스를 살펴보면(위 참조) `Preparable` 인터페이스를 구현하고 있음을 알 수 있습니다. prepare 메서드에는 다음 코드가 있습니다:
 
 ### EditAction.java - prepare 메서드
@@ -56,7 +62,7 @@ setPersonBean(editService.getPerson());
 
 
 
-### >  [HTTP 세션](../http-session)으로 돌아가기 또는 [파라미터 제외하기](../annotations)로 이동
+### >  [HTTP 세션](../http-session)으로 돌아가기 또는 [파라미터 제외하기](../exclude-parameters)로 이동
 
 ---
 

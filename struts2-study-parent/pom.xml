@@ -69,7 +69,7 @@
     <!-- 20. Preparable 인터페이스 -->
     <module>../preparable-interface/preparable-interface-struts</module>
     <!-- 21. 파라미터 제외 -->
-    <!-- // TODO -->
+    <module>../exclude-parameters/exclude-parameters-struts</module>
     <!-- 22. JasperReports 튜토리얼 -->
     <!-- // TODO -->
     <!-- 23. JSON 튜토리얼 - FlexJSON 예제 -->
