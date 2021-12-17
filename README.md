@@ -62,8 +62,8 @@
 
 * [단위 테스트](unit-testing)
 * [HTTP 세션](http-session)
-* Preparable 인터페이스
-* 파라미터 제외
+* [Preparable 인터페이스](preparable-interface)
+* 파라미터 제외하기
 
 ### 추가 튜토리얼
 * JasperReports 튜토리얼

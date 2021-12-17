@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.fp024.struts2.study</groupId>
+    <artifactId>struts2-study-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../../struts2-study-parent/pom.xml</relativePath>
+  </parent>
+
+  <artifactId>preparable-interface-struts</artifactId>
+  <packaging>war</packaging>
+
+  <name>${project.artifactId} - Struts 2 Study Maven Webapp</name>
+  <url>https://github.com/fp024/struts2-study/tree/master/preparable-interface</url>
+
+  <properties>
+    <spring.platformVersion>5.2.18.RELEASE</spring.platformVersion>
+    <mockito.version>4.1.0</mockito.version>
+    <hamcrest.version>2.2</hamcrest.version>
+  </properties>
+
+  <dependencies>
+    <!-- JUnit 5를 사용하기 위해 https://github.com/apache/struts/tree/master/plugins/junit 프로젝트를 수정했다. -->
+    <dependency>
+      <groupId>org.fp024.struts2.study</groupId>
+      <artifactId>struts2-junit5-user-custom-plugin</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!--
+      MockHttpServletResponse.setContentType() 실행시
+      spring-web에 있는 MediaType 클래스를 사용하기 때문에, 테스트를 위해 추가해줄 필요가 있다.
+    -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${spring.platformVersion}</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-inline</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest</artifactId>
+      <version>${hamcrest.version}</version>
+      <scope>test</scope>
+    </dependency>
+    
+  </dependencies>
+</project>

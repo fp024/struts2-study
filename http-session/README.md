@@ -136,7 +136,7 @@ SessionAware를 구현하는 각 액션이 ParameterNameAware 인터페이스도
 
 
 
-### >  [단위 테스트](../unit-testing)로 돌아가기 또는 [Preparable 인터페이스](https://struts.apache.org/getting-started/preperable-interface.html)로 이동
+### >  [단위 테스트](../unit-testing)로 돌아가기 또는 [Preparable 인터페이스](../preparable-interface)로 이동
 
 ---
 
