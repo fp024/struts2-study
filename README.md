@@ -1,4 +1,4 @@
-# STRUTS 2 스터티
+# STRUTS 2 스터티 - Getting Started
 
 > * Struts 2 - Getting Started
 >   * https://struts.apache.org/getting-started/
@@ -66,7 +66,7 @@
 * [파라미터 제외하기](exclude-parameters)
 
 ### 추가 튜토리얼
-* JasperReports 튜토리얼
+* [JasperReports 튜토리얼](jasper-reports-tutorial)
 * [JSON 튜토리얼](json)
 
 ### 플러그인 프로젝트
