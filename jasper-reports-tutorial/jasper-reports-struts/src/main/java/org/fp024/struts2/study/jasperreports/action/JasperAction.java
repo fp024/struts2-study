@@ -4,9 +4,9 @@ import com.opensymphony.xwork2.ActionSupport;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import net.sf.jasperreports.engine.JasperCompileManager;
 import org.apache.struts2.util.ServletContextAware;
 import org.fp024.struts2.study.jasperreports.model.Person;
+import org.fp024.struts2.study.jasperreports.service.JasperTemplateInitializer;
 
 import javax.servlet.ServletContext;
 import java.time.LocalDateTime;
@@ -15,6 +15,12 @@ import java.util.List;
 
 @Slf4j
 public class JasperAction extends ActionSupport implements ServletContextAware {
+  public JasperAction() {
+    if (!JasperTemplateInitializer.isInit) {
+      throw new IllegalStateException("Jasper Template 초기화 실패");
+    }
+  }
+
   @Setter private ServletContext servletContext;
 
   /** JasperReports 데이터 소스로 사용할 List. */
@@ -35,15 +41,6 @@ public class JasperAction extends ActionSupport implements ServletContextAware {
     myList.add(p2);
     myList.add(p3);
     myList.add(p4);
-
-    try {
-      JasperCompileManager.compileReportToFile(
-          getClass().getResource("/jasper/our_jasper_template.jrxml").getFile(),
-          servletContext.getRealPath("/WEB-INF/jasper") + "/our_compiled_template.jasper");
-    } catch (Exception e) {
-      LOGGER.error(e.getMessage(), e);
-      return ERROR;
-    }
 
     return SUCCESS;
   }
