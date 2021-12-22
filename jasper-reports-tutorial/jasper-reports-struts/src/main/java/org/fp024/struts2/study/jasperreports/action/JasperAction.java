@@ -2,32 +2,24 @@ package org.fp024.struts2.study.jasperreports.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.struts2.util.ServletContextAware;
 import org.fp024.struts2.study.jasperreports.model.Person;
 import org.fp024.struts2.study.jasperreports.service.JasperTemplateInitializer;
 
-import javax.servlet.ServletContext;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-public class JasperAction extends ActionSupport implements ServletContextAware {
-  public JasperAction() {
-    if (!JasperTemplateInitializer.isInit) {
-      throw new IllegalStateException("Jasper Template 초기화 실패");
-    }
-  }
-
-  @Setter private ServletContext servletContext;
+public class JasperAction extends ActionSupport {
+  private static final boolean isJasperInit = JasperTemplateInitializer.isInit;
 
   /** JasperReports 데이터 소스로 사용할 List. */
   @Getter private List<Person> myList;
 
   @Override
   public String execute() {
+    LOGGER.info("jasper is init {}", isJasperInit);
     LocalDateTime registerDate = LocalDateTime.now();
     // 가상의 인물을 만듦.
     Person p1 = new Person(1L, "Patrick", "Lightbuddie", registerDate.minusSeconds(30));
