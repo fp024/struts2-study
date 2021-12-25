@@ -353,7 +353,9 @@ http://localhost:8080/basic-struts/index.jsp 로 이동할 때와 동일한 페�
 
 * [x] 아티펙트 관리와 어플리케이션 빌드를 위해 Maven을 사용하는 Struts 2 어플리케이션 만들기
   * 웹 어플리케이션 프로젝트의 디렉토리 구조 및 기본 파일 배치를 어떻게 해줄 것인지에 대한 설명까진 없다.
+  
   * 알려진 Maven Web Application Archetype 중에 단순한 것으로 프로젝트 구조를 될 것 같다.
+  
   * maven-archetype-webapp 을 사용하자!
     * 참고: https://maven.apache.org/archetypes/maven-archetype-webapp/
 
@@ -364,20 +366,20 @@ http://localhost:8080/basic-struts/index.jsp 로 이동할 때와 동일한 페�
     * 진행
 
       1. basic-struts 란 프로젝트가 위차할 곳에 Maven 명령 프롬프트를 띄운다.
-
+  
             ```
             mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DarchetypeVersion=1.4
             ```
             
       2. 각 프로젝트 속성 입력
-
+  
             * groupId: org.fp024.struts2.study
             * artifactId: basic-struts
             * version: 1.0-SNAPSHOT 변경 없이 유지
             * package: org.fp024.struts2.study.basic
 
     * 생성된 프로젝트 디렉토리/파일 구조
-
+  
       ```
       basic-struts
           │  pom.xml
@@ -393,14 +395,31 @@ http://localhost:8080/basic-struts/index.jsp 로 이동할 때와 동일한 페�
 
     * Maven Wrapper 추가
 
-      * 참조: https://www.baeldung.com/maven-wrapper
-
-        > Maven Wrapper는 특정 버전의 Maven이 필요한 프로젝트(또는 Maven 설치를 전혀 원하지 않는 사용자)에 탁월한 선택입니다. 운영체제에 여러 버전을 설치하는 대신 프로젝트별 래퍼 스크립트를 사용할 수 있습니다.
+      * **Maven Wrapper가 Apache Maven 공식 플러그인이 되었습니다. (2021/12)**
+  
+        * https://github.com/takari/maven-wrapper
     
-      * 프로젝트 루트에서 아래 명령 수행 (Maven 버전을 3.8.3 으로 지정)
+        * https://maven.apache.org/wrapper/
+    
+        * https://maven.apache.org/wrapper/maven-wrapper-plugin/wrapper-mojo.html
+      
+          ```
+          mvn wrapper:wrapper -Dmaven=3.8.4
+          ```
+    
+          
+    
+      * **이전 정보 (더이상 업데이트 되지 않는 플러그인입니다. )**
+    
+        * 참조: https://www.baeldung.com/maven-wrapper
+    
+          > Maven Wrapper는 특정 버전의 Maven이 필요한 프로젝트(또는 Maven 설치를 전혀 원하지 않는 사용자)에 탁월한 선택입니다. 운영체제에 여러 버전을 설치하는 대신 프로젝트별 래퍼 스크립트를 사용할 수 있습니다.
+      
+        * 프로젝트 루트에서 아래 명령 수행 (Maven 버전을 3.8.4 으로 지정)
+    
     
         ```bash
-        mvn -N io.takari:maven:wrapper -Dmaven=3.8.3
+        mvn -N io.takari:maven:wrapper -Dmaven=3.8.4
         ```
     
       * Wrapper 내용이 추가된 프로젝트 디렉토리/파일 구조
