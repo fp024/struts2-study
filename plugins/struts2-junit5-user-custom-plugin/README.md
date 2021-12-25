@@ -270,9 +270,44 @@ Struts2 Getting Started의 Unit Testing 항목을 이 개조한 플러그인을 
 
 
 
+## STRUTS 2의 2.5.28.2 버전업 대응
+
+* 코어모듈의 log4j2 버전이 업데이트되었다:  2.12.2 -> 2.12.3
+
+  ```bash
+  fp024@git-bash /c/git-other/apache/struts (STRUTS_2_5_28_2)
+  $ git diff STRUTS_2_5_28_1 plugins/junit
+  warning: refname 'STRUTS_2_5_28_1' is ambiguous.
+  diff --git a/plugins/junit/pom.xml b/plugins/junit/pom.xml
+  index a2f5117fe..69991f8a2 100644
+  --- a/plugins/junit/pom.xml
+  +++ b/plugins/junit/pom.xml
+  @@ -24,7 +24,7 @@
+       <parent>
+           <groupId>org.apache.struts</groupId>
+           <artifactId>struts2-plugins</artifactId>
+  -        <version>2.5.28.1</version>
+  +        <version>2.5.28.2</version>
+       </parent>
+  
+       <artifactId>struts2-junit-plugin</artifactId>
+  
+  fp024@git-bash /c/git-other/apache/struts (STRUTS_2_5_28_2)
+  $ git diff STRUTS_2_5_28_1 core/src/main/java/com/opensymphony/xwork2/XWorkJUnit4TestCase.java
+  warning: refname 'STRUTS_2_5_28_1' is ambiguous.
+  
+  fp024@git-bash /c/git-other/apache/struts (STRUTS_2_5_28_2)
+  $
+  
+  ```
+
+  * 이미 log4j2 버전을 2.17.0으로 사용중이여서 현재 스터디 프로젝트에 영향은 없지만 버전만 올려두자!
+
+    
+
 ## STRUTS 2의 2.5.28.1 버전업 대응
 
-* 코어모듈의 log4j2 버전이 업데이트되었다:  2.12.1 -> 2.12.1
+* 코어모듈의 log4j2 버전이 업데이트되었다:  2.12.1 -> 2.12.2
 
   ```bash
   username@hostname MINGW64 /c/git-others/apache/struts (STRUTS_2_5_28_1)
