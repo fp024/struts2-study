@@ -18,13 +18,6 @@
   <name>${project.artifactId} - Struts 2 Study Maven Webapp</name>
   <url>https://github.com/fp024/struts2-study/tree/master/jasper-reports-tutorial</url>
 
-  <properties>
-    <jasperreports.version>6.18.1</jasperreports.version>
-    <spring.platformVersion>5.2.19.RELEASE</spring.platformVersion>    
-    <mockito.version>4.1.0</mockito.version>
-    <hamcrest.version>2.2</hamcrest.version>
-  </properties>
-
   <dependencies>
     <dependency>
       <groupId>org.apache.struts</groupId>

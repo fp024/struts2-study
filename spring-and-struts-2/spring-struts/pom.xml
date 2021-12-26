@@ -18,10 +18,6 @@
   <name>${project.artifactId} - Struts 2 Study Maven Webapp</name>
   <url>https://github.com/fp024/struts2-study/tree/master/spring-and-struts-2</url>
 
-  <properties>
-    <spring.platformVersion>5.2.18.RELEASE</spring.platformVersion>
-  </properties>
-
   <!-- struts2-spring-plugin 에 의해 의존성이 걸리는 Spring 모듈들의 버전관리를 위해 추가 -->
   <dependencyManagement>
     <dependencies>
@@ -45,7 +41,7 @@
     <dependency>
       <groupId>javax.annotation</groupId>
       <artifactId>javax.annotation-api</artifactId>
-      <version>1.3.2</version>
+      <version>${javax.annotation-api.version}</version>
     </dependency>
 
     <dependency>

@@ -18,12 +18,6 @@
   <name>${project.artifactId} - Struts 2 Study Maven Webapp</name>
   <url>https://github.com/fp024/struts2-study/tree/master/json</url>
 
-  <properties>
-    <jackson.version>2.13.0</jackson.version>
-    <spring.platformVersion>5.2.18.RELEASE</spring.platformVersion>
-    <mockito.version>4.1.0</mockito.version>
-  </properties>
-
   <dependencies>
     <!--
       https://struts.apache.org/plugins/config-browser/

@@ -18,12 +18,6 @@
   <name>${project.artifactId} - Struts 2 Study Maven Webapp</name>
   <url>https://github.com/fp024/struts2-study/tree/master/control-tags</url>
 
-  <properties>
-    <spring.platformVersion>5.2.18.RELEASE</spring.platformVersion>
-    <mockito.version>4.1.0</mockito.version>
-    <hamcrest.version>2.2</hamcrest.version>
-  </properties>
-
   <dependencies>
     <!-- JUnit 5를 사용하기 위해 https://github.com/apache/struts/tree/master/plugins/junit 프로젝트를 수정했다. -->
     <dependency>

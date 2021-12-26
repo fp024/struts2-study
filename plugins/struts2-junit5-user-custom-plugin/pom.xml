@@ -33,7 +33,7 @@
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     <struts2.version>2.5.28.2</struts2.version>
-    <spring.platformVersion>5.2.18.RELEASE</spring.platformVersion>
+    <spring.platformVersion>5.2.19.RELEASE</spring.platformVersion>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>5.8.2</junit.version>
     <log4j2.version>2.17.0</log4j2.version>
