@@ -19,7 +19,7 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
 
-    <struts2.version>2.5.28.2</struts2.version>
+    <struts2.version>2.5.28.3</struts2.version>
     <spring.platformVersion>5.2.19.RELEASE</spring.platformVersion>
     
     <log4j2.version>2.17.1</log4j2.version>
