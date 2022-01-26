@@ -268,6 +268,39 @@ Struts2 Getting Started의 Unit Testing 항목을 이 개조한 플러그인을 
 
 # Struts 2 버전업
 
+## STRUTS 2의 2.5.29 버전업 대응 (2022/01/26)
+
+* 뷰를 다루는 태그 클래스 부분 수정이 있는 것 같다.
+
+  ```bash
+  fp024@git-bash /c/git-other/apache/struts (STRUTS_2_5_29)
+  $ git diff STRUTS_2_5_28_3 plugins/junit
+  warning: refname 'STRUTS_2_5_28_3' is ambiguous.
+  diff --git a/plugins/junit/pom.xml b/plugins/junit/pom.xml
+  index ef75dd9c4..13f874039 100644
+  --- a/plugins/junit/pom.xml
+  +++ b/plugins/junit/pom.xml
+  @@ -24,7 +24,7 @@
+       <parent>
+           <groupId>org.apache.struts</groupId>
+           <artifactId>struts2-plugins</artifactId>
+  -        <version>2.5.28.3</version>
+  +        <version>2.5.29</version>
+       </parent>
+  
+       <artifactId>struts2-junit-plugin</artifactId>
+  
+  fp024@git-bash /c/git-other/apache/struts (STRUTS_2_5_29)
+  $ git diff STRUTS_2_5_28_3 core/src/main/java/com/opensymphony/xwork2/XWorkJUnit4TestCase.java
+  warning: refname 'STRUTS_2_5_28_3' is ambiguous.
+  
+  fp024@git-bash /c/git-other/apache/struts (STRUTS_2_5_29)
+  $
+  
+  ```
+
+  
+
 ## STRUTS 2의 2.5.28.3 버전업 대응 (2022/01/03)
 
 * 코어모듈의 log4j2 버전이 업데이트되었다:  2.12.3 -> 2.12.4
