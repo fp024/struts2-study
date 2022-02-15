@@ -44,7 +44,7 @@
     <mockito.version>4.3.1</mockito.version>
     <hamcrest.version>2.2</hamcrest.version>
 
-    <jetty.version>10.0.7</jetty.version>
+    <jetty.version>10.0.8</jetty.version>
   </properties>
 
   <!-- module에도 상대경로 접근 방식으로 접근할 수 있다.-->
