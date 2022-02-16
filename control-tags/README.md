@@ -2,7 +2,7 @@
 
 > 원문 : https://struts.apache.org/getting-started/control-tags.html
 
-* 서문
+* 소개
 * Struts 2 if 태그
 * Struts iterator 태그
 * 추가 Iterator 속성
@@ -13,7 +13,7 @@
 
 
 
-## 서문
+## 소개
 
 Struts 2에는 뷰에서 사용할 수 있는 여러 제어 태그가 있습니다. 이 튜토리얼에서는 Struts 2 if 및 iterator 태그를 사용하는 방법의 예를 설명하고 보여줍니다. 이러한 태그 및 기타 제어 태그에 대한 자세한 내용은 [태그 레퍼런스](http://cwiki.apache.org/confluence/display/WW/Generic+Tag+Reference)를 참조하세요. 
 
@@ -109,7 +109,7 @@ Struts 2 iterator 태그에는 iterator 태그가 컬렉션의 일부에 대해�
 * 변경사항
   * 프로젝트명: [control-tags-struts](control-tags-struts)
   * Hancrest 라이브러리 추가한 김에 단정문을 assertThat으로 바꿔봤는데, 뭔가 읽기 편해진 것 같다. 😁
-* [x] 서문
+* [x] 소개
 * [x] Struts 2 if 태그
 * [x] Struts iterator 태그
 * [x] 추가 Iterator 속성

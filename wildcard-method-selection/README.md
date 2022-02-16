@@ -2,7 +2,7 @@
 
 > 원문 : https://struts.apache.org/getting-started/wildcard-method-selection.html
 
-* 서문
+* 소개
 * 예제 애플리케이션
 * 와일드카드 메서드 선택
 * 동적 메서드 호출(Dynamic Method Invocation)
@@ -14,7 +14,7 @@
 
 
 
-## 서문
+## 소개
 
 이 튜토리얼에서 우리는 struts.xml 설정 파일에서 action 노드를 설정하는 방법을 다룰 것입니다. 그래서 하나의 action 노드가 여러 개의 다른 액션 URL을 액션 클래스의 특정 메서드와 연관시키는 데 사용될 수 있습니다. 이렇게 하면 struts.xml 구성 파일에 작성해야 하는 action 노드의 수가 줄어듭니다.  
 
@@ -120,7 +120,7 @@ Struts 2 문서에서는 Struts 구성에서 `struts.enable.DynamicMethodInvocat
   
     
   
-* [x] 서문
+* [x] 소개
 
 * [x] 예제 애플리케이션
 

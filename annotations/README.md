@@ -2,7 +2,7 @@
 
 > 원문 : https://struts.apache.org/getting-started/annotations.html
 
-* 서문
+* 소개
 * Struts 2 컨벤션 플러그인
 * Struts 2 구성 플러그인
 * 어노테이션
@@ -14,7 +14,7 @@
 
 
 
-## 서문
+## 소개
 
 이전 튜토리얼에서는 XML 파일(`struts.xml`)을 사용하여 애플리케이션을 구성했습니다. XML 파일은 ActionSupport 클래스(`RegisterAction.java`)와 함께 액션 이름(`register`)을 연결하고 브라우저에 다시 렌더링할 결과(`register.jsp`)를 연결합니다. Struts 2는 XML을 사용하여 액션 이름, `ActionSupport` 클래스 및 결과에 대한 표준 명명 규칙 및 어노테이션을 사용하여 애플리케이션을 구성하는 대안을 제공합니다.  
 
@@ -137,7 +137,7 @@ XML 파일을 사용하여 Struts 2 애플리케이션을 구성할 필요를 �
   
     
   
-* [x] 서문
+* [x] 소개
 
 * [x] Struts 2 컨벤션 플러그인
 

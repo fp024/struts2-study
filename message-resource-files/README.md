@@ -2,7 +2,7 @@
 
 > 원문 : https://struts.apache.org/getting-started/message-resource-files.html
 
-* 서문
+* 소개
 * 메시지 리소스 프로퍼티 파일
 * Struts 2 key 속성
 * Struts 2 text 태그
@@ -15,7 +15,7 @@
 
 
 
-### 서문
+### 소개
 
 이 튜토리얼에서는 Struts 2 메시지 리소스 기능(메시지 리소스 번들이라고도 함) 을 살펴보겠습니다. 메시지 리소스는 어플리케이션에서 동일한 뷰 페이지에 텍스트를 입력하고, 폼 필드 라벨을 만들고, 사용자의 로케일(i18n)에 따라 텍스트를 특정 언어로 변경하는 간단한 방법을 제공합니다.
 
@@ -264,7 +264,7 @@ thankyou=Gracias por registrarse, %{personBean.firstName}.
   * request_locale 파라미터로 전달이 일어나면 현재 사용자 세션에 대해 해당 로케일을 유지 하는 것 같다. JSSIONID 쿠키를 명시적으로 지우면 기본 로케일 로 돌아와서 영문으로 표시됨.
     * 쿠키 값 확인 편집으로 아래 확장 크롬 확장 프로그램이 좋은 것 같다.
       * https://chrome.google.com/webstore/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm
-* [x] 서문
+* [x] 소개
 * [x] 메시지 리소스 프로퍼티 파일
 * [x] Struts 2 key 속성
 * [x] Struts 2 text 태그

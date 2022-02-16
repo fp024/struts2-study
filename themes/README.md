@@ -2,7 +2,7 @@
 
 > 원문 : https://struts.apache.org/getting-started/themes.html
 
-* 서문
+* 소개
 * Struts 2가 사용할 테마 지정하기
 * Struts 2 태그가 사용하는 CSS 지정하기
 * Struts 2 태그에 자신만의 테마 생성 및 적용하기 
@@ -14,7 +14,7 @@
 
 
 
-## 서문
+## 소개
 
 웹 페이지에서 `s:select`와 같은 Struts 2 태그를 사용할 때 Struts 2 프레임워크는 모양에 스타일을 지정하고 select 컨트롤의 레이아웃을 제어하는 HTML을 생성합니다. 스타일과 레이아웃은 태그에 대해 설정된 Struts 2 테마에 따라 결정됩니다. Struts 2에는 세 가지 기본 제공 테마가 있습니다: `simple`, `xhtml`, `css_xhtml`. 테마를 지정하지 않으면 Struts 2는 기본적으로 `xhtml` 테마를 사용합니다.
 
@@ -174,7 +174,7 @@ Struts 2 테마를 사용하는 방법과 이를 무시하는 방법에 대해 �
 
 * 변경사항
   * 프로젝트명: [themes-struts](themes-struts)
-* [x] 서문
+* [x] 소개
 * [x] Struts 2가 사용할 테마 지정하기
 * [x] Struts 2 태그가 사용하는 CSS 지정하기
 * [x] Struts 2 태그에 자신만의 테마 생성 및 적용하기 

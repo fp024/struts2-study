@@ -2,7 +2,7 @@
 
 > 원문 : https://struts.apache.org/getting-started/form-validation-using-xml.html
 
-* 서문
+* 소개
 * 예제 애플리케이션
 *  XML을 사용한 유효성 검증
 * XML 유효성 검사기 형식
@@ -17,7 +17,7 @@
 
 
 
-## 서문
+## 소개
 
 이 튜토리얼에서는 Struts 2의 XML 유효성 검증 방법론을 사용하여 양식 필드에서 사용자의 입력을 검증하는 방법을 다룰 것입니다. 이전에 [폼 유효성 검사](../form-validation) 튜토리얼에서 액션 클래스의 validate 메서드를 사용하여 사용자의 입력을 검증하는 것에 대해 논의했습니다. 별도의 XML 유효성 검사 파일을 사용하면 Struts 2 프레임워크에 내장된 유효성 검사기를 사용할 수 있습니다.
 

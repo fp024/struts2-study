@@ -2,7 +2,7 @@
 
 > 원문 : https://struts.apache.org/getting-started/form-tags.html
 
-* 서문
+* 소개
 * 예제 애플리케이션
 * Struts 2 select 태그
 * Struts 2 radio 태그
@@ -15,7 +15,7 @@
 
 
 
-### 서문
+### 소개
 
 이 튜토리얼에서는 다른 Struts 2 폼 컨트롤 몇가지를 살펴봅니다 Struts 2 폼을 사용하는 방법을 설명한 이전 튜토리얼([폼 처리](../processing-forms), [폼 유효성 검사](../form-validation) 및 [메시지 리소스 파일](../message-resource-files))에서 Struts 2 `head`, `form`, `textfield` 컨트롤 및 key 속성을 사용하는 방법을 다루었습니다. 이 튜토리얼에서는 Struts 2 `select`, `radio`, `checkbox` 및 `checkboxlist` 폼 컨트롤 사용방법을 살펴볼 것 입니다.
 

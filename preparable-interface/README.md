@@ -2,7 +2,7 @@
 
 > 원문 : https://struts.apache.org/getting-started/preperable-interface.html
 
-* 서문
+* 소개
 * Preparable 인터페이스
 * 예제 애플리케이션
 * 요약
@@ -12,7 +12,7 @@
 
 
 
-## 서문
+## 소개
 
 종종 폼 컨트롤을 채우는 데 사용되는 데이터는 데이터베이스에서 동적으로 생성됩니다. 사용자가 폼을 제출하면 Struts 2 유효성 검사 인터셉터가 사용자의 폼 입력 유효성을 검사하려고 시도합니다. 유효성 검사가 실패하면 Struts 2 프레임워크는 값 `input`을 반환하지만 `input` 액션은 다시 실행되지 않습니다. 오히려 `input` 결과와 관련된 뷰가 사용자에게 렌더링됩니다. 일반적으로 이 뷰는 원래 폼을 표시한 페이지입니다.
 
@@ -73,7 +73,7 @@ setPersonBean(editService.getPerson());
 * 프로젝트 변경사항
   * 프로젝트명: [preparable-interface-struts](preparable-interface-struts) 
   
-* [x] 서문
+* [x] 소개
 
 * [x] Preparable 인터페이스
 

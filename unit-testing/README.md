@@ -2,7 +2,7 @@
 
 > 원문 : https://struts.apache.org/getting-started/unit-testing.html
 
-* 서문
+* 소개
 * 설정
 * 단위 테스트 작성
 * 유효성 검증 통과 테스트
@@ -14,7 +14,7 @@
 
 
 
-## 서문
+## 소개
 
 Struts 2는 [Struts 2 JUnit 플러그인](../plugins/struts2-junit5-user-custom-plugin/junit-plugin.md)을 사용하여 Struts 액션 클래스의 메서드에 대한 단위 테스트 실행을 지원합니다. JUnit 플러그인을 사용하면 Struts 2 프레임워크 내에서 액션 클래스의 메서드를 테스트할 수 있습니다. Struts Servlet 필터와 인터셉터는 애플리케이션이 Servlet 컨테이너에서 실행 중인 것처럼 실행됩니다.
 
@@ -161,7 +161,7 @@ Struts 2 프레임워크와 함께 액션 클래스의 메서드를 테스트하
     </dependency>
     ```
 
-- [x] 서문
+- [x] 소개
 
 - [x] 설정
 

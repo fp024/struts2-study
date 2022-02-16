@@ -2,7 +2,7 @@
 
 > 원문 : https://struts.apache.org/getting-started/introducing-interceptors.html
 
-* 서문
+* 소개
 
 * 인터셉터 입문
 
@@ -17,7 +17,7 @@
 
 
 
-## 서문
+## 소개
 
 지금까지의 튜토리얼은 Struts 2 프레임워크의 내부 작동을 탐구하지 않았습니다. 그러나 이 튜토리얼에서는 액션이 실행될 때마다 대부분의 작업을 수행하기 위해 Struts 2 프레임워크가 의존하는 주요 클래스 세트를 소개합니다. 이 튜토리얼의 예제 프로젝트에는 Struts XML 구성 파일(struts.xml)에서 Register 클래스의 execute 메서드에 매핑되는 register 링크가 있습니다. execute 메서드가 호출되기 전에 Struts 2 프레임워크에 의해 뒷단에서 많은 작업이 수행됩니다. 예를 들면:
 
@@ -141,7 +141,7 @@ INFO: Executed action /register!execute took 177 ms.
   * [SimpleInterceptor.java](./interceptors-struts/src/main/java/org/fp024/struts2/study/register/interceptor/SimpleInterceptor.java)
   * mockito-inline 사용해보았는데.. 훌륭한 모듈 같다. CALLS_REAL_METHODS 옵션을 지정하면 스텁으로 정의하지 않은 메서드는 실제 메서드를 호출하는 부분이 정말 마음에 들었다!
   
-* [x] 서문
+* [x] 소개
 
 * [x] 인터셉터 입문
 
