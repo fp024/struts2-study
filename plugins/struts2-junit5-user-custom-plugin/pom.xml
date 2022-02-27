@@ -19,8 +19,7 @@
  * under the License.
  */
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.fp024.struts2.study</groupId>
@@ -30,13 +29,14 @@
   <version>1.0.0-SNAPSHOT</version>
 
   <properties>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
     <struts2.version>2.5.29</struts2.version>
     <spring.platformVersion>5.3.16</spring.platformVersion>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>5.8.2</junit.version>
     <log4j2.version>2.17.1</log4j2.version>
+    <asm.version>9.2</asm.version>
   </properties>
 
   <!-- struts2-spring-plugin 에 의해 의존성이 걸리는 Spring 모듈들의 버전관리를 위해 추가 -->
@@ -141,6 +141,32 @@
       <groupId>org.apache.struts</groupId>
       <artifactId>struts2-convention-plugin</artifactId>
       <scope>test</scope>
+      <exclusions>
+        <!-- Java 17의 바이트코드 조작을 할 수 없는 구 버전(7.3.1)을 사용하고 있기 때문에, 외부에서 새로 정의했다.-->
+        <exclusion>
+          <groupId>org.ow2.asm</groupId>
+          <artifactId>asm</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.ow2.asm</groupId>
+          <artifactId>asm-commons</artifactId>
+        </exclusion>        
+      </exclusions>
+    </dependency>
+
+    <!-- struts2-convention-plugin에서 Java 17 바이트 코드 해석을 7.3.1버전에서 할 수 없는 것 같다. 버전을 상위버전으로 올린 후 해결되었다.-->
+    <dependency>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm</artifactId>
+      <version>${asm.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm-commons</artifactId>
+      <version>${asm.version}</version>
+      <scope>test</scope>
     </dependency>
 
     <!-- Portlet -->
@@ -167,25 +193,25 @@
       </plugins>
     </pluginManagement>
     <plugins>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-toolchains-plugin</artifactId>
-      <version>3.0.0</version>
-      <executions>
-        <execution>
-          <goals>
-            <goal>toolchain</goal>
-          </goals>
-        </execution>
-      </executions>
-      <configuration>
-        <toolchains>
-          <jdk>
-            <version>${maven.compiler.target}</version>
-          </jdk>
-        </toolchains>
-      </configuration>
-    </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-toolchains-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>toolchain</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <toolchains>
+            <jdk>
+              <version>${maven.compiler.target}</version>
+            </jdk>
+          </toolchains>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>

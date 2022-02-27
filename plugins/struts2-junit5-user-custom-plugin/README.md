@@ -266,6 +266,66 @@ Struts2 Getting Started의 Unit Testing 항목을 이 개조한 플러그인을 
 
 ---
 
+# Java 17 버전업
+
+모든 예제 프로젝트를 Java 17로 실행하기 위해서, 버전을 올려봤는데, `struts2-convention-plugin` 을 사용한 프로젝트에서 오류가 발생했다. 
+
+컨벤션 플러그인 내부에서 asm 라이브러리를 사용하는데, Java 17의 바이트 코드를 다룰 수 없어 생기는 문제로 보여 asm 버전을 7.3.1에서 9.2로 올려주었고, 이후 Java 17에서 실행해도 오류가 없었다.
+
+```xml
+<!-- Convention Plugin tests -->
+<dependency>
+  <groupId>org.apache.struts</groupId>
+  <artifactId>struts2-convention-plugin</artifactId>
+  <scope>test</scope>
+  <exclusions>
+    <!-- Java 17의 바이트코드 조작을 할 수 없는 구 버전(7.3.1)을 사용하고 있기 때문에, 외부에서 새로 정의했다.-->        
+    <exclusion>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm</artifactId>
+    </exclusion>
+    <exclusion>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm-commons</artifactId>
+    </exclusion>        
+  </exclusions>
+</dependency>
+
+<!-- struts2-convention-plugin에서 Java 17 바이트 코드 해석을 7.3.1버전에서 할 수 없는 것 같다. 버전을 상위버전으로 올린 후 해결되었다.-->
+<dependency>
+  <groupId>org.ow2.asm</groupId>
+  <artifactId>asm</artifactId>
+  <version>${asm.version}</version>
+  <scope>test</scope>
+</dependency>
+
+<dependency>
+  <groupId>org.ow2.asm</groupId>
+  <artifactId>asm-commons</artifactId>
+  <version>${asm.version}</version>
+  <scope>test</scope>
+</dependency>
+```
+
+* 이 플러그인 프로젝트와 의존관계는 없지만... struts-parent에 asm에 대한 버전 정의가 있는데, 그것이 오버라이드 되도록 스터디 parent 프로젝트의 `<properties>`에 추가했다.
+
+  ```xml
+  <properties>
+    ...
+    <!-- struts2-convention-plugin에서 Java 17 바이트 코드 해석을 못해서, 버전을 올렸다. -->
+    <asm.version>9.2</asm.version>
+    ...
+  </properties>
+  ```
+
+  
+
+
+
+---
+
+
+
 # Struts 2 버전업
 
 ## STRUTS 2의 2.5.29 버전업 대응 (2022/01/26)

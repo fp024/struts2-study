@@ -28,17 +28,43 @@
   </dependencyManagement>
   
   <dependencies>
+    <!-- Convention Plugin tests -->
     <dependency>
       <groupId>org.apache.struts</groupId>
       <artifactId>struts2-convention-plugin</artifactId>
+      <exclusions>
+        <!-- Java 17의 바이트코드 조작을 할 수 없는 구 버전(7.3.1)을 사용하고 있기 때문에, 외부에서 새로 정의했다.-->        
+        <exclusion>
+          <groupId>org.ow2.asm</groupId>
+          <artifactId>asm</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.ow2.asm</groupId>
+          <artifactId>asm-commons</artifactId>
+        </exclusion>        
+      </exclusions>
     </dependency>
+
+    <!-- struts2-convention-plugin에서 Java 17 바이트 코드 해석을 7.3.1버전에서 할 수 없는 것 같다. 버전을 상위버전으로 올린 후 해결되었다.-->
+    <dependency>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm</artifactId>
+      <version>${asm.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm-commons</artifactId>
+      <version>${asm.version}</version>
+    </dependency>
+
     <!-- struts2-convention-plugin 사용시 아래 디펜던시가 추가되어야 액션 테스트시 오류가 안난다. -->
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-compress</artifactId>
       <version>1.21</version>
     </dependency>
-  
+
     <dependency>
       <groupId>org.apache.struts</groupId>
       <artifactId>struts2-config-browser-plugin</artifactId>
