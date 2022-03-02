@@ -22,7 +22,7 @@
     <struts2.version>2.5.29</struts2.version>
     <spring.platformVersion>5.3.16</spring.platformVersion>
     
-    <log4j2.version>2.17.1</log4j2.version>
+    <log4j2.version>2.17.2</log4j2.version>
     
     <jackson.version>2.13.1</jackson.version>
     <jackson-databind.version>${jackson.version}</jackson-databind.version>
