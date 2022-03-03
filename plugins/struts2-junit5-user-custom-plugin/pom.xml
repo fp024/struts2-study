@@ -150,7 +150,7 @@
         <exclusion>
           <groupId>org.ow2.asm</groupId>
           <artifactId>asm-commons</artifactId>
-        </exclusion>        
+        </exclusion>
       </exclusions>
     </dependency>
 
