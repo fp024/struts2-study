@@ -159,7 +159,7 @@
       
       
 
-* Maven을 실행하는 JAVA 환경은 11이어야함, toolchain을 적용하여, mvnw의 Java 실행환경이 JDK 8이라도 JDK 11을 통해 빌드가 되지만, Jetty는 toolchain의 설정으로 처리되지 않고, mvnw의 JAVA 실행환경을 따르므로 Unsupported major.minor version 예외가 발생할 수 있음.
+* Maven을 실행하는 JAVA 환경은 17이어야함, toolchain을 적용하여, mvnw의 Java 실행환경이 JDK 8이라도 JDK 17을 통해 빌드가 되지만, Jetty는 toolchain의 설정으로 처리되지 않고, mvnw의 JAVA 실행환경을 따르므로 Unsupported major.minor version 예외가 발생할 수 있음. ( 아직은 아니지만.. 나중에라도 Jetty Maven 플러그인이 Toolchain을 지원하면 신경안써도 될것 같다. 😅)
 
 ### Jetty의 변경 감지 자동 반영-재시작에 문제가 있음
 
@@ -175,3 +175,9 @@
   
 * 이 스터디 프로젝트도 `<scan>`값을 -1로 하자. 	
 
+
+
+## 🎇 Java 17 대응 이슈
+
+* Java 17로 런타임으로 바꾸고 몇몇 이슈들이 나타나는데, 발견 및 해결할 때마다 이 문서에 정리하자!
+  * [Java 17 대응 이슈 문서 링크](struts2-study-parent/Java-17-issue.md)

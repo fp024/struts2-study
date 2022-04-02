@@ -214,6 +214,21 @@
           </toolchains>
         </configuration>
       </plugin>
+      <!-- 
+        java.lang.reflect.InaccessibleObjectException: 
+        Unable to make field private static final java.util.concurrent.ConcurrentMap 
+        java.util.ResourceBundle.cacheList accessible: 
+        module java.base does not "opens java.util" to unnamed module 관련 처리
+      -->      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>        
+        <configuration>
+          <argLine>
+            --add-opens=java.base/java.util=ALL-UNNAMED
+          </argLine>
+        </configuration>        
+      </plugin>
     </plugins>
   </build>
 </project>
