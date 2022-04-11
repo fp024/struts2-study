@@ -19,7 +19,7 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
 
-    <struts2.version>2.5.29</struts2.version>
+    <struts2.version>2.5.30</struts2.version>
     <spring.platformVersion>5.3.18</spring.platformVersion>
     
     <log4j2.version>2.17.2</log4j2.version>
@@ -52,6 +52,10 @@
     <asm.version>9.2</asm.version>
 
     <jetty.version>10.0.8</jetty.version>
+    <jettyContextPath>/${project.build.finalName}</jettyContextPath>
+    
+    <!-- 현시점 환경에서 다시 시도해봤을 때, Jetty 리로딩에 문제가 없어서 Enter를 누르면 재시작 되도록 0으로 설정을 바꾸었다. -->
+    <jettyAutoDeploy>0</jettyAutoDeploy>
   </properties>
 
   <!-- module에도 상대경로 접근 방식으로 접근할 수 있다.-->
@@ -106,7 +110,9 @@
     <module>../json/json-customize-jackson-struts</module>
     <!-- 25. JSON 튜토리얼 - Struts 2 JSON Plugin 예제 -->
     <module>../json/json-struts</module>
-    
+    <!-- 26. 이중 평가 테스트 ( AliasInterceptor ) -->
+    <module>../struts-double-evaluation-test</module>
+
   </modules>
 
   <dependencyManagement>
@@ -159,7 +165,7 @@
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
-      <version>3.1.0</version>
+      <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -305,11 +311,12 @@
         <artifactId>jetty-maven-plugin</artifactId>
         <version>${jetty.version}</version>
         <configuration>
+          <!-- jetty가 forked 모드로 실행될 때만 의미가 있는 것 같다. 일단 설정은 남겨두자. -->
           <jvmArgs>
             --add-opens java.base/java.util=ALL-UNNAMED
           </jvmArgs>
           <webApp>
-            <contextPath>/${project.build.finalName}</contextPath>
+            <contextPath>${jettyContextPath}</contextPath>
             <sessionHandler>
               <sessionIdPathParameterName>none</sessionIdPathParameterName>
             </sessionHandler>
@@ -323,7 +330,7 @@
               오류 패턴이 Spring에서 봤던것과 같다. (Spring은 ContextLoaderListener 를 정상적으로 못 읽음)
               -1로 설정하여 이 기능을 꺼놓도록 하자!
           -->
-          <scan>-1</scan>
+          <scan>${jettyAutoDeploy}</scan>
           <scanTargetPatterns>
             <scanTargetPattern>
               <directory>src/main/webapp/WEB-INF</directory>
