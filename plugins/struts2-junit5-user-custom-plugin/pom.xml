@@ -32,7 +32,7 @@
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
     <struts2.version>2.5.30</struts2.version>
-    <spring.platformVersion>5.3.18</spring.platformVersion>
+    <spring.platformVersion>5.3.19</spring.platformVersion>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>5.8.2</junit.version>
     <log4j2.version>2.17.2</log4j2.version>
