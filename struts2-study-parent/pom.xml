@@ -42,14 +42,14 @@
     
     <jasperreports.version>6.19.1</jasperreports.version>
 
-    <lombok.version>1.18.22</lombok.version>
+    <lombok.version>1.18.24</lombok.version>
 
     <junit.version>5.8.2</junit.version>
-    <mockito.version>4.4.0</mockito.version>
+    <mockito.version>4.5.1</mockito.version>
     <hamcrest.version>2.2</hamcrest.version>
 
     <!-- struts2-convention-plugin에서 Java 17 바이트 코드 해석을 못해서, 버전을 올렸다. -->
-    <asm.version>9.2</asm.version>
+    <asm.version>9.3</asm.version>
 
     <jetty.version>10.0.9</jetty.version>
     <jettyContextPath>/${project.build.finalName}</jettyContextPath>
