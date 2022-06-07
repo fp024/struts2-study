@@ -6,10 +6,6 @@ import com.opensymphony.xwork2.ActionProxyFactory;
 import com.opensymphony.xwork2.XWorkJUnit5UserCustomTestCase;
 import com.opensymphony.xwork2.config.Configuration;
 import com.opensymphony.xwork2.interceptor.ValidationAware;
-import com.opensymphony.xwork2.interceptor.annotations.After;
-import com.opensymphony.xwork2.interceptor.annotations.Before;
-import com.opensymphony.xwork2.util.logging.LoggerFactory;
-import com.opensymphony.xwork2.util.logging.jdk.JdkLoggerFactory;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.dispatcher.Dispatcher;
 import org.apache.struts2.dispatcher.HttpParameters;
@@ -30,21 +26,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Formatter;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public abstract class StrutsJUnit5TestCase<T> extends XWorkJUnit5UserCustomTestCase {
-
   protected MockHttpServletResponse response;
   protected MockHttpServletRequest request;
   protected MockPageContext pageContext;
@@ -53,35 +41,6 @@ public abstract class StrutsJUnit5TestCase<T> extends XWorkJUnit5UserCustomTestC
   protected Dispatcher dispatcher;
 
   protected DefaultResourceLoader resourceLoader = new DefaultResourceLoader();
-
-  static {
-    ConsoleHandler handler = new ConsoleHandler();
-    final SimpleDateFormat df = new SimpleDateFormat("mm:ss.SSS");
-    Formatter formatter =
-        new Formatter() {
-          @Override
-          public String format(LogRecord record) {
-            StringBuilder sb = new StringBuilder();
-            sb.append(record.getLevel());
-            sb.append(':');
-            for (int x = 9 - record.getLevel().toString().length(); x > 0; x--) {
-              sb.append(' ');
-            }
-            sb.append('[');
-            sb.append(df.format(new Date(record.getMillis())));
-            sb.append("] ");
-            sb.append(formatMessage(record));
-            sb.append('\n');
-            return sb.toString();
-          }
-        };
-    handler.setFormatter(formatter);
-    Logger logger = Logger.getLogger("");
-    if (logger.getHandlers().length > 0) logger.removeHandler(logger.getHandlers()[0]);
-    logger.addHandler(handler);
-    logger.setLevel(Level.WARNING);
-    LoggerFactory.setLoggerFactory(new JdkLoggerFactory());
-  }
 
   /** gets an object from the stack after an action is executed */
   protected Object findValueAfterExecute(String key) {
@@ -163,12 +122,12 @@ public abstract class StrutsJUnit5TestCase<T> extends XWorkJUnit5UserCustomTestC
     actionContext.setParameters(HttpParameters.create(request.getParameterMap()).build());
     initSession(actionContext);
     // set the action context to the one used by the proxy
-    ActionContext.setContext(actionContext);
+    ActionContext.bind(actionContext);
   }
 
   protected void initSession(ActionContext actionContext) {
     if (actionContext.getSession() == null) {
-      actionContext.setSession(new HashMap<String, Object>());
+      actionContext.withSession(new HashMap<>());
       request.setSession(new MockHttpSession(servletContext));
     }
   }

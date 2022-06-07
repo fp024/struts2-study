@@ -28,7 +28,6 @@ import org.springframework.core.io.UrlResource;
 import java.net.URL;
 
 public class ConventionPluginResourceLoader extends DefaultResourceLoader {
-
   private static final Logger log = LogManager.getLogger(ConventionPluginResourceLoader.class);
 
   @Override

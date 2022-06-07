@@ -26,7 +26,7 @@
     <!-- for logger interceptor see: https://struts.apache.org/core-developers/logging-interceptor.html -->
     <!-- for timer interceptor see https://struts.apache.org/core-developers/timer-interceptor.html -->
     <action name="register" class="registerAction" method="execute">
-      <interceptor-ref name="timer"/>
+      <!-- <interceptor-ref name="timer"/> --> <!-- Struts2 6.0.0 부터 timer 인터셉터는 제거 되었다. -->
       <interceptor-ref name="logger"/>
       <interceptor-ref name="simpleInterceptor"/>
       <interceptor-ref name="defaultStack">

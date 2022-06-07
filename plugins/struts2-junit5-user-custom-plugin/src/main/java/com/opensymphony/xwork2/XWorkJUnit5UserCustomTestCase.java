@@ -16,7 +16,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
 public class XWorkJUnit5UserCustomTestCase {
-
   protected ConfigurationManager configurationManager;
   protected Configuration configuration;
   protected Container container;
