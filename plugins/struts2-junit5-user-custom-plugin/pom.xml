@@ -37,7 +37,7 @@
 
     <spring.platformVersion>5.3.22</spring.platformVersion>
 
-    <junit.version>5.8.2</junit.version>
+    <junit.version>5.9.0</junit.version>
 
     <log4j2.version>2.18.0</log4j2.version>
 
