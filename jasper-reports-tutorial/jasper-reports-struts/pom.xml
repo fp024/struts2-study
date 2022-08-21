@@ -1,35 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <parent>
     <groupId>org.fp024.struts2.study</groupId>
     <artifactId>struts2-study-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <relativePath>../../struts2-study-parent/pom.xml</relativePath>
   </parent>
-
   <artifactId>jasper-reports-struts</artifactId>
   <packaging>war</packaging>
-
   <name>${project.artifactId} - Struts 2 Study Maven Webapp</name>
   <url>https://github.com/fp024/struts2-study/tree/master/jasper-reports-tutorial</url>
-
+  <!-- 
+    struts2-spring-plugin 에서 적절한 Spring 버전을 가져오긴하지만,
+    이 테스트 프로젝트에서는 Spring 버전을 최신으로 관리해보기 위해서 BOM 프로젝트를 추가했습니다.
+  -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-framework-bom</artifactId>
+        <version>${spring.platformVersion}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>org.apache.struts</groupId>
       <artifactId>struts2-jasperreports-plugin</artifactId>
     </dependency>
-
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-spring-plugin</artifactId>
+      <version>${struts2.version}</version>
+    </dependency>
     <dependency>
       <groupId>net.sf.jasperreports</groupId>
       <artifactId>jasperreports</artifactId>
       <version>${jasperreports.version}</version>
+      <exclusions>
+        <!-- spring-jcl 5.3.22에 commons-logging이 포함되어있다. jasperreports 에 있는 디펜던시를 제외했을 때도 문제가 없어서 이대로 유지하자. -->
+        <exclusion>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
-
+    <!-- @PostConstruct, @PreDestory 사용을 위해서 추가, Java 9부터 모듈로 분리됨 -->
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>${javax.annotation-api.version}</version>
+    </dependency>
     <!-- JUnit 5를 사용하기 위해 https://github.com/apache/struts/tree/master/plugins/junit 프로젝트를 수정했다. -->
     <dependency>
       <groupId>org.fp024.struts2.study</groupId>
@@ -37,38 +63,23 @@
       <version>1.0.0-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
-    
-    <!--
-      MockHttpServletResponse.setContentType() 실행시
-      spring-web에 있는 MediaType 클래스를 사용하기 때문에, 테스트를 위해 추가해줄 필요가 있다.
-    -->
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
-      <version>${spring.platformVersion}</version>
-      <scope>test</scope>
-    </dependency>
-    
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-junit-jupiter</artifactId>
       <version>${mockito.version}</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-inline</artifactId>
       <version>${mockito.version}</version>
       <scope>test</scope>
     </dependency>
-    
     <dependency>
-      <groupId>org.hamcrest</groupId>
-      <artifactId>hamcrest</artifactId>
-      <version>${hamcrest.version}</version>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>${assertj.version}</version>
       <scope>test</scope>
     </dependency>
-    
   </dependencies>
 </project>

@@ -1,25 +1,18 @@
 package org.fp024.struts2.study.jasperreports.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
-import org.fp024.struts2.study.jasperreports.model.Person;
-import org.fp024.struts2.study.jasperreports.service.JasperTemplateInitializer;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Getter;
+import org.fp024.struts2.study.jasperreports.model.Person;
 
-@Slf4j
 public class JasperAction extends ActionSupport {
-  private static final boolean isJasperInit = JasperTemplateInitializer.isInit;
-
   /** JasperReports 데이터 소스로 사용할 List. */
   @Getter private List<Person> myList;
 
   @Override
   public String execute() {
-    LOGGER.info("jasper is init {}", isJasperInit);
     LocalDateTime registerDate = LocalDateTime.now();
     // 가상의 인물을 만듦.
     Person p1 = new Person(1L, "Patrick", "Lightbuddie", registerDate.minusSeconds(30));
