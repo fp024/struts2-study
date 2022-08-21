@@ -47,6 +47,7 @@
     <junit.version>5.9.0</junit.version>
     <mockito.version>4.6.1</mockito.version>
     <hamcrest.version>2.2</hamcrest.version>
+    <assertj.version>3.23.1</assertj.version>
 
     <!-- struts2-convention-plugin에서 Java 17 바이트 코드 해석을 못해서, 버전을 올렸다. -->
     <asm.version>9.3</asm.version>
@@ -115,15 +116,19 @@
     <module>../preparable-interface/preparable-interface-struts</module>
     <!-- 21. 파라미터 제외 -->
     <module>../exclude-parameters/exclude-parameters-struts</module>
-    <!-- 22. JasperReports 튜토리얼 -->
+    <!-- 22. JasperReports 튜토리얼 : JasperReports 컴파일을 Spring Component Bean으로 처리-->
     <module>../jasper-reports-tutorial/jasper-reports-struts</module>
-    <!-- 23. JSON 튜토리얼 - FlexJSON 예제 -->
+    <!-- 23. JasperReports 튜토리얼 : JasperReports 컴파일을 Struts 인터셉터로 처리 -->
+    <module>../jasper-reports-tutorial/jasper-reports-with-interceptor</module>
+    <!-- 24. JasperReports 튜토리얼 : JasperReports 컴파일을 Servlet의 ContextListener로 처리 -->
+    <module>../jasper-reports-tutorial/jasper-reports-with-contextlistener</module>
+    <!-- 25. JSON 튜토리얼 - FlexJSON 예제 -->
     <module>../json/json-customize-flexjson-struts</module>
-    <!-- 24. JSON 튜토리얼 - Jackson 예제 -->
+    <!-- 26. JSON 튜토리얼 - Jackson 예제 -->
     <module>../json/json-customize-jackson-struts</module>
-    <!-- 25. JSON 튜토리얼 - Struts 2 JSON Plugin 예제 -->
+    <!-- 27. JSON 튜토리얼 - Struts 2 JSON Plugin 예제 -->
     <module>../json/json-struts</module>
-    <!-- 26. 이중 평가 테스트 ( AliasInterceptor ) -->
+    <!-- 28. 이중 평가 테스트 ( AliasInterceptor ) -->
     <module>../struts-double-evaluation-test</module>
 
   </modules>

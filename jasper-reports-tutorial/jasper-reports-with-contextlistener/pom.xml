@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.fp024.struts2.study</groupId>
+    <artifactId>struts2-study-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../../struts2-study-parent/pom.xml</relativePath>
+  </parent>
+  <artifactId>jasper-reports-with-contextlistener</artifactId>
+  <packaging>war</packaging>
+  <name>${project.artifactId} - Struts 2 Study Maven Webapp</name>
+  <url>https://github.com/fp024/struts2-study/tree/master/jasper-reports-tutorial</url>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-jasperreports-plugin</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>net.sf.jasperreports</groupId>
+      <artifactId>jasperreports</artifactId>
+      <version>${jasperreports.version}</version>      
+    </dependency>
+  </dependencies>
+</project>
