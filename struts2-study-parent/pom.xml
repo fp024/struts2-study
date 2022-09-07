@@ -24,7 +24,7 @@
     
     <log4j2.version>2.18.0</log4j2.version>
     
-    <jackson.version>2.13.3</jackson.version>
+    <jackson.version>2.13.4</jackson.version>
     <jackson-databind.version>${jackson.version}</jackson-databind.version>
     <!-- 
       Struts에서 Jackson Databind를 따로 프로퍼티를 땃는지 이해가 안갔는데, 
