@@ -19,10 +19,10 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
 
-    <struts2.version>6.0.0</struts2.version>
-    <spring.platformVersion>5.3.22</spring.platformVersion>
+    <struts2.version>6.0.3</struts2.version>
+    <spring.platformVersion>5.3.23</spring.platformVersion>
     
-    <log4j2.version>2.18.0</log4j2.version>
+    <log4j2.version>2.19.0</log4j2.version>
     
     <jackson.version>2.13.4</jackson.version>
     <jackson-databind.version>${jackson.version}</jackson-databind.version>
@@ -52,7 +52,7 @@
     <!-- struts2-convention-plugin에서 Java 17 바이트 코드 해석을 못해서, 버전을 올렸다. -->
     <asm.version>9.3</asm.version>
 
-    <jetty.version>10.0.11</jetty.version>
+    <jetty.version>10.0.12</jetty.version>
     <jettyContextPath>/${project.build.finalName}</jettyContextPath>
     
     <!-- 현시점 환경에서 다시 시도해봤을 때, Jetty 리로딩에 문제가 없어서 Enter를 누르면 재시작 되도록 0으로 설정을 바꾸었다. -->
