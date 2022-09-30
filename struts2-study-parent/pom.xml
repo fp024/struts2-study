@@ -33,7 +33,7 @@
     <flexjson.version>3.3</flexjson.version>
 
     <hikaricp.version>5.0.1</hikaricp.version>
-    <hibernate.version>5.6.11.Final</hibernate.version>
+    <hibernate.version>5.6.12.Final</hibernate.version>
     <hsqldb.version>2.7.0</hsqldb.version>
 
     <guava.version>31.1-jre</guava.version>
