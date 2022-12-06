@@ -22,32 +22,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.fp024.struts2.study</groupId>
+  <parent>
+    <groupId>org.fp024.struts2.study</groupId>
+    <artifactId>struts2-study-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../../struts2-study-parent/pom.xml</relativePath>
+  </parent>
+
   <artifactId>struts2-junit5-user-custom-plugin</artifactId>
   <packaging>jar</packaging>
   <name>Struts 2 JUnit 5 User Custom Plugin</name>
   <version>1.0.0-SNAPSHOT</version>
-
-  <properties>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    <struts2.version>6.1.1</struts2.version>
-
-    <spring.platformVersion>5.3.23</spring.platformVersion>
-
-    <junit.version>5.9.1</junit.version>
-
-    <log4j2.version>2.19.0</log4j2.version>
-
-    <asm.version>9.3</asm.version>
-
-    <!-- Maven Plugin 버전 -->
-    <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-    <maven-toolchains-plugin.version>3.1.0</maven-toolchains-plugin.version>
-  </properties>
 
   <!-- struts2-spring-plugin 에 의해 의존성이 걸리는 Spring 모듈들의 버전관리를 위해 추가 -->
   <dependencyManagement>
@@ -84,11 +69,6 @@
   </dependencyManagement>
 
   <dependencies>
-    <dependency>
-      <groupId>org.apache.struts</groupId>
-      <artifactId>struts2-core</artifactId>
-    </dependency>
-
     <!-- Apache Log4j SLF4J Binding  -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
@@ -119,27 +99,9 @@
       <artifactId>struts2-spring-plugin</artifactId>
       <optional>true</optional>
     </dependency>
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>4.0.1</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax.servlet.jsp</groupId>
-      <artifactId>javax.servlet.jsp-api</artifactId>
-      <version>2.3.3</version>
-      <scope>provided</scope>
-    </dependency>
 
-    <!-- JUnit 4 디펜던시는 제거 -->
-    <!--
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-    </dependency>
-    -->
     <!-- JUnit 5 디펜던시 추가 -->
+    <!-- JUnit을 main환경에서 사용해야하므로 scope가 test가 아니다. -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
@@ -187,58 +149,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>${maven-compiler-plugin.version}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>${maven-surefire-plugin.version}</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-toolchains-plugin</artifactId>
-        <version>${maven-toolchains-plugin.version}</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>toolchain</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <toolchains>
-            <jdk>
-              <version>${maven.compiler.target}</version>
-            </jdk>
-          </toolchains>
-        </configuration>
-      </plugin>
-      <!-- 
-        java.lang.reflect.InaccessibleObjectException: 
-        Unable to make field private static final java.util.concurrent.ConcurrentMap 
-        java.util.ResourceBundle.cacheList accessible: 
-        module java.base does not "opens java.util" to unnamed module 관련 처리
-      -->      
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>        
-        <configuration>
-          <argLine>
-            --add-opens=java.base/java.util=ALL-UNNAMED
-          </argLine>
-        </configuration>        
-      </plugin>
-    </plugins>
-  </build>
 </project>
