@@ -12,27 +12,51 @@
 ### 예제 실행하기
 
 * [struts2-study-parent](struts2-study-parent) 디렉토리 경로를 계층구조로 대신 상대적인 경로로 정의했습니다.
+
+* 우선 JUnit 5가 실행가능하게 만든 [커스텀 플러그인](plugins/struts2-junit5-user-custom-plugin)을 로컬 레파지토리에 설치해야하므로 스터디 프로젝트 루트에서 다음을 실행합니다.
+
+  ```
+  $ mvnw install
+  
+  ...
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Reactor Summary for struts2-study - Struts 2 Study Maven Parent 1.0.0-SNAPSHOT:
+  [INFO]
+  [INFO] struts2-study - Struts 2 Study Maven Parent ........ SUCCESS [  0.172 s]
+  [INFO] Struts 2 JUnit 5 User Custom Plugin ................ SUCCESS [  9.311 s]
+  [INFO] ------------------------------------------------------------------------
+  [INFO] BUILD SUCCESS
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Total time:  9.655 s
+  [INFO] Finished at: 2022-xx-xxTxx:xx:xx+xx:00
+  [INFO] ------------------------------------------------------------------------
+  
+  $
+  ```
+
+  
+
 * 실행방법은 두가지입니다.
   * 개별 하위 프로젝트에서 들어가서 프로젝트를 실행 (예: [Struts 2 웹 어플리케이션을 만드는 방법](how-to-create-a-struts-2-web-application)의 예제실행)
 
     ```bash
-    cd how-to-create-a-struts-2-web-application
-    cd basic-struts
-    mvnw clean jetty:run
+    $ cd how-to-create-a-struts-2-web-application
+    $ cd basic-struts
+    $ mvnw clean jetty:run
     ```
     
   * struts2-study-parent 디렉토리에서 실행  (예: [메시지 리소스 파일](message-resource-files)의 예제실행)
 
     ```bash
-    cd struts2-study-parent
-    mvnw clean jetty:run -pl ../message-resource-files/message-resource-struts -am
+    $ cd struts2-study-parent
+    $ mvnw clean jetty:run -pl ../message-resource-files/message-resource-struts -am
     ```
 
   * 모든 하위 프로젝트 테스트
 
     ```bash
-    cd struts2-study-parent
-    mvnw clean test
+    $ cd struts2-study-parent
+    $ mvnw clean test
     ```
 
      
@@ -180,7 +204,7 @@
 * 😍 오랜만에 확인했는데 지금은 잘된다. Jetty 버전업이 된 상태이긴 한데, 이것 때문일지.. Parent POM의 `<scan>` 값을 0으로 바꿔서 콘솔에서 `<Enter>`누르면 재시작 되게 기본값으로 설정했다. 필요시 양수를 넣으면 해당 초만큼 간격으로 변경감지해서 재시작 할 수 도 있다.
 
     
-    
+  
 
 ## 🎇 Java 17 대응 이슈
 

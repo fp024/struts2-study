@@ -24,16 +24,15 @@
 
   <parent>
     <groupId>org.fp024.struts2.study</groupId>
-    <artifactId>struts2-study-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <relativePath>../../struts2-study-parent/pom.xml</relativePath>
+    <artifactId>struts2-study</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../../</relativePath>
   </parent>
 
   <artifactId>struts2-junit5-user-custom-plugin</artifactId>
   <packaging>jar</packaging>
   <name>Struts 2 JUnit 5 User Custom Plugin</name>
-  <version>1.0.0-SNAPSHOT</version>
-
+  
   <!-- struts2-spring-plugin 에 의해 의존성이 걸리는 Spring 모듈들의 버전관리를 위해 추가 -->
   <dependencyManagement>
     <dependencies>
@@ -98,6 +97,19 @@
       <groupId>org.apache.struts</groupId>
       <artifactId>struts2-spring-plugin</artifactId>
       <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>${javax.servlet-api.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>javax.servlet.jsp-api</artifactId>
+      <version>${javax.servlet.jsp-api.version}</version>
+      <scope>provided</scope>
     </dependency>
 
     <!-- JUnit 5 디펜던시 추가 -->
