@@ -254,7 +254,7 @@
     <!-- Junit 5 커스텀 플러그인 -->
     <module>plugins/struts2-junit5-user-custom-plugin</module>
 
-    <!-- 예제 프로젝트의 부모 pom -->
+    <!-- 예제 프로젝트의 부모 pom : 로컬 레파지토리 설치는 struts2-study와 struts2-junit5-user-custom-plugin 만 설치하면 되므로 아래는 포함하지 말자.. -->
     <!-- <module>struts2-study-parent</module> -->
   </modules>
 </project>
