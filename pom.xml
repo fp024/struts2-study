@@ -24,8 +24,8 @@
     <javax.servlet.jsp-api.version>2.3.3</javax.servlet.jsp-api.version>
     <apache.taglibs-standard-impl.version>1.2.5</apache.taglibs-standard-impl.version>
 
-    <struts2.version>6.1.1</struts2.version>
-    <spring.platformVersion>5.3.25</spring.platformVersion>
+    <struts2.version>6.1.2</struts2.version>
+    <spring.platformVersion>5.3.26</spring.platformVersion>
     
     <log4j2.version>2.20.0</log4j2.version>
     
@@ -50,12 +50,12 @@
     <lombok.version>1.18.26</lombok.version>
 
     <junit.version>5.9.2</junit.version>
-    <mockito.version>5.1.1</mockito.version>
+    <mockito.version>5.2.0</mockito.version>
     <hamcrest.version>2.2</hamcrest.version>
     <assertj.version>3.24.2</assertj.version>
 
     <!-- struts2-convention-plugin에서 Java 17 바이트 코드 해석을 못해서, 버전을 올렸다. -->
-    <asm.version>9.4</asm.version>
+    <asm.version>9.5</asm.version>
 
     <jetty.version>10.0.14</jetty.version>
     <jettyContextPath>/${project.build.finalName}</jettyContextPath>
@@ -67,12 +67,12 @@
     <!-- Maven Plugin 버전 -->
     <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version>
     <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
-    <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-    <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
+    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+    <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
+    <maven-failsafe-plugin.version>3.0.0</maven-failsafe-plugin.version>
     <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
-    <maven-install-plugin.version>3.0.1</maven-install-plugin.version>
-    <maven-deploy-plugin.version>3.0.0</maven-deploy-plugin.version>
+    <maven-install-plugin.version>3.1.1</maven-install-plugin.version>
+    <maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
     <maven-toolchains-plugin.version>3.1.0</maven-toolchains-plugin.version>
   </properties>
 
