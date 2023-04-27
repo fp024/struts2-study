@@ -1,7 +1,7 @@
 package org.fp024.struts2.study.register.action;
 
-import com.google.common.base.Strings;
 import com.opensymphony.xwork2.ActionSupport;
+import java.io.Serial;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -24,7 +24,7 @@ public class RegisterAction extends ActionSupport {
     this.registerService = registerService;
   }
 
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
 
   @Getter @Setter private Person personBean;
 
@@ -57,11 +57,12 @@ public class RegisterAction extends ActionSupport {
 
   @Override
   public void validate() {
-    if (Strings.isNullOrEmpty(personBean.getEmail())) {
+
+    if (personBean.getEmail() == null || personBean.getEmail().isBlank()) {
       addFieldError("personBean.email", "Email is required.");
     }
 
-    if (Strings.isNullOrEmpty(personBean.getFirstName())) {
+    if (personBean.getFirstName() == null || personBean.getFirstName().isBlank()) {
       addFieldError("personBean.firstName", "First name is required.");
     }
 

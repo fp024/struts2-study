@@ -1,7 +1,8 @@
 package org.fp024.struts2.study.register.action;
 
-import com.google.common.base.Strings;
 import com.opensymphony.xwork2.ActionSupport;
+import java.io.Serial;
+import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
 import org.fp024.struts2.study.register.model.Person;
@@ -9,8 +10,6 @@ import org.fp024.struts2.study.register.service.RegisterService;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
-import java.time.LocalDateTime;
 
 /** struts.xml에서 registerAction 빈이름으로 접근할 수 있다. */
 @Component
@@ -22,7 +21,7 @@ public class RegisterAction extends ActionSupport {
     this.registerService = registerService;
   }
 
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
 
   @Getter @Setter private Person personBean;
 
@@ -42,11 +41,11 @@ public class RegisterAction extends ActionSupport {
 
   @Override
   public void validate() {
-    if (Strings.isNullOrEmpty(personBean.getEmail())) {
+    if (personBean.getEmail() == null || personBean.getEmail().isBlank()) {
       addFieldError("personBean.email", "Email is required.");
     }
 
-    if (Strings.isNullOrEmpty(personBean.getFirstName())) {
+    if (personBean.getFirstName() == null || personBean.getFirstName().isBlank()) {
       addFieldError("personBean.firstName", "First name is required.");
     }
 
