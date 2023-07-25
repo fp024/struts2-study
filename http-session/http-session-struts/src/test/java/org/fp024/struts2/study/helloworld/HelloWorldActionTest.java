@@ -1,7 +1,11 @@
 package org.fp024.struts2.study.helloworld;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionProxy;
+import java.util.Map;
 import org.apache.struts2.StrutsSpringJUnit5TestCase;
 import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
@@ -9,11 +13,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.util.ReflectionTestUtils;
-
-import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringJUnitConfig(locations = "classpath:applicationContext.xml")
 class HelloWorldActionTest extends StrutsSpringJUnit5TestCase<HelloWorldAction> {
@@ -58,9 +57,7 @@ class HelloWorldActionTest extends StrutsSpringJUnit5TestCase<HelloWorldAction> 
     request.setParameter("session", "not_add");
     executeAction("/hello.action");
     // 여기서의 세션은 위에 파라미터에서 설정하려한 session과는 관계가 없다.
-    @SuppressWarnings("unchecked")
-    SessionMap<String, Object> sessionMap =
-        (SessionMap<String, Object>) findValueAfterExecute("session");
+    SessionMap sessionMap = (SessionMap) findValueAfterExecute("session");
     assertEquals(1, sessionMap.get("helloCount"));
 
     String message = (String) findValueAfterExecute("messageStore.message");

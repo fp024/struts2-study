@@ -2,18 +2,20 @@ package org.fp024.struts2.study.helloworld;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.interceptor.ParameterNameAware;
+import java.util.Map;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.struts2.interceptor.SessionAware;
+import org.apache.struts2.action.SessionAware;
 import org.fp024.struts2.study.model.MessageStore;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.util.Map;
-
 /**
  * Bruce Phillips 님의 코드를 참고하여,<br>
  * 현재 프로젝트 환경에 맞게 수정한 클래스 입니다.
+ *
+ * <p>https://struts.apache.org/maven/struts2-core/apidocs/org/apache/struts2/interceptor/SessionAware.html
+ * 6.2.0에서 SessionAware인터페이스가 Deprecated됨
  */
 @Component("helloWorldAction") // 이렇게 따로 적어주지 않아도 빈 이름은 첫글자를 소문자로한 클래스명이 된다.
 @Scope("prototype")
@@ -71,8 +73,12 @@ public class HelloWorldAction extends ActionSupport implements SessionAware, Par
   }
 
   /** ActionContext.getContext().getSession() 으로도 session 맵을 얻을수도 있는 것 같다. */
+  /*
+    https://struts.apache.org/maven/struts2-core/apidocs/org/apache/struts2/interceptor/SessionAware.html
+    6.2.0 부터는 setSession()이 withSession)으로 메서드명 변경됨.
+  */
   @Override
-  public void setSession(Map<String, Object> session) {
+  public void withSession(Map<String, Object> session) {
     userSession = session;
   }
 }

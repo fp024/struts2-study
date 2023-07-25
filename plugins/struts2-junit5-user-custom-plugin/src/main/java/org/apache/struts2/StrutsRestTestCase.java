@@ -124,7 +124,7 @@ public class StrutsRestTestCase<T> extends StrutsJUnit5TestCase<T> {
 
     ActionContext invocationContext = proxy.getInvocation().getInvocationContext();
     invocationContext.getContextMap().put(ServletActionContext.ACTION_MAPPING, mapping);
-    invocationContext.setParameters(HttpParameters.create(request.getParameterMap()).build());
+    invocationContext.withParameters(HttpParameters.create(request.getParameterMap()).build());
     // set the action context to the one used by the proxy
     ActionContext.bind(invocationContext);
 

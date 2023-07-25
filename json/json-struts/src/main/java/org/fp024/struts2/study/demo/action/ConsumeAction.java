@@ -1,11 +1,10 @@
 package org.fp024.struts2.study.demo.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import lombok.Getter;
-import org.apache.struts2.interceptor.ServletRequestAware;
-import org.fp024.struts2.study.demo.domain.MyBean;
-
 import javax.servlet.http.HttpServletRequest;
+import lombok.Getter;
+import org.apache.struts2.action.ServletRequestAware;
+import org.fp024.struts2.study.demo.domain.MyBean;
 
 public class ConsumeAction extends ActionSupport implements ServletRequestAware {
   @Getter private final MyBean bean = new MyBean();
@@ -20,7 +19,8 @@ public class ConsumeAction extends ActionSupport implements ServletRequestAware 
     return SUCCESS;
   }
 
-  public void setServletRequest(HttpServletRequest request) {
+  @Override
+  public void withServletRequest(HttpServletRequest request) {
     responseAsJson = request.getHeader("Accept").contains("application/json");
   }
 }
