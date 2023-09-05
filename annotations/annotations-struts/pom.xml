@@ -62,7 +62,7 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-compress</artifactId>
-      <version>1.21</version>
+      <version>${commons-compress.version}</version>
     </dependency>
 
     <dependency>
@@ -85,7 +85,7 @@
     <dependency>
       <groupId>org.hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
-      <version>2.6.1</version>
+      <version>${hsqldb.version}</version>
     </dependency>
 
     <!-- Java 8 환경에서 최신 4.x 버전이 호환가능함. -->

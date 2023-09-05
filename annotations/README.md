@@ -176,7 +176,7 @@ XML 파일을 사용하여 Struts 2 애플리케이션을 구성할 필요를 �
   <dependency>
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-compress</artifactId>
-    <version>1.21</version>
+    <version>${commons-compress.version}</version>
   </dependency>
   ```
 
