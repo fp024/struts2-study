@@ -25,7 +25,7 @@
     <apache.taglibs-standard-impl.version>1.2.5</apache.taglibs-standard-impl.version>
 
     <struts2.version>6.3.0.1</struts2.version>
-    <spring.platformVersion>5.3.30</spring.platformVersion>
+    <spring.platformVersion>5.3.31</spring.platformVersion>
     
     <log4j2.version>2.21.1</log4j2.version>
     
@@ -63,7 +63,7 @@
     <jettyAutoDeploy>0</jettyAutoDeploy>
 
     <!-- Maven Plugin 버전 -->
-    <maven-clean-plugin.version>3.3.1</maven-clean-plugin.version>
+    <maven-clean-plugin.version>3.3.2</maven-clean-plugin.version>
     <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
     <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
     <maven-surefire-plugin.version>3.2.2</maven-surefire-plugin.version>
@@ -74,7 +74,7 @@
     <maven-toolchains-plugin.version>3.1.0</maven-toolchains-plugin.version>
     
     <!-- Struts JUnit Plugin -->
-    <commons-compress.version>1.24.0</commons-compress.version>
+    <commons-compress.version>1.25.0</commons-compress.version>
     <portlet-api.version>3.0.1</portlet-api.version>
   </properties>
 
