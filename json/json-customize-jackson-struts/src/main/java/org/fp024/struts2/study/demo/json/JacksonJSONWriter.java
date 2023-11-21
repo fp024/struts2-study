@@ -1,20 +1,18 @@
 package org.fp024.struts2.study.demo.json;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.struts2.json.JSONException;
-import org.apache.struts2.json.JSONWriter;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.regex.Pattern;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.struts2.json.JSONException;
+import org.apache.struts2.json.JSONWriter;
 
 @Slf4j
 public class JacksonJSONWriter implements JSONWriter {
@@ -52,9 +50,9 @@ public class JacksonJSONWriter implements JSONWriter {
       mapper.setDateFormat(dateFormat);
 
       // LocalDateTime의 포멧은 별도 지정해줘야한다.
-      DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(dateFormatter);
-      javaTimeModule.addSerializer(
-          LocalDateTime.class, new LocalDateTimeSerializer(dateTimeFormatter));
+      mapper
+          .configOverride(LocalDateTime.class)
+          .setFormat(JsonFormat.Value.forPattern("MM/dd/yyyy"));
     }
     // dateFormatter를 지정하지 않았을 때, LocalDateTime 기본 형식은 2011-12-03T10:15:30 이런 모양이 된다.
     // (DateTimeFormatter.ISO_LOCAL_DATE_TIME)
