@@ -17,8 +17,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up JDK 17
-      id: setup-java-17
+    - name: Set up JDK 8, 11, 17
+      id: setup-java-8-11-17
       uses: actions/setup-java@v4
       with:                
         distribution: 'temurin'
@@ -34,12 +34,14 @@ jobs:
           11
           17
 
-    # - uses: cactuslab/maven-toolchains-xml-action@v1
-    #   with:
-    #     toolchains: |
-    #       [
-    #         {"jdkVersion": "17", "jdkHome": "${{ env.JAVA_HOME }}"}
-    #       ]
+    - uses: cactuslab/maven-toolchains-xml-action@v1
+      with:
+        toolchains: |
+          [
+            {"jdkVersion": "8", "jdkHome": "${{ env.JAVA_HOME_8 }}"},
+            {"jdkVersion": "11", "jdkHome": "${{ env.JAVA_HOME_11 }}"},
+            {"jdkVersion": "17", "jdkHome": "${{ env.JAVA_HOME_17 }}"}
+          ]
 
     - name: Build with Maven (struts2-junit5-user-custom-plugin install)
       run: mvn -B install --file pom.xml
