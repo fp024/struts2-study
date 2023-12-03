@@ -34,20 +34,20 @@ jobs:
           11
           17
 
-    - uses: cactuslab/maven-toolchains-xml-action@v1
-      with:
-        toolchains: |
-          [
-            {"jdkVersion": "8", "jdkHome": "${{ env.JAVA_HOME_8_x64 }}"},
-            {"jdkVersion": "11", "jdkHome": "${{ env.JAVA_HOME_11_x64 }}"},
-            {"jdkVersion": "17", "jdkHome": "${{ env.JAVA_HOME_17_x64 }}"}
-          ]
+    # - uses: cactuslab/maven-toolchains-xml-action@v1
+    #   with:
+    #     toolchains: |
+    #       [
+    #         {"jdkVersion": "8", "jdkHome": "${{ env.JAVA_HOME_8_x64 }}"},
+    #         {"jdkVersion": "11", "jdkHome": "${{ env.JAVA_HOME_11_x64 }}"},
+    #         {"jdkVersion": "17", "jdkHome": "${{ env.JAVA_HOME_17_x64 }}"}
+    #       ]
 
     - name: Build with Maven (struts2-junit5-user-custom-plugin install)
-      run: mvn -B install --file pom.xml
+      run: mvn -B install --file pom.xml -t toolchain.xml
 
     - name: Build with Maven (Projects)
-      run: mvn -B install --file struts2-study-parent/pom.xml
+      run: mvn -B install --file struts2-study-parent/pom.xml -t toolchain.xml
 
 #    - name: Publish to GitHub Packages Apache Maven
 #      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
