@@ -22,9 +22,14 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        toolchains: '[{"jdk": {"version": "17", "vendor": "temurin"}}]'
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
+    - uses: cactuslab/maven-toolchains-xml-action@v1
+      with:
+        toolchains: |
+          [
+            {"jdkVersion": "17", "jdkHome": "${{steps.setupJava.outputs.path}}"}
+          ]
 
     - name: Build with Maven (struts2-junit5-user-custom-plugin install)
       run: mvn -B install --file pom.xml
