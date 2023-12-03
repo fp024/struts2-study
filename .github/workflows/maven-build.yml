@@ -38,9 +38,9 @@ jobs:
       with:
         toolchains: |
           [
-            {"jdkVersion": "8", "jdkHome": "${{ env.JAVA_HOME_8 }}"},
-            {"jdkVersion": "11", "jdkHome": "${{ env.JAVA_HOME_11 }}"},
-            {"jdkVersion": "17", "jdkHome": "${{ env.JAVA_HOME_17 }}"}
+            {"jdkVersion": "8", "jdkHome": "${{ env.JAVA_HOME_8_x64 }}"},
+            {"jdkVersion": "11", "jdkHome": "${{ env.JAVA_HOME_11_x64 }}"},
+            {"jdkVersion": "17", "jdkHome": "${{ env.JAVA_HOME_17_x64 }}"}
           ]
 
     - name: Build with Maven (struts2-junit5-user-custom-plugin install)
