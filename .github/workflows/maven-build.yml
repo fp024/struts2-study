@@ -28,7 +28,7 @@ jobs:
       with:
         toolchains: |
           [
-            {"jdkVersion": "17", "jdkHome": "${{JAVA_HOME}}"}
+            {"jdkVersion": "17", "jdkHome": "$JAVA_HOME"}
           ]
 
     - name: Build with Maven (struts2-junit5-user-custom-plugin install)
