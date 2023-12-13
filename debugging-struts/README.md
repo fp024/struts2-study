@@ -1,6 +1,8 @@
 # Struts 디버깅
 
 > 원문 : https://struts.apache.org/getting-started/debugging-struts.html
+>
+> * ✨ Jetty의 ContextPath 설정을 프로젝트 이름 대신에 루트로 하기로해서 스크린샷의 브라우저 URL과 문서 내의 테스트 URL이 다를 수 있는데, 이부분 참고 부탁합니다.
 
 * 소개
 * 구성 플러그인 

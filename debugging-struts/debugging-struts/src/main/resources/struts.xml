@@ -39,8 +39,8 @@
     <default-action-ref name="index" />
 
     <global-results>
-      <result name="error">/error.jsp</result>
-      <result name="securityerror">/securityerror.jsp</result>
+      <result name="error">/WEB-INF/views/error.jsp</result>
+      <result name="securityerror">/WEB-INF/views/securityerror.jsp</result>
     </global-results>
 
     <!-- 전역 예외 매핑 설정 -->
@@ -51,37 +51,41 @@
 
     <!-- 이 액션을 호출하면 특정 예외가 발생하도록 설정 -->
     <action name="causesecurityexception" class="org.fp024.struts2.study.register.action.Register" method="throwSecurityException">
-      <result>/register.jsp</result>
+      <result>/WEB-INF/views/register.jsp</result>
     </action>
 
     <action name="causeexception" class="org.fp024.struts2.study.register.action.Register" method="throwException">
-      <result>/register.jsp</result>
+      <result>/WEB-INF/views/register.jsp</result>
     </action>
 
     <action name="causenullpointerexception" class="org.fp024.struts2.study.register.action.Register" method="throwNullPointerException">
-      <result>/register.jsp</result>
+      <result>/WEB-INF/views/register.jsp</result>
     </action>
 
     <!-- 액션 단위에 예외 매핑을 설정 -->
     <action name="actionspecificexception" class="org.fp024.struts2.study.register.action.Register" method="throwSecurityException">
       <exception-mapping exception="org.fp024.struts2.study.register.exceptions.SecurityBreachException" result="login" />
-      <result>/register.jsp</result>
-      <result name="login">/login.jsp</result>
+      <result>/WEB-INF/views/register.jsp</result>
+      <result name="login">/WEB-INF/views/login.jsp</result>
     </action>
 
 
     <!-- result 노드의 이름이 지정되지 않은 경우 success 값이 기본입니다. -->
     <action name="index">
-      <result>/index.jsp</result>
+      <result>/WEB-INF/views/index.jsp</result>
+    </action>
+
+    <action name="registerForm">
+      <result>/WEB-INF/views/registerForm.jsp</result>
     </action>
 
     <action name="hello" class="org.fp024.struts2.study.helloworld.action.HelloWorldAction" method="execute">
-      <result name="success">/HelloWorld.jsp</result>
+      <result name="success">/WEB-INF/views/HelloWorld.jsp</result>
     </action>
 
     <action name="register" class="org.fp024.struts2.study.register.action.Register" method="execute">
-      <result name="success">/thankyou.jsp</result>
-      <result name="input">/register.jsp</result>
+      <result name="success">/WEB-INF/views/thankyou.jsp</result>
+      <result name="input">/WEB-INF/views/register.jsp</result>
     </action>
   </package>
 
