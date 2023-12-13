@@ -53,7 +53,7 @@ Hello World 튜토리얼에서 `struts.xml` 설정을 보면 다음을 찾을 �
 ```xml
 ...
 <action name="hello" class="org.fp024.struts2.study.helloworld.action.HelloWorldAction" method="execute">
-    <result name="success">/HelloWorld.jsp</result>
+    <result name="success">/WEB-INF/views/HelloWorld.jsp</result>
 </action>
 ...
 ```

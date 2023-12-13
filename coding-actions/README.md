@@ -1,6 +1,8 @@
 # 액션 코딩하기
 
 > 원문 : https://struts.apache.org/getting-started/coding-actions.html
+>
+> * ✨ Jetty의 ContextPath 설정을 프로젝트 이름 대신에 루트로 하기로해서 스크린샷의 브라우저 URL과 문서 내의 테스트 URL이 다를 수 있는데, 이부분 참고 부탁합니다.
 
 * 소개
 * Struts 2 액션 클래스
@@ -25,7 +27,7 @@ Struts 2 액션 코딩에는 다음과 같은 몇가지 부분이 포합됩니�
 
 ```jsp
 <action name="hello" class="org.apache.struts.helloworld.action.HelloWorldAction" method="execute">
-    <result name="success">/HelloWorld.jsp</result>
+    <result name="success">/WEB-INF/views/HelloWorld.jsp</result>
 </action>
 ```
 

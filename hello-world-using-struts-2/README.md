@@ -182,12 +182,12 @@ action 노드를  (action `name="hello"`)  package 노드를 열고 닫는 안�
 
     <package name="basicstruts2" extends="struts-default">
         <action name="index">
-            <result>/index.jsp</result>
+            <result>/WEB-INF/views/index.jsp</result>
         </action>
 		
         <!-- 새로 추가한 action mapping -->
         <action name="hello" class="org.apache.struts.helloworld.action.HelloWorldAction" method="execute">
-            <result name="success">/HelloWorld.jsp</result>
+            <result name="success">/WEB-INF/views/HelloWorld.jsp</result>
         </action>
     </package>
 </struts>
