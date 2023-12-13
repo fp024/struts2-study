@@ -1,6 +1,8 @@
 # 예외 처리
 
 > 원문 : https://struts.apache.org/getting-started/exception-handling.html
+>
+> * ✨ Jetty의 ContextPath 설정을 프로젝트 이름 대신에 루트로 하기로해서 스크린샷의 브라우저 URL과 문서 내의 테스트 URL이 다를 수 있는데, 이부분 참고 부탁합니다.
 
 * 소개
 * 전역 예외 처리
@@ -30,7 +32,7 @@ Struts 2 프레임워크를 사용하면 프레임워크가 잡히지 않은 예
 ```xml
 <global-results>
     <result name="securityerror">/securityerror.jsp</result>
-    <result name="error">/error.jsp</result>
+    <result name="error">/WEB-INF/views/error.jsp</result>
 </global-results>
 
 <global-exception-mappings>
@@ -52,8 +54,8 @@ Struts 2 프레임워크를 사용하면 프레임워크가 잡히지 않은 예
 ```xml
 <action name="actionspecificexception" class="org.apache.struts.register.action.Register" method="throwSecurityException">
    <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="login" />
-   <result>/register.jsp</result>
-   <result name="login">/login.jsp</result>
+   <result>/WEB-INF/views/register.jsp</result>
+   <result name="login">/WEB-INF/views/login.jsp</result>
 </action>
 ```
 
