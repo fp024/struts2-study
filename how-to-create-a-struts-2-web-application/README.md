@@ -1,6 +1,8 @@
 # Struts 2 웹 어플리케이션을 만드는 방법
 
 > 원문 : https://struts.apache.org/getting-started/how-to-create-a-struts2-web-application.html
+>
+> * ✨ Jetty의 ContextPath 설정을 프로젝트 이름 대신에 루트로 하기로해서 스크린샷의 브라우저 URL과 문서 내의 테스트 URL이 다를 수 있는데, 이부분 참고 부탁합니다.
 
 * Java 요구사항
 
@@ -70,7 +72,7 @@ Java IDE에서 표준 Maven 프로젝트 폴더 구조를 따르는 `basic_strut
 
 Maven을 사용하여 애플리케이션을 실행하려면 POM.XML에 JETTY MAVEN-Plugin을 추가하세요.
 
-#### pom.xml  - jetty 플러그인
+#### pom.xml  - jetty 플러그인 
 
 ```xml
 <build>
@@ -98,6 +100,8 @@ Maven을 사용하여 애플리케이션을 실행하려면 POM.XML에 JETTY MAV
 
 위의 플러그인을 사용하면 mvn jetty:run을 사용하여 애플리케이션을 실행할 수 있습니다.
 
+> ✨ 공식 문서는 예전 버전으로 되어있지만, 이 예제 프로젝트는 최신 Jetty 12.x 버전 이상으로 되어있습니다.
+
 ### 스텝2 - index.jsp 추가
 
 다음 단계는 이 웹 애플리케이션에 간단한 index.jsp를 추가하는 것입니다.  `src/main/webapp` 아래에 Basic Struts 2 Application이란 제목의 index.jsp를 만듭니다 - body에는 Welcome To Struts 2! 라는 h1 제목을 추가합니다. 
@@ -120,7 +124,7 @@ Maven을 사용하여 애플리케이션을 실행하려면 POM.XML에 JETTY MAV
 
 `mvn jetty:run`을 실행하여 어플리케이션을 실행합니다.
 
-웹 브라우저에서 http://localhost:8080/basic-struts/index.jsp 로 이동합니다.  다음이 표시되야합니다.
+웹 브라우저에서 http://localhost:8080/index.jsp 로 이동합니다.  다음이 표시되야합니다.
 
 ![struts2_index_jsp](doc-resources/struts2_index_jsp.png)
 
@@ -300,7 +304,7 @@ Struts 2는 XML 구성 파일 또는 Annotation(또는 둘다) 사용하여 URL,
 
     <package name="basicstruts2" extends="struts-default">
         <action name="index">
-            <result>/index.jsp</result>
+            <result>/WEB-INF/views/index.jsp</result>
         </action>
     </package>
 
