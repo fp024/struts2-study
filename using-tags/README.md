@@ -1,6 +1,8 @@
 # 태그 사용하기
 
 > 원문 : https://struts.apache.org/getting-started/using-tags.html
+>
+> * ✨ Jetty의 ContextPath 설정을 프로젝트 이름 대신에 루트로 하기로해서 스크린샷의 브라우저 URL과 문서 내의 테스트 URL이 다를 수 있는데, 이부분 참고 부탁합니다.
 
 * Struts 2 url 태그
 * Struts 2 폼 태그
@@ -237,9 +239,17 @@ HelloWorldAction 클래스의 getMessageStore는 MessageStore 객체를 반환�
     ...
     ```
   
+    * 그런데.. 이게 인터넷 사용기록을 완전히 지우고 하면 다시 나타남.. 
     
+      ```xml
+      <p><a href="<s:url action='hello' encode='UTF-8'/>">Hello World</a></p>
+      ```
+    
+      * `s:url`을 사용한 부분에 위처럼 encode를 지정해주면 확실히 없어지긴 하는데, 이 프로젝트만 추가해두고 나머지는 어떻게 할지 생각을 해보자!
   
 * [x] Struts 2 url 태그
+
 * [x] Struts 2 폼 태그
+
 * [x] Struts 2 프로퍼티 태그
 

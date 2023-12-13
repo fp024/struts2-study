@@ -8,9 +8,9 @@
     </head>
     <body>
         <h1>Welcome To Struts 2!</h1>
-        <p><a href="<s:url action='hello'/>">Hello World</a></p>
+        <p><a href="<s:url action='hello' encode='UTF-8'/>">Hello World</a></p>
 
-        <s:url action="hello" var="helloLink">
+        <s:url action="hello" var="helloLink" encode='UTF-8'>
             <s:param name="userName">Bruce Phillips</s:param>
         </s:url>
 

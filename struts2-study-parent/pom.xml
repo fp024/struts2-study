@@ -91,13 +91,14 @@
       <scope>provided</scope>
     </dependency>
 
-    <!-- jetty가 사용하는 apache-jstl에 디펜던시된 taglibs-standard-impl이 Tomcat 8.5에서도 잘 동작한다. -->
+    <!-- jetty가 사용하는 jetty-ee8-glassfish-jstl에 디펜던시된 tjavax.servlet.jsp.jstl은 Tomcat 9.0에서도 잘 동작한다. -->
     <dependency>
-      <groupId>org.apache.taglibs</groupId>
-      <artifactId>taglibs-standard-impl</artifactId>
-      <version>${apache.taglibs-standard-impl.version}</version>
+      <groupId>org.glassfish.web</groupId>
+      <artifactId>javax.servlet.jsp.jstl</artifactId>
+      <version>${javax.servlet.jsp.jstl.version}</version>
       <scope>runtime</scope>
     </dependency>
+    
   </dependencies>
 
   <build>
@@ -105,8 +106,8 @@
     <plugins>
       <plugin>
         <!-- https://www.eclipse.org/jetty/documentation/jetty-10/programming-guide/index.html#jetty-maven-plugin -->
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-maven-plugin</artifactId>
+        <groupId>org.eclipse.jetty.ee8</groupId>
+        <artifactId>jetty-ee8-maven-plugin</artifactId>
         <version>${jetty.version}</version>
         <configuration>
           <!-- jetty가 forked 모드로 실행될 때만 의미가 있는 것 같다. 일단 설정은 남겨두자. -->
@@ -144,13 +145,13 @@
         </configuration>
         <dependencies>
           <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>apache-jstl</artifactId>
+            <groupId>org.eclipse.jetty.ee8</groupId>
+            <artifactId>jetty-ee8-glassfish-jstl</artifactId>
             <version>${jetty.version}</version>
             <exclusions>
               <exclusion>
-                <groupId>org.apache.taglibs</groupId>
-                <artifactId>taglibs-standard-impl</artifactId>
+                <groupId>org.glassfish.web</groupId>
+                <artifactId>javax.servlet.jsp.jstl</artifactId>
               </exclusion>
             </exclusions>
           </dependency>

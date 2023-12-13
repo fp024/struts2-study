@@ -1,6 +1,8 @@
 # Struts 2 를 사용한 Hello World
 
 > 원문 : https://struts.apache.org/getting-started/hello-world-using-struts2.html
+>
+> * ✨ Jetty의 ContextPath 설정을 프로젝트 이름 대신에 루트로 하기로해서 스크린샷의 브라우저 URL이 다를 수 있는데, 이부분 참고 부탁합니다.
 
 * 설명
 
@@ -225,7 +227,7 @@ Struts url 태그는 hello 액션으로 URL을 생성합니다. hello 액션은 
 
 `mvn jetty:run`을 실행하여 애플리케이션을 실행합니다.
 
-http://localhost:8080/helloworld-struts/index.action URL로 이동하면 다음이 표시됩니다.
+http://localhost:8080/index.action URL로 이동하면 다음이 표시됩니다.
 
 ![helloworld_index_action](doc-resources/helloworld_index_action.png)
 
@@ -237,7 +239,7 @@ Hello World 링크를 클릭하면 HelloWorld.jsp 페이지가 표시됩니다.
 
 ## 코드가 작동하는 방식
 
-브라우저는 URL http://localhost:8080/helloworld/hello.action에 대한 요청을 웹 서버에 보냅니다.
+브라우저는 URL http://localhost:8080/hello.action에 대한 요청을 웹 서버에 보냅니다.
 
 1. 컨테이너는 웹서보로부터 `hello.action`에 대한 요청을 받습니다. `web.xml`로부터 로드된 설정에 따라 컨테이너는`*.action` 요청을 포함하여 모든 요청이 `org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter`로 라우팅되는 것을 찾습니다. `StrutsPrepareAndExecuteFilter`는 프레임워크의 진입점입니다. 
 2. 프레임워크는 "hello"라는 액션 매핑을 찾고 이 매핑이 `HelloWorldAction` 클래스에 해당하는 것을 찾습니다. 프레임워크는 Action을 인스턴스화하고 Action의 `execute` 메서드를 호출합니다.
