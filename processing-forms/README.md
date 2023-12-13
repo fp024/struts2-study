@@ -1,6 +1,8 @@
 # 폼 처리
 
 > 원문 : https://struts.apache.org/getting-started/processing-forms.html
+>
+> * ✨ Jetty의 ContextPath 설정을 프로젝트 이름 대신에 루트로 하기로해서 스크린샷의 브라우저 URL과 문서 내의 테스트 URL이 다를 수 있는데, 이부분 참고 부탁합니다.
 
 * 소개
 * 폼과 Java 모델 클래스
@@ -211,8 +213,12 @@ Struts 2 property 와 url 태그가 기억나지 않는다면 [Struts 2 태그 �
 #### struts.xml에 새로 추가할 action 노드
 
 ```xml
+<action name="registerForm">
+  <result>/WEB-INF/views/register.jsp</result>
+</action>
+
 <action name="register" class="org.apache.struts.register.action.Register" method="execute">
-    <result name="success">/thankyou.jsp</result>
+    <result name="success">/WEB-INF/views/thankyou.jsp</result>
 </action>
 ```
 
@@ -229,12 +235,12 @@ Struts 2 property 와 url 태그가 기억나지 않는다면 [Struts 2 태그 �
 #### register.jsp 링크
 
 ```jsp
-<p><a href="register.jsp">Please register</a> for our prize drawing.</p>
+<p><a href="<s:url action='registerForm'/>">Please register</a> for our prize drawing.</p>
 ```
 
 #### 예제 실행
 
-모든 것이 정확하면 응용프로그램을 실행할 수 있어야합니다. (`mvn jetty:run`) 그리고 웹브라우저에서 이 URL을 열 수 있습니다. `http://localhost:8080/processing-forms-struts/index.action` 해당 페이지에 등록할 수 있는 링크가 있어야합니다. 해당 링크를 클릭하면 `register.jsp` 페이지가 표시되어야합니다.
+모든 것이 정확하면 응용프로그램을 실행할 수 있어야합니다. (`mvn jetty:run`) 그리고 웹브라우저에서 이 URL을 열 수 있습니다. `http://localhost:8080/index.action` 해당 페이지에 등록할 수 있는 링크가 있어야합니다. 해당 링크를 클릭하면 `register.jsp` 페이지가 표시되어야합니다.
 
 ![register-form](doc-resources/register-form.png)
 
@@ -262,3 +268,14 @@ Struts 2 property 와 url 태그가 기억나지 않는다면 [Struts 2 태그 �
 * [x] 결과를 위한 뷰 추가
 * [x] struts.xml에 액션 매핑 만들기
 * [x] register.jsp에 링크 만들기
+
+
+
+---
+
+## 기타
+
+* 모든 JSP를 /WEB-INF/views에 넣으려다보니 뭔가 내맘대로 바꿔야는 부분이 생기는 것 같다. 😅
+
+  나중에 나오는 보안 가이드에서도 jsp를 WEB-INF 밖으로 노출시키지 않는 것을 권장해서 이런식으로 바꾸고는 있는데.. 예제설명을 바꿔야할 부분이 꽤 생긴다..😅
+
