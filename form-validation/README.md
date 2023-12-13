@@ -1,6 +1,8 @@
 # 폼 유효성 검사
 
 > 원문 : https://struts.apache.org/getting-started/form-validation.html
+>
+> * ✨ Jetty의 ContextPath 설정을 프로젝트 이름 대신에 루트로 하기로해서 스크린샷의 브라우저 URL과 문서 내의 테스트 URL이 다를 수 있는데, 이부분 참고 부탁합니다.
 
 * 소개
 * 유효성 검사 메서드 추가하기
