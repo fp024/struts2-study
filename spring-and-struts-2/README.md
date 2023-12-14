@@ -1,6 +1,8 @@
 # 스프링과 Struts 2
 
 > 원문 : https://struts.apache.org/getting-started/spring.html
+>
+> * ✨ Jetty의 ContextPath 설정을 프로젝트 이름 대신에 루트로 하기로해서 스크린샷의 브라우저 URL과 문서 내의 테스트 URL이 다를 수 있는데, 이부분 참고 부탁합니다.
 
 * 소개
 
@@ -136,7 +138,7 @@ public void setEditService(EditService editService) {
 
 ```xml
 <action name="edit" class="editAction" method="input">
-    <result name="input">/edit.jsp</result>
+    <result name="input">/WEB-INF/views/edit.jsp</result>
 </action>
 ```
 
@@ -191,7 +193,7 @@ public void setEditService(EditService editService) {
 
 * [x] 대안 - ActionSupport 클래스 생성을 스프링으로 관리
 
-  * 스프링 설정파일에 component-scan을 설정하고 액션 클래스에 `@Component`, `@Scope("prototype")` 을 붙힌후, struts.xml에서도 빈 id로 설정했는데, 문제없이 잘된다.
+  * 스프링 설정파일에 component-scan을 설정하고 액션 클래스에 `@Component`, `@Scope("prototype")` 을 붙힌 후, struts.xml에서도 빈 id로 설정했는데, 문제없이 잘된다.
   * 테스트 코드에서 확인시에도 프로토타입 동작(빈을 얻을 때마다 새로운 객체 생성)이 정상적인 것을 확인했다.
 
 * [x] 요약
