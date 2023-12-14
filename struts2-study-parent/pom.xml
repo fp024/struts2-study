@@ -65,13 +65,13 @@
     <module>../jasper-reports-tutorial/jasper-reports-with-interceptor</module>
     <!-- 24. JasperReports 튜토리얼 : JasperReports 컴파일을 Servlet의 ContextListener로 처리 (v)-->
     <module>../jasper-reports-tutorial/jasper-reports-with-contextlistener</module>
-    <!-- 25. JSON 튜토리얼 - FlexJSON 예제 -->
+    <!-- 25. JSON 튜토리얼 - FlexJSON 예제 (v) -->
     <module>../json/json-customize-flexjson-struts</module>
-    <!-- 26. JSON 튜토리얼 - Jackson 예제 -->
+    <!-- 26. JSON 튜토리얼 - Jackson 예제 (v) -->
     <module>../json/json-customize-jackson-struts</module>
-    <!-- 27. JSON 튜토리얼 - Struts 2 JSON Plugin 예제 -->
+    <!-- 27. JSON 튜토리얼 - Struts 2 JSON Plugin 예제 (x) -->
     <module>../json/json-struts</module>
-    <!-- 28. 이중 평가 테스트 ( AliasInterceptor ) -->
+    <!-- 28. 이중 평가 테스트 ( AliasInterceptor ) (v) -->
     <module>../struts-double-evaluation-test</module>
   </modules>
 

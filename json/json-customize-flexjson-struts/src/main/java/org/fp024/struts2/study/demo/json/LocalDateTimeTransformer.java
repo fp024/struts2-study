@@ -4,7 +4,6 @@ import flexjson.JSONException;
 import flexjson.ObjectBinder;
 import flexjson.ObjectFactory;
 import flexjson.transformer.AbstractTransformer;
-
 import java.lang.reflect.Type;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -13,6 +12,7 @@ import java.time.temporal.Temporal;
 /** flexjson.transformer.DateTransformer 을 참고해서 변환기를 만들어봤다. */
 public class LocalDateTimeTransformer extends AbstractTransformer implements ObjectFactory {
   private final String dateFormat;
+
   /**
    * DateTransformer에서는 SimpleDateFormat을 ThreadLocal에 넣어서 사용하는 부분이 있었는데,<br>
    * DateTimeFormatter가 thread-safe해서, 멤버 필드로 두고 직접 접근해서 사용해서 해도 될 것 같다.<br>
