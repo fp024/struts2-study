@@ -3,8 +3,7 @@ package org.fp024.struts2.study.edit.action;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.Preparable;
-import com.opensymphony.xwork2.security.DefaultExcludedPatternsChecker;
-import com.opensymphony.xwork2.security.ExcludedPatternsChecker;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -14,8 +13,6 @@ import org.fp024.struts2.study.edit.service.CarModelsService;
 import org.fp024.struts2.study.edit.service.CarModelsServiceHardCoded;
 import org.fp024.struts2.study.edit.service.EditService;
 import org.fp024.struts2.study.edit.service.EditServiceInMemory;
-
-import java.util.List;
 
 /**
  * Person 편집과 관련된 액션을 처리하는 컨트롤러 역할을 합니다.

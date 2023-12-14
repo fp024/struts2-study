@@ -57,7 +57,7 @@
     <module>../http-session/http-session-struts</module>
     <!-- 20. Preparable 인터페이스 (v) -->
     <module>../preparable-interface/preparable-interface-struts</module>
-    <!-- 21. 파라미터 제외 -->
+    <!-- 21. 파라미터 제외 (v) -->
     <module>../exclude-parameters/exclude-parameters-struts</module>
     <!-- 22. JasperReports 튜토리얼 : JasperReports 컴파일을 Spring Component Bean으로 처리 (x)-->
     <module>../jasper-reports-tutorial/jasper-reports-struts</module>

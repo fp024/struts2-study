@@ -27,16 +27,16 @@
 
     <!-- result 노드의 이름이 지정되지 않은 경우 success 값이 기본입니다. -->
     <action name="index">
-      <result>/index.jsp</result>
+      <result>/WEB-INF/views/index.jsp</result>
     </action>
 
     <action name="edit" class="org.fp024.struts2.study.edit.action.EditAction" method="input">
-      <result name="input">/edit.jsp</result>
+      <result name="input">/WEB-INF/views/edit.jsp</result>
     </action>
 
     <action name="save" class="org.fp024.struts2.study.edit.action.EditAction" method="execute">
-      <result name="input">/edit.jsp</result>
-      <result name="success">/thankyou.jsp</result>
+      <result name="input">/WEB-INF/views/edit.jsp</result>
+      <result name="success">/WEB-INF/views/thankyou.jsp</result>
     </action>
 
   </package>
