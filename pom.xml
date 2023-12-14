@@ -23,10 +23,12 @@
     <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
     <javax.servlet.jsp-api.version>2.3.3</javax.servlet.jsp-api.version>
     
-
-
+    
     <struts2.version>6.3.0.2</struts2.version>
     <spring.platformVersion>5.3.31</spring.platformVersion>
+    
+    <struts2-junit5-user-custom-plugin.version>${project.version}</struts2-junit5-user-custom-plugin.version>
+    
     
     <log4j2.version>2.22.0</log4j2.version>
     

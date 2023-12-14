@@ -83,7 +83,7 @@
     <dependency>
       <groupId>org.fp024.struts2.study</groupId>
       <artifactId>struts2-junit5-user-custom-plugin</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
+      <version>${struts2-junit5-user-custom-plugin.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
