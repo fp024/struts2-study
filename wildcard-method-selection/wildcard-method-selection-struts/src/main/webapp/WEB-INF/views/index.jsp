@@ -1,1 +1,3 @@
-<% response.sendRedirect("/Person.action"); %>
+<% 
+  response.sendRedirect(pageContext.getServletContext().getContextPath() + "/Person.action"); 
+%>
