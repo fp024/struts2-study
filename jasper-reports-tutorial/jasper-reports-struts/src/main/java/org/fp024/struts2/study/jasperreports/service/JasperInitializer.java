@@ -12,11 +12,13 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class JasperInitializer {
-  private final String compiledJapserFilePath;
+  private final String compiledJasperFilePath;
 
   public JasperInitializer(ServletContext servletContext) {
-    this.compiledJapserFilePath =
+    this.compiledJasperFilePath =
         servletContext.getRealPath("/WEB-INF/jasper/our_compiled_template.jasper");
+    LOGGER.info(
+        "### {}", servletContext.getRealPath("/WEB-INF/jasper/our_compiled_template.jasper"));
   }
 
   @PostConstruct
@@ -31,7 +33,7 @@ public class JasperInitializer {
                     throw new IllegalStateException("our_jasper_template.jrxml File not found.");
                   })
               .getFile(),
-          compiledJapserFilePath);
+          compiledJasperFilePath);
       LOGGER.info("=== End JasperReport compile ===");
     } catch (Exception e) {
       throw new IllegalStateException("Failed to compile, " + e.getMessage(), e);
@@ -40,7 +42,7 @@ public class JasperInitializer {
 
   @PreDestroy
   public void destroy() throws Exception {
-    File templteFile = new File(compiledJapserFilePath);
+    File templteFile = new File(compiledJasperFilePath);
     LOGGER.info(
         "=== Compiled JasperReport file ({}) delete result: {} ===",
         templteFile.getAbsolutePath(),

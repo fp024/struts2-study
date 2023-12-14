@@ -14,6 +14,9 @@ public class JasperReportsContextListener implements ServletContextListener {
     deleteCompiledJasperFile(sce);
     try {
       LOGGER.info("=== Start JasperReport compile ===");
+      LOGGER.info(
+          "### {}",
+          sce.getServletContext().getRealPath("/WEB-INF/jasper/our_compiled_template.jasper"));
       JasperCompileManager.compileReportToFile(
           Optional.ofNullable(
                   JasperReportsContextListener.class.getResource(
