@@ -26,46 +26,12 @@
     <groupId>org.fp024.struts2.study</groupId>
     <artifactId>struts2-study</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <relativePath>../../</relativePath>
+    <relativePath>../../pom.xml</relativePath>
   </parent>
 
   <artifactId>struts2-junit5-user-custom-plugin</artifactId>
   <packaging>jar</packaging>
   <name>Struts 2 JUnit 5 User Custom Plugin</name>
-  
-  <!-- struts2-spring-plugin 에 의해 의존성이 걸리는 Spring 모듈들의 버전관리를 위해 추가 -->
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.apache.struts</groupId>
-        <artifactId>struts2-bom</artifactId>
-        <version>${struts2.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-framework-bom</artifactId>
-        <version>${spring.platformVersion}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-bom</artifactId>
-        <version>${log4j2.version}</version>
-        <scope>import</scope>
-        <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>org.junit</groupId>
-        <artifactId>junit-bom</artifactId>
-        <version>${junit.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
   <dependencies>
     <!-- Apache Log4j SLF4J Binding  -->

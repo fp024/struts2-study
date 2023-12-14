@@ -26,26 +26,7 @@
     <jetty-exclude-jstl-artifact-id>${jetty10-exclude-jstl-artifact-id}</jetty-exclude-jstl-artifact-id>
     <jetty-exclude-jstl-version>${jetty10-exclude-jstl-version}</jetty-exclude-jstl-version>
   </properties>
-  
-  <!-- 
-    struts2-spring-plugin 에서 적절한 Spring 버전을 가져오긴하지만,
-    이 테스트 프로젝트에서는 Spring 버전을 최신으로 관리해보기 위해서 BOM 프로젝트를 추가했습니다.
-  -->
-  <!--
-     Although it gets the appropriate Spring version from struts2-spring-plugin ,
-     In this test project, a BOM project was added to keep the Spring version up to date.
-  -->
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-framework-bom</artifactId>
-        <version>${spring.platformVersion}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>org.apache.struts</groupId>

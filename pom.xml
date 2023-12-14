@@ -109,6 +109,13 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-framework-bom</artifactId>
+        <version>${spring.platformVersion}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
         <groupId>org.apache.struts</groupId>
         <artifactId>struts2-bom</artifactId>
         <version>${struts2.version}</version>
