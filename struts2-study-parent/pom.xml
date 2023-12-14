@@ -55,7 +55,7 @@
     <module>../unit-testing/unit-testing-struts</module>
     <!-- 19. HTTP 세션 (v) -->
     <module>../http-session/http-session-struts</module>
-    <!-- 20. Preparable 인터페이스 -->
+    <!-- 20. Preparable 인터페이스 (v) -->
     <module>../preparable-interface/preparable-interface-struts</module>
     <!-- 21. 파라미터 제외 -->
     <module>../exclude-parameters/exclude-parameters-struts</module>
