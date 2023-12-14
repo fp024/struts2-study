@@ -40,13 +40,13 @@
     
     <!-- result 노드의 이름이 지정되지 않은 경우 success 값이 기본입니다. -->
     <action name="index">
-      <result>/index.jsp</result>
+      <result>/WEB-INF/views/index.jsp</result>
     </action>
 
     <!-- URL이 hello.action이면 HelloWorldAction 클래스의 execute 메서드를 호출합니다.
     execute 메서드에 의해 반환된 result가 success 이면 HelloWorld.jsp를 렌더링합니다. -->
     <action name="hello" class="helloWorldAction" method="execute">
-      <result name="success">/HelloWorld.jsp</result>
+      <result name="success">/WEB-INF/views/HelloWorld.jsp</result>
     </action>
   </package>
 </struts>

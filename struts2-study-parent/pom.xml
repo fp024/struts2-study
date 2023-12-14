@@ -53,7 +53,7 @@
     <module>../introducing-interceptors/interceptors-struts</module>
     <!-- 18. 단위 테스트 (v) -->
     <module>../unit-testing/unit-testing-struts</module>
-    <!-- 19. HTTP 세션 -->
+    <!-- 19. HTTP 세션 (v) -->
     <module>../http-session/http-session-struts</module>
     <!-- 20. Preparable 인터페이스 -->
     <module>../preparable-interface/preparable-interface-struts</module>
