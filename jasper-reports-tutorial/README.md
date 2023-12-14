@@ -520,3 +520,37 @@ Jetty 12 에서는 null을 반환해서 제대로 할 수 가 없다.  Tomcat 9,
 
 이 문제 관련해서 단순 예제를 만들어서 Jetty Github에 문의글 올려봐야겠다. 😅
 
+
+
+그리고 실행 관련해서 `jetty10` 이라는 프로필로 상위에 올렸다.
+
+#### Jetty 10 실행
+
+```sh
+mvn clean jetty:run -Pjetty10
+```
+
+#### Jetty 12 실행
+
+```sh
+mvn clean jetty:run
+```
+
+> Maven에서 상위 POM에 설정된 특정 profile을 하위 폼에서 default로 실행하게 하는 구문이 있으면 좋은데.. 그런 것은 없는 것 같다. 
+>
+> 하위 프로젝트 실행시 커멘드라인으로 -P 옵션 붙여서 프로필을 지정해 줄 수 밖에 없음.
+
+
+
+그리고 jasper-reports-with-interceptor도 다시 테스트 해보니 이것도 Jetty 12버전으로 하면 realPath 경로를 못찾는다..😅
+
+Jetty 10으로 실행해야 문제가 없음.
+
+
+
+템플릿 생성 경로를 서버 실행 루트 이하의 `WEB-INF` 이하로 컴파일된 템플릿 생성 경로를 둬서 그렇기도한데..
+
+`${user.home}/jasper-templates-temp`  이란 경로생성해서 하는 것으로 바꿀까? 😅 나중에 생각을 해보자..
+
+
+

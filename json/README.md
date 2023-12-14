@@ -396,3 +396,31 @@ Embedded Jetty가 운영환경 기본 인코딩으로 response 에 Character Enc
 
 그래도 통합되지 않은 상태라면, Spring의 CharacterEncodingFilter 를 사용하기 위해서, spring-web, spring-context 의 디펜던시를 pom.xml에 정의할 필요가 있고, 이것에 연관되어 의존되는 spring-core, spring-aop 등등 덩달아 의존되는 것이  많아서 이때는 사용자 정의 필터를 추가해서 처리 하는 것이 나을 것 같다.
 
+
+
+---
+
+## 기타
+
+### 2023-12-15
+
+Jetty 12 가 Default Servlet 처리가 바로안되서 
+
+`http://localhost:8080/consume.html` 이 경로가 접근이 안된다고 생각했는데.. 지금은 또 된다.. 뭔가 이유를 모르겠음..😅
+
+일단 프로필을 상위 POM에 작성해서 다음과 같이 실행하게 했다.
+
+#### Jetty 12 실행
+
+```sh
+mvn clean jetty:run
+```
+
+#### Jetty 10 실행
+
+```sh
+mvn clean jetty:run -Pjetty10
+```
+
+
+
