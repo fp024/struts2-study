@@ -37,9 +37,9 @@
     <module>../debugging-struts/debugging-struts</module>
     <!-- 10. 폼 테그 (v)-->
     <module>../form-tags/form-tags-struts</module>
-    <!-- 11. XML을 사용하여 폼 검증 -->
+    <!-- 11. XML을 사용하여 폼 검증 (v) -->
     <module>../form-validation-using-xml/form-xml-validation-struts</module>
-    <!-- 12. 제어 테그 -->
+    <!-- 12. 제어 테그 (v) -->
     <module>../control-tags/control-tags-struts</module>
     <!-- 13. 와일드카드 메서드 선택 -->
     <module>../wildcard-method-selection/wildcard-method-selection-struts</module>

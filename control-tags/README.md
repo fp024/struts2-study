@@ -1,6 +1,8 @@
 # 제어 태그
 
 > 원문 : https://struts.apache.org/getting-started/control-tags.html
+>
+> * ✨ Jetty의 ContextPath 설정을 프로젝트 이름 대신에 루트로 하기로해서 스크린샷의 브라우저 URL과 문서 내의 테스트 URL이 다를 수 있는데, 이부분 참고 부탁합니다.
 
 * 소개
 * Struts 2 if 태그
@@ -108,7 +110,7 @@ Struts 2 iterator 태그에는 iterator 태그가 컬렉션의 일부에 대해�
 
 * 변경사항
   * 프로젝트명: [control-tags-struts](control-tags-struts)
-  * Hancrest 라이브러리 추가한 김에 단정문을 assertThat으로 바꿔봤는데, 뭔가 읽기 편해진 것 같다. 😁
+  * Hamcrest 라이브러리 추가한 김에 단정문을 assertThat으로 바꿔봤는데, 뭔가 읽기 편해진 것 같다. 😁
 * [x] 소개
 * [x] Struts 2 if 태그
 * [x] Struts iterator 태그
