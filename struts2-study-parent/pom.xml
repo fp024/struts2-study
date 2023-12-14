@@ -43,7 +43,7 @@
     <module>../control-tags/control-tags-struts</module>
     <!-- 13. 와일드카드 메서드 선택 (v) -->
     <module>../wildcard-method-selection/wildcard-method-selection-struts</module>
-    <!-- 14. 테마 -->
+    <!-- 14. 테마 (v) -->
     <module>../themes/themes-struts</module>
     <!-- 15. 스프링과 Struts 2 -->
     <module>../spring-and-struts-2/spring-struts</module>

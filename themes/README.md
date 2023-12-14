@@ -1,6 +1,8 @@
 # 테마
 
 > 원문 : https://struts.apache.org/getting-started/themes.html
+>
+> * ✨ Jetty의 ContextPath 설정을 프로젝트 이름 대신에 루트로 하기로해서 스크린샷의 브라우저 URL과 문서 내의 테스트 URL이 다를 수 있는데, 이부분 참고 부탁합니다.
 
 * 소개
 * Struts 2가 사용할 테마 지정하기
@@ -179,3 +181,36 @@ Struts 2 테마를 사용하는 방법과 이를 무시하는 방법에 대해 �
 * [x] Struts 2 태그가 사용하는 CSS 지정하기
 * [x] Struts 2 태그에 자신만의 테마 생성 및 적용하기 
 * [x] 요약
+
+  
+
+---
+
+## 기타
+
+### Struts 2.5.33까지는 괜찮은데.. 6.3.0.2에서는 FreeMarker 템플릿 오류가 발생한다. (해결함)
+
+그동안 JUnit 테스트만 돌리고 실제 서버에 실행해서 화면을 확인하지 않다보니... 몰랐던 것 같다.
+
+```
+FreeMarker template error (HTML_DEBUG mode; use RETHROW in production!)
+
+Template inclusion failed (for parameter value "/template/KUTheme_simple/checkboxlist.ftl"):
+Syntax error in template "template/KUTheme_simple/checkboxlist.ftl" in line 16, column 56:
+Using ?html (legacy escaping) is not allowed when auto-escaping is on with a markup output format (HTML), to avoid double-escaping mistakes.
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #include "/${parameters.templateDir}/...  [in template "template/KUTheme/checkboxlist.ftl" at line 2, column 1]
+----
+```
+
+#### `?html`과 `?esc` 의 차이점
+
+- `?html`은 레거시 이스케이핑 방법으로, HTML에서 특수 문자(`<`, `>`, `&`, `"`, `'`)를 안전하게 이스케이핑한다. 이 방법은 자동 이스케이핑이 켜져 있는 상태에서는 사용할 수 없다.
+- `?esc`는 최신의 이스케이핑 방법으로, 템플릿의 출력 형식에 따라 적절한 이스케이핑을 적용한다. 
+  예를 들어, 출력 형식이 HTML인 경우, `?esc`는 `?html`과 동일한 이스케이핑을 적용하지만, 출력 형식이 XML이나 JSON인 경우, `?esc`는 해당 형식에 맞는 이스케이핑을 적용한다.
+
+결국은 checkboxlist.ftl 파일 안의 `?html`을 `?esc`로 바꿔주기만 하면 되었다.
+
+확인해보니 위에 스샷 찍은대로 잘 나옴.
