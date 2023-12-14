@@ -16,11 +16,7 @@
     
     <!-- result 노드의 이름이 지정되지 않은 경우 success 값이 기본입니다. -->
     <action name="index">
-      <result>/index.jsp</result>
-    </action>
-
-    <action name="register_input" class="registerAction" method="input">
-      <result name="input">register.jsp</result>
+      <result>/WEB-INF/views/index.jsp</result>
     </action>
 
     <!--
@@ -28,14 +24,14 @@
       예를 들어 createPerson 작업은 PersonAction 클래스에서 create라는 메서드를 호출합니다.
     -->
     <action name="*Person" class="org.fp024.struts2.study.wildcardmethod.action.PersonAction" method="{1}">
-      <result name="success">view.jsp</result>
-      <result name="input">input.jsp</result>
+      <result name="success">/WEB-INF/views/view.jsp</result>
+      <result name="input">/WEB-INF/views/input.jsp</result>
       <allowed-methods>create,edit,saveOrUpdate,delete</allowed-methods>
     </action>
 
     <action name="person!*" class="org.fp024.struts2.study.wildcardmethod.action.PersonAction" method="run{1}This">
-      <result name="success">view.jsp</result>
-      <result name="input">input.jsp</result>
+      <result name="success">/WEB-INF/views/view.jsp</result>
+      <result name="input">/WEB-INF/views/input.jsp</result>
       <allowed-methods>runCreateThis</allowed-methods>
     </action>
 

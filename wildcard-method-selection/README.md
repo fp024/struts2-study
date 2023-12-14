@@ -1,6 +1,8 @@
 # 와일드카드 메서드 선택
 
 > 원문 : https://struts.apache.org/getting-started/wildcard-method-selection.html
+>
+> * ✨ Jetty의 ContextPath 설정을 프로젝트 이름 대신에 루트로 하기로해서 스크린샷의 브라우저 URL과 문서 내의 테스트 URL이 다를 수 있는데, 이부분 참고 부탁합니다.
 
 * 소개
 * 예제 애플리케이션
@@ -71,16 +73,16 @@ Struts 2 [사용자 메일링](http://struts.apache.org/mail.html) 리스트는 
 
 예를 들어 아래 URL은 위의 액션 매핑에 의해 처리되고 `PersonAction` 클래스의 `create` 메서드가 호출됩니다. 
 
-* `http://localhost:8080/wildcard-method-selection/createPerson.action` 
+* `http://localhost:8080/createPerson.action` 
 
 아래 URL 은  `PersonAction` 클래스의 `delete` 메서드가 호출되도록 합니다. 
 
-* `http://localhost:8080/wildcard-method-selection/deletePerson.action`
+* `http://localhost:8080/deletePerson.action`
 
 Person 앞에 아무것도 없는 URL이 있으면 어떻게 될까요? 
 아래 URL과 같이 Person 앞에 값이 없으면 Struts 2 프레임워크는 `PersonAction` 클래스의 `execute` 메서드를 호출합니다. 
 
-* `http://localhost:8080/wildcard-method-selection/Person.action` 
+* `http://localhost:8080/Person.action` 
 
 
 

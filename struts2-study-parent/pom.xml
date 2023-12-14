@@ -41,7 +41,7 @@
     <module>../form-validation-using-xml/form-xml-validation-struts</module>
     <!-- 12. 제어 테그 (v) -->
     <module>../control-tags/control-tags-struts</module>
-    <!-- 13. 와일드카드 메서드 선택 -->
+    <!-- 13. 와일드카드 메서드 선택 (v) -->
     <module>../wildcard-method-selection/wildcard-method-selection-struts</module>
     <!-- 14. 테마 -->
     <module>../themes/themes-struts</module>
