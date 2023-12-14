@@ -33,7 +33,7 @@ jobs:
     - name: Build with Maven (struts2-junit5-user-custom-plugin install)
       run: mvn -B clean install --file pom.xml -t toolchains.xml
 
-    - name: Build with Maven (Projects)
+    - name: Build with Maven (all projects build test)
       run: mvn -B clean test --file struts2-study-parent/pom.xml -t toolchains.xml
 
 #    - name: Publish to GitHub Packages Apache Maven
