@@ -49,7 +49,7 @@
     <module>../spring-and-struts-2/spring-struts</module>
     <!-- 16. 어노테이션 (v) -->
     <module>../annotations/annotations-struts</module>
-    <!-- 17. 인터셉터 입문 -->
+    <!-- 17. 인터셉터 입문 (v) -->
     <module>../introducing-interceptors/interceptors-struts</module>
     <!-- 18. 단위 테스트 -->
     <module>../unit-testing/unit-testing-struts</module>
