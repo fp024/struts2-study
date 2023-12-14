@@ -468,3 +468,55 @@ jasperreports 버전을 6.18.1을 사용하고 있는데, 잘못된 경고 로�
 
 ![jasper-report](doc-resources/jasper-report.png)
 
+
+
+---
+
+## 기타
+
+### ✨ getRealPath()가 null을 반환하는 문제
+
+Spring이나 ServletContextListener를 활용해서 getRealPath() 얻어오는 부분이 있는데...
+
+Jetty 12 에서는 null을 반환해서 제대로 할 수 가 없다.  Tomcat 9, Jetty 10에서는 문제가 없던 부분임.
+
+* Spring의 ServietContext 주입 활용
+
+  ```java
+  @Component
+  @Slf4j
+  public class JasperInitializer {
+    private final String compiledJapserFilePath;
+  
+    public JasperInitializer(ServletContext servletContext) {
+      this.compiledJapserFilePath =
+          servletContext.getRealPath("/WEB-INF/jasper/our_compiled_template.jasper");
+    }
+    ...
+  ```
+
+* ServletContextListener 활용
+
+  ```java
+    @Override
+    public void contextInitialized(ServletContextEvent sce) {
+      ...  
+      sce.getServletContext().getRealPath("/WEB-INF/jasper/our_compiled_template.jasper")
+    }  
+  ```
+
+위의 두 경우 모두 getRealPath()가 null을 반환함.
+
+그래서 일단  [jasper-reports-struts](jasper-reports-struts) , [jasper-reports-with-contextlistener](jasper-reports-with-contextlistener) 이 두개 예제는 Jetty 10을 유지했다.
+
+그런데 Struts 인터셉터를 활용해서 인터셉터 메서드 내에서 `ServletActionContext.getServletContext()` 를 통해 얻은 reahPath 값은 null이 아니였다.
+
+```java
+ ServletActionContext.getServletContext()
+            .getRealPath("/WEB-INF/jasper/our_compiled_template.jasper");
+```
+
+ [jasper-reports-with-interceptor](jasper-reports-with-interceptor)  이 프로젝트는 Jetty 12를 사용하기로 했다.
+
+이 문제 관련해서 단순 예제를 만들어서 Jetty Github에 문의글 올려봐야겠다. 😅
+

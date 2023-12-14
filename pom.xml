@@ -23,8 +23,7 @@
     <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
     <javax.servlet.jsp-api.version>2.3.3</javax.servlet.jsp-api.version>
     
-    <!-- https://mvnrepository.com/artifact/org.glassfish.web/javax.servlet.jsp.jstl -->
-    <javax.servlet.jsp.jstl.version>1.2.5</javax.servlet.jsp.jstl.version>
+
 
     <struts2.version>6.3.0.2</struts2.version>
     <spring.platformVersion>5.3.31</spring.platformVersion>
@@ -57,7 +56,32 @@
     <!-- struts2-convention-plugin에서 Java 17 바이트 코드 해석을 못해서, 버전을 올렸다. -->
     <asm.version>9.6</asm.version>
 
+
     <jetty.version>12.0.4</jetty.version>
+    <jetty-plugin-group-id>org.eclipse.jetty.ee8</jetty-plugin-group-id>
+    <jetty-plugin-artifact-id>jetty-ee8-maven-plugin</jetty-plugin-artifact-id>
+    
+    <jetty-root-jstl-group-id>org.eclipse.jetty.ee8</jetty-root-jstl-group-id>
+    <jetty-root-jstl-artifact-id>jetty-ee8-glassfish-jstl</jetty-root-jstl-artifact-id>
+    
+    <jetty-exclude-jstl-group-id>org.glassfish.web</jetty-exclude-jstl-group-id>
+    <jetty-exclude-jstl-artifact-id>javax.servlet.jsp.jstl</jetty-exclude-jstl-artifact-id>
+    <!-- https://mvnrepository.com/artifact/org.glassfish.web/javax.servlet.jsp.jstl -->
+    <jetty-exclude-jstl-version>1.2.5</jetty-exclude-jstl-version>
+
+
+    <jetty10.version>10.0.18</jetty10.version>
+    <jetty10-plugin-group-id>org.eclipse.jetty</jetty10-plugin-group-id>
+    <jetty10-plugin-artifact-id>jetty-maven-plugin</jetty10-plugin-artifact-id>
+    
+    <jetty10-root-jstl-group-id>org.eclipse.jetty</jetty10-root-jstl-group-id>
+    <jetty10-root-jstl-artifact-id>apache-jstl</jetty10-root-jstl-artifact-id>
+    
+    <jetty10-exclude-jstl-group-id>org.apache.taglibs</jetty10-exclude-jstl-group-id>
+    <jetty10-exclude-jstl-artifact-id>taglibs-standard-impl</jetty10-exclude-jstl-artifact-id>
+    <jetty10-exclude-jstl-version>1.2.5</jetty10-exclude-jstl-version>
+    
+
     <!-- <jettyContextPath>/${project.build.finalName}</jettyContextPath>-->
     <!-- 예제 프로젝트로서 개별 실행하므로 경로를 ContextPath로 나눌 필요는 없다. -->
     <jettyContextPath>/</jettyContextPath>

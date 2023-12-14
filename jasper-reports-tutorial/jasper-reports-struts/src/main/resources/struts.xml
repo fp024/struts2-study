@@ -11,7 +11,7 @@
     <default-action-ref name="index"/>
     <!-- result 노드의 이름이 지정되지 않은 경우 success 값이 기본입니다. -->
     <action name="index">
-      <result>/index.jsp</result>
+      <result>/WEB-INF/views/index.jsp</result>
     </action>
     <action name="myJasperTest" class="org.fp024.struts2.study.jasperreports.action.JasperAction">
       <result name="success" type="jasper">

@@ -11,10 +11,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-public class JapserInitializer {
+public class JasperInitializer {
   private final String compiledJapserFilePath;
 
-  public JapserInitializer(ServletContext servletContext) {
+  public JasperInitializer(ServletContext servletContext) {
     this.compiledJapserFilePath =
         servletContext.getRealPath("/WEB-INF/jasper/our_compiled_template.jasper");
   }
@@ -25,7 +25,7 @@ public class JapserInitializer {
       LOGGER.info("=== Start JasperReport compile ===");
       JasperCompileManager.compileReportToFile(
           Optional.ofNullable(
-                  JapserInitializer.class.getResource("/jasper/our_jasper_template.jrxml"))
+                  JasperInitializer.class.getResource("/jasper/our_jasper_template.jrxml"))
               .orElseThrow(
                   () -> {
                     throw new IllegalStateException("our_jasper_template.jrxml File not found.");

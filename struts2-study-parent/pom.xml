@@ -15,27 +15,27 @@
   <artifactId>struts2-study-parent</artifactId>
   <packaging>pom</packaging>
 
-  <!-- module에도 상대경로 접근 방식으로 접근할 수 있다.-->
+  <!-- module에도 상대 경로 접근 방식으로 접근할 수 있다.-->
   <modules>
-    <!-- 1. Struts 2 웹 어플리케이션을 만드는 방법 -->
+    <!-- 1. Struts 2 웹 어플리케이션을 만드는 방법 (v)-->
     <module>../how-to-create-a-struts-2-web-application/basic-struts</module>
-    <!-- 2. Struts 2를 사용한 Hello World -->
+    <!-- 2. Struts 2를 사용한 Hello World (v)-->
     <module>../hello-world-using-struts-2/helloworld-struts</module>
-    <!-- 3. 태그 사용하기 -->
+    <!-- 3. 태그 사용하기 (v)-->
     <module>../using-tags/using-tags-struts</module>
-    <!-- 4. 액션 코딩하기 -->
+    <!-- 4. 액션 코딩하기 (v)-->
     <module>../coding-actions/coding-actions-struts</module>
-    <!-- 5. 폼 처리 -->
+    <!-- 5. 폼 처리 (v)-->
     <module>../processing-forms/processing-forms-struts</module>
-    <!-- 6. 폼 유효성 검사 -->
+    <!-- 6. 폼 유효성 검사 (v)-->
     <module>../form-validation/form-validation-struts</module>
-    <!-- 7. 메시지 리소스 파일 -->
+    <!-- 7. 메시지 리소스 파일 (v)-->
     <module>../message-resource-files/message-resource-struts</module>
-    <!-- 8. 예외 처리 -->
+    <!-- 8. 예외 처리 (v)-->
     <module>../exception-handling/exception-handling-struts</module>
-    <!-- 9. Struts 디버깅 -->
+    <!-- 9. Struts 디버깅 (v)-->
     <module>../debugging-struts/debugging-struts</module>
-    <!-- 10. 폼 테그 -->
+    <!-- 10. 폼 테그 (v)-->
     <module>../form-tags/form-tags-struts</module>
     <!-- 11. XML을 사용하여 폼 검증 -->
     <module>../form-validation-using-xml/form-xml-validation-struts</module>
@@ -59,11 +59,11 @@
     <module>../preparable-interface/preparable-interface-struts</module>
     <!-- 21. 파라미터 제외 -->
     <module>../exclude-parameters/exclude-parameters-struts</module>
-    <!-- 22. JasperReports 튜토리얼 : JasperReports 컴파일을 Spring Component Bean으로 처리-->
+    <!-- 22. JasperReports 튜토리얼 : JasperReports 컴파일을 Spring Component Bean으로 처리 (x)-->
     <module>../jasper-reports-tutorial/jasper-reports-struts</module>
-    <!-- 23. JasperReports 튜토리얼 : JasperReports 컴파일을 Struts 인터셉터로 처리 -->
+    <!-- 23. JasperReports 튜토리얼 : JasperReports 컴파일을 Struts 인터셉터로 처리 (x)-->
     <module>../jasper-reports-tutorial/jasper-reports-with-interceptor</module>
-    <!-- 24. JasperReports 튜토리얼 : JasperReports 컴파일을 Servlet의 ContextListener로 처리 -->
+    <!-- 24. JasperReports 튜토리얼 : JasperReports 컴파일을 Servlet의 ContextListener로 처리 (v)-->
     <module>../jasper-reports-tutorial/jasper-reports-with-contextlistener</module>
     <!-- 25. JSON 튜토리얼 - FlexJSON 예제 -->
     <module>../json/json-customize-flexjson-struts</module>
@@ -91,23 +91,24 @@
       <scope>provided</scope>
     </dependency>
 
-    <!-- jetty가 사용하는 jetty-ee8-glassfish-jstl에 디펜던시된 tjavax.servlet.jsp.jstl은 Tomcat 9.0에서도 잘 동작한다. -->
     <dependency>
-      <groupId>org.glassfish.web</groupId>
-      <artifactId>javax.servlet.jsp.jstl</artifactId>
-      <version>${javax.servlet.jsp.jstl.version}</version>
+      <groupId>${jetty-exclude-jstl-group-id}</groupId>
+      <artifactId>${jetty-exclude-jstl-artifact-id}</artifactId>
+      <version>${jetty-exclude-jstl-version}</version>
       <scope>runtime</scope>
     </dependency>
     
   </dependencies>
 
+
   <build>
     <finalName>${project.artifactId}</finalName>    
     <plugins>
       <plugin>
-        <!-- https://www.eclipse.org/jetty/documentation/jetty-10/programming-guide/index.html#jetty-maven-plugin -->
-        <groupId>org.eclipse.jetty.ee8</groupId>
-        <artifactId>jetty-ee8-maven-plugin</artifactId>
+        <!-- https://eclipse.dev/jetty/documentation/jetty-10/programming-guide/index.html#jetty-maven-plugin -->
+        <!-- https://eclipse.dev/jetty/documentation/jetty-12/programming-guide/index.html#jetty-maven-plugin -->
+        <groupId>${jetty-plugin-group-id}</groupId>
+        <artifactId>${jetty-plugin-artifact-id}</artifactId>
         <version>${jetty.version}</version>
         <configuration>
           <!-- jetty가 forked 모드로 실행될 때만 의미가 있는 것 같다. 일단 설정은 남겨두자. -->
@@ -123,12 +124,6 @@
           <deployMode>EMBED</deployMode>
           <stopKey>CTRL+C</stopKey>
           <stopPort>8999</stopPort>
-          <!--
-              Spring 에서만 Jetty의 자동반영-재시작이 실패하는 줄 알았더니...
-              Struts 2도 StrutsPrepareAndExecuteFilter을 정상적으로 못 읽어와서 Jetty의 자동반영-재시작이 실패한다.
-              오류 패턴이 Spring에서 봤던것과 같다. (Spring은 ContextLoaderListener 를 정상적으로 못 읽음)
-              -1로 설정하여 이 기능을 꺼놓도록 하자!
-          -->
           <scan>${jettyAutoDeploy}</scan>
           <scanTargetPatterns>
             <scanTargetPattern>
@@ -145,13 +140,13 @@
         </configuration>
         <dependencies>
           <dependency>
-            <groupId>org.eclipse.jetty.ee8</groupId>
-            <artifactId>jetty-ee8-glassfish-jstl</artifactId>
+            <groupId>${jetty-root-jstl-group-id}</groupId>
+            <artifactId>${jetty-root-jstl-artifact-id}</artifactId>
             <version>${jetty.version}</version>
             <exclusions>
               <exclusion>
-                <groupId>org.glassfish.web</groupId>
-                <artifactId>javax.servlet.jsp.jstl</artifactId>
+                <groupId>${jetty-exclude-jstl-group-id}</groupId>
+                <artifactId>${jetty-exclude-jstl-artifact-id}</artifactId>
               </exclusion>
             </exclusions>
           </dependency>

@@ -14,6 +14,19 @@
   <name>${project.artifactId} - Struts 2 Study Maven Webapp</name>
   <url>https://github.com/fp024/struts2-study/tree/master/jasper-reports-tutorial</url>
   
+  <properties>
+    <jetty.version>${jetty10.version}</jetty.version>
+    <jetty-plugin-group-id>${jetty10-plugin-group-id}</jetty-plugin-group-id>
+    <jetty-plugin-artifact-id>${jetty10-plugin-artifact-id}</jetty-plugin-artifact-id>
+    
+    <jetty-root-jstl-group-id>${jetty10-root-jstl-group-id}</jetty-root-jstl-group-id>
+    <jetty-root-jstl-artifact-id>apache-jstl</jetty-root-jstl-artifact-id>
+    
+    <jetty-exclude-jstl-group-id>${jetty10-exclude-jstl-group-id}</jetty-exclude-jstl-group-id>
+    <jetty-exclude-jstl-artifact-id>${jetty10-exclude-jstl-artifact-id}</jetty-exclude-jstl-artifact-id>
+    <jetty-exclude-jstl-version>${jetty10-exclude-jstl-version}</jetty-exclude-jstl-version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.apache.struts</groupId>
