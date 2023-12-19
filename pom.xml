@@ -59,7 +59,7 @@
     <asm.version>9.6</asm.version>
 
 
-    <jetty.version>12.0.4</jetty.version>
+    <jetty.version>12.0.5</jetty.version>
     <jetty-plugin-group-id>org.eclipse.jetty.ee8</jetty-plugin-group-id>
     <jetty-plugin-artifact-id>jetty-ee8-maven-plugin</jetty-plugin-artifact-id>
     
@@ -72,7 +72,7 @@
     <jetty-exclude-jstl-version>1.2.5</jetty-exclude-jstl-version>
 
 
-    <jetty10.version>10.0.18</jetty10.version>
+    <jetty10.version>10.0.19</jetty10.version>
     <jetty10-plugin-group-id>org.eclipse.jetty</jetty10-plugin-group-id>
     <jetty10-plugin-artifact-id>jetty-maven-plugin</jetty10-plugin-artifact-id>
     
@@ -96,8 +96,8 @@
     <maven-clean-plugin.version>3.3.2</maven-clean-plugin.version>
     <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
     <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-    <maven-surefire-plugin.version>3.2.2</maven-surefire-plugin.version>
-    <maven-failsafe-plugin.version>3.2.2</maven-failsafe-plugin.version>
+    <maven-surefire-plugin.version>3.2.3</maven-surefire-plugin.version>
+    <maven-failsafe-plugin.version>3.2.3</maven-failsafe-plugin.version>
     <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
     <maven-install-plugin.version>3.1.1</maven-install-plugin.version>
     <maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
