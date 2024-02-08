@@ -14,14 +14,12 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-@DirtiesContext
 @SpringJUnitConfig(locations = {"classpath:applicationContext.xml"})
 class PersonRepositoryTest {
   @Autowired private PersonRepository personRepository;
@@ -39,7 +37,7 @@ class PersonRepositoryTest {
     assertFalse(list.isEmpty());
   }
 
-  @Order(2)
+  @Order(3)
   @Test
   @Transactional
   @Rollback // 테스트 환경에서는 기본이 롤백이여서 일부러 이 어노테이션을 붙여줄 필요는 없다. 반영이 필요하면 @Commit을 붙인다.

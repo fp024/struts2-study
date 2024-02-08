@@ -18,6 +18,10 @@
   <name>${project.artifactId} - Struts 2 Study Maven Webapp</name>
   <url>https://github.com/fp024/struts2-study/tree/master/introducing-interceptors</url>
 
+  <properties>
+    <junit.version>5.10.1</junit.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.apache.struts</groupId>

@@ -10,11 +10,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-@DirtiesContext
 @SpringJUnitConfig(locations = {"classpath:applicationContext.xml"})
 class RegisterServiceTest {
   @Autowired private RegisterService registerService;
