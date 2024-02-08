@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import lombok.extern.slf4j.Slf4j;
 import org.fp024.struts2.study.register.model.Person;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -17,6 +18,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.transaction.annotation.Transactional;
 
+@Slf4j
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringJUnitConfig(locations = {"classpath:applicationContext.xml"})
 class PersonRepositoryTest {
@@ -41,7 +43,10 @@ class PersonRepositoryTest {
   @Rollback // 테스트 환경에서는 기본이 롤백이여서 일부러 이 어노테이션을 붙여줄 필요는 없다. 반영이 필요하면 @Commit을 붙인다.
   void testFindByIdThenRemoveThenList() {
     personRepository.remove(personRepository.findById("struts@apache.org"));
-    assertTrue(personRepository.list().isEmpty());
+
+    List<Person> result = personRepository.list();
+    LOGGER.info("### result: ", result);
+    assertTrue(result.isEmpty());
   }
 
   @Order(3)
