@@ -50,16 +50,16 @@
 
     <lombok.version>1.18.30</lombok.version>
 
-    <junit.version>5.10.1</junit.version>
-    <mockito.version>5.8.0</mockito.version>
+    <junit.version>5.10.2</junit.version>
+    <mockito.version>5.10.0</mockito.version>
     <hamcrest.version>2.2</hamcrest.version>
-    <assertj.version>3.25.1</assertj.version>
+    <assertj.version>3.25.3</assertj.version>
 
     <!-- struts2-convention-plugin에서 Java 17 바이트 코드 해석을 못해서, 버전을 올렸다. -->
     <asm.version>9.6</asm.version>
 
 
-    <jetty.version>12.0.5</jetty.version>
+    <jetty.version>12.0.6</jetty.version>
     <jetty-plugin-group-id>org.eclipse.jetty.ee8</jetty-plugin-group-id>
     <jetty-plugin-artifact-id>jetty-ee8-maven-plugin</jetty-plugin-artifact-id>
     
@@ -72,7 +72,7 @@
     <jetty-exclude-jstl-version>1.2.5</jetty-exclude-jstl-version>
 
 
-    <jetty10.version>10.0.19</jetty10.version>
+    <jetty10.version>10.0.20</jetty10.version>
     <jetty10-plugin-group-id>org.eclipse.jetty</jetty10-plugin-group-id>
     <jetty10-plugin-artifact-id>jetty-maven-plugin</jetty10-plugin-artifact-id>
     
