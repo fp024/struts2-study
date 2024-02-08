@@ -45,7 +45,7 @@ class PersonRepositoryTest {
     personRepository.remove(personRepository.findById("struts@apache.org"));
 
     List<Person> result = personRepository.list();
-    LOGGER.info("### result: ", result);
+    LOGGER.info("### result: {}", result);
     assertTrue(result.isEmpty());
   }
 
