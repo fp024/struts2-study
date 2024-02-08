@@ -1,19 +1,20 @@
 package org.fp024.struts2.study.register.service;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.time.LocalDateTime;
 import org.fp024.struts2.study.register.model.Person;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import java.time.LocalDateTime;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@DirtiesContext
 @SpringJUnitConfig(locations = {"classpath:applicationContext.xml"})
 class RegisterServiceTest {
   @Autowired private RegisterService registerService;
