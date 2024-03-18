@@ -41,11 +41,10 @@
     <!--
       flexjson 대신 jackson-databind를 사용해보자!
       https://github.com/FasterXML/jackson-databind
-    -->
+    -->    
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>${jackson-databind.version}</version>
     </dependency>
 
     <!--
