@@ -45,7 +45,7 @@
 
     <jasperreports.version>6.21.2</jasperreports.version>
 
-    <lombok.version>1.18.30</lombok.version>
+    <lombok.version>1.18.32</lombok.version>
 
     <junit.version>5.10.2</junit.version>
     <mockito.version>5.11.0</mockito.version>
@@ -53,10 +53,10 @@
     <assertj.version>3.25.3</assertj.version>
 
     <!-- struts2-convention-plugin에서 Java 17 바이트 코드 해석을 못해서, 버전을 올렸다. -->
-    <asm.version>9.6</asm.version>
+    <asm.version>9.7</asm.version>
 
 
-    <jetty.version>12.0.7</jetty.version>
+    <jetty.version>12.0.8</jetty.version>
     <jetty-plugin-group-id>org.eclipse.jetty.ee8</jetty-plugin-group-id>
     <jetty-plugin-artifact-id>jetty-ee8-maven-plugin</jetty-plugin-artifact-id>
     
@@ -92,7 +92,7 @@
     <!-- Maven Plugin 버전 -->
     <maven-clean-plugin.version>3.3.2</maven-clean-plugin.version>
     <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-    <maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
+    <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
     <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
     <maven-failsafe-plugin.version>3.2.5</maven-failsafe-plugin.version>
     <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
