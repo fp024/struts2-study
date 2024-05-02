@@ -16,9 +16,9 @@ public class JasperInitializer {
 
   public JasperInitializer(ServletContext servletContext) {
     this.compiledJasperFilePath =
-        servletContext.getRealPath("/WEB-INF/jasper/our_compiled_template.jasper");
+        servletContext.getRealPath("/WEB-INF/jasper/") + "our_compiled_template.jasper";
     LOGGER.info(
-        "### {}", servletContext.getRealPath("/WEB-INF/jasper/our_compiled_template.jasper"));
+        "### {}{}", servletContext.getRealPath("/WEB-INF/jasper/"), "our_compiled_template.jasper");
   }
 
   @PostConstruct

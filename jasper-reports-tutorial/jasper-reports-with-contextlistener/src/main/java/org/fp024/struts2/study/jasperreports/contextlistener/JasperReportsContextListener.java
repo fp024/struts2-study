@@ -15,8 +15,9 @@ public class JasperReportsContextListener implements ServletContextListener {
     try {
       LOGGER.info("=== Start JasperReport compile ===");
       LOGGER.info(
-          "### {}",
-          sce.getServletContext().getRealPath("/WEB-INF/jasper/our_compiled_template.jasper"));
+          "### {}, {}",
+          sce.getServletContext().getRealPath("/WEB-INF/jasper/README.md"),
+          "our_compiled_template.jasper");
       JasperCompileManager.compileReportToFile(
           Optional.ofNullable(
                   JasperReportsContextListener.class.getResource(
@@ -26,7 +27,7 @@ public class JasperReportsContextListener implements ServletContextListener {
                     throw new IllegalStateException("our_jasper_template.jrxml File not found.");
                   })
               .getFile(),
-          sce.getServletContext().getRealPath("/WEB-INF/jasper/our_compiled_template.jasper"));
+          sce.getServletContext().getRealPath("/WEB-INF/jasper/") + "our_compiled_template.jasper");
       LOGGER.info("=== End JasperReport compile ===");
     } catch (Exception e) {
       throw new IllegalStateException("Failed to compile, " + e.getMessage(), e);
@@ -41,7 +42,8 @@ public class JasperReportsContextListener implements ServletContextListener {
   private void deleteCompiledJasperFile(ServletContextEvent sce) {
     File compiledJasperFile =
         new File(
-            sce.getServletContext().getRealPath("/WEB-INF/jasper/our_compiled_template.jasper"));
+            sce.getServletContext().getRealPath("/WEB-INF/jasper/")
+                + "our_compiled_template.jasper");
     LOGGER.info(
         "=== Compiled JasperReport file ({}) delete result: {} ===",
         compiledJasperFile.getAbsolutePath(),
