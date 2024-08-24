@@ -1,0 +1,46 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="jasper_test" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="9bca3a26-1bbe-4561-957e-aa1746d2a645">
+	<field name="name" class="java.lang.String"/>
+	<field name="lastName" class="java.lang.String"/>
+	<field name="registerDate" class="java.lang.String"/>
+	<title height="50">
+		<element kind="staticText" uuid="2becebe7-bde8-4661-a3e0-952de9892f85" x="0" y="0" width="180" height="15">
+			<text><![CDATA[Struts 2 JasperReports Sample]]></text>
+		</element>
+	</title>
+	<pageHeader/>
+	<columnHeader height="20">
+		<element kind="staticText" uuid="7fab15e7-ffc4-4440-b6a3-a8624a12cbfc" x="100" y="0" width="100" height="20" underline="true">
+			<text><![CDATA[NAME]]></text>
+		</element>
+		<element kind="staticText" uuid="fc30e6f8-5cb9-43f0-8b3d-2600662bf05c" x="200" y="0" width="100" height="20" underline="true">
+			<text><![CDATA[LASTNAME]]></text>
+		</element>
+		<element kind="staticText" uuid="275f025a-2f2e-4bcf-bd3a-0d26d3a4d1dc" x="300" y="0" width="100" height="20" underline="true">
+			<text><![CDATA[REGISTER DATE]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<element kind="textField" uuid="c393573d-36b4-44d4-a37d-f21d043b5985" x="100" y="0" width="100" height="15">
+				<expression><![CDATA[$F{name}]]></expression>
+			</element>
+			<element kind="textField" uuid="9c2ab293-621e-4cec-ae7c-ade5e97ac52b" x="200" y="0" width="100" height="15">
+				<expression><![CDATA[$F{lastName}]]></expression>
+			</element>
+			<element kind="textField" uuid="acd7afd5-854f-4770-bcd1-29eedd0404e4" x="300" y="0" width="100" height="15">
+				<expression><![CDATA[$F{registerDate}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter/>
+	<pageFooter height="15">
+		<element kind="staticText" uuid="b8dafaa0-435b-43ae-b563-3af564d7ab80" x="0" y="0" width="40" height="15">
+			<text><![CDATA[Page:]]></text>
+		</element>
+		<element kind="textField" uuid="94dcc67b-5501-45a0-a628-1c1caf905367" x="40" y="0" width="100" height="15">
+			<expression><![CDATA[$V{PAGE_NUMBER}]]></expression>
+		</element>
+	</pageFooter>
+	<summary/>
+</jasperReport>

@@ -29,9 +29,7 @@ public class JasperInitializer {
           Optional.ofNullable(
                   JasperInitializer.class.getResource("/jasper/our_jasper_template.jrxml"))
               .orElseThrow(
-                  () -> {
-                    throw new IllegalStateException("our_jasper_template.jrxml File not found.");
-                  })
+                  () -> new IllegalStateException("our_jasper_template.jrxml File not found."))
               .getFile(),
           compiledJasperFilePath);
       LOGGER.info("=== End JasperReport compile ===");
