@@ -23,9 +23,7 @@ public class JasperReportsContextListener implements ServletContextListener {
                   JasperReportsContextListener.class.getResource(
                       "/jasper/our_jasper_template.jrxml"))
               .orElseThrow(
-                  () -> {
-                    throw new IllegalStateException("our_jasper_template.jrxml File not found.");
-                  })
+                  () -> new IllegalStateException("our_jasper_template.jrxml File not found."))
               .getFile(),
           sce.getServletContext().getRealPath("/WEB-INF/jasper/") + "our_compiled_template.jasper");
       LOGGER.info("=== End JasperReport compile ===");

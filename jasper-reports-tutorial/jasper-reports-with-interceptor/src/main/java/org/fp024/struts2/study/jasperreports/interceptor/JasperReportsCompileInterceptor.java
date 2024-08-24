@@ -24,9 +24,7 @@ public class JasperReportsCompileInterceptor extends AbstractInterceptor {
                     JasperReportsCompileInterceptor.class.getResource(
                         "/jasper/our_jasper_template.jrxml"))
                 .orElseThrow(
-                    () -> {
-                      throw new IllegalStateException("our_jasper_template.jrxml File not found.");
-                    })
+                    () -> new IllegalStateException("our_jasper_template.jrxml File not found."))
                 .getFile(),
             compiledJasperFile);
         LOGGER.info("=== End JasperReport compile ===");
