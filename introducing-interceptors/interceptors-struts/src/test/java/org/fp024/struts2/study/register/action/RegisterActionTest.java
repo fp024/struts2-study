@@ -1,20 +1,19 @@
 package org.fp024.struts2.study.register.action;
 
-import com.opensymphony.xwork2.ActionProxy;
-import com.opensymphony.xwork2.ActionSupport;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.mockStatic;
+
+import java.time.LocalDateTime;
+import javax.transaction.Transactional;
+import org.apache.struts2.ActionProxy;
+import org.apache.struts2.ActionSupport;
 import org.apache.struts2.StrutsSpringJUnit5TestCase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-
-import javax.transaction.Transactional;
-import java.time.LocalDateTime;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.Mockito.mockStatic;
 
 /** StrutsSpringJUnit5TestCase<테스트할 액션 클래스> 를 상속 받아 테스트 클래스를 만듦. */
 @SpringJUnitConfig(locations = {"classpath:applicationContext.xml"})
@@ -43,7 +42,7 @@ class RegisterActionTest extends StrutsSpringJUnit5TestCase<RegisterAction> {
 
        그래도 왠만하면 Mock의 범위를 길게가져가지 않는게 나을 것 같다.
       */
-      mockedLocalDateTime.when(() -> LocalDateTime.now()).thenReturn(expectAccessTime);
+      mockedLocalDateTime.when(LocalDateTime::now).thenReturn(expectAccessTime);
       ActionProxy actionProxy = getActionProxy("/register.action");
 
       RegisterAction action = (RegisterAction) actionProxy.getAction();

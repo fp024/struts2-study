@@ -1,12 +1,11 @@
 package org.fp024.struts2.study.register.interceptor;
 
-import com.opensymphony.xwork2.ActionInvocation;
-import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
-import lombok.extern.slf4j.Slf4j;
-import org.fp024.struts2.study.register.action.RegisterAction;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.struts2.ActionInvocation;
+import org.apache.struts2.interceptor.AbstractInterceptor;
+import org.fp024.struts2.study.register.action.RegisterAction;
 
 @Slf4j
 public class SimpleInterceptor extends AbstractInterceptor {

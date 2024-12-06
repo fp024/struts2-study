@@ -1,10 +1,10 @@
 package org.fp024.struts2.study.register.action;
 
-import com.opensymphony.xwork2.ActionSupport;
 import java.io.Serial;
 import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.struts2.ActionSupport;
 import org.fp024.struts2.study.register.model.Person;
 import org.fp024.struts2.study.register.service.RegisterService;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class RegisterAction extends ActionSupport {
-  private final RegisterService registerService;
+  private final transient RegisterService registerService;
 
   public RegisterAction(RegisterService registerService) {
     this.registerService = registerService;
@@ -23,7 +23,7 @@ public class RegisterAction extends ActionSupport {
 
   @Serial private static final long serialVersionUID = 1L;
 
-  @Getter @Setter private Person personBean;
+  @Getter @Setter private transient Person personBean;
 
   @Getter @Setter private LocalDateTime accessDate;
 
