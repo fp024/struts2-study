@@ -18,8 +18,6 @@
  */
 package org.apache.struts2;
 
-import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionProxy;
 import com.opensymphony.xwork2.ActionProxyFactory;
 import com.opensymphony.xwork2.config.Configuration;
 import org.apache.struts2.dispatcher.Dispatcher;

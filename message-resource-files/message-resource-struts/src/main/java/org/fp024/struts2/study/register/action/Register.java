@@ -1,22 +1,22 @@
 package org.fp024.struts2.study.register.action;
 
-import com.opensymphony.xwork2.ActionSupport;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.struts2.ActionSupport;
 import org.fp024.struts2.study.register.model.Person;
 
 public class Register extends ActionSupport {
   private static final long serialVersionUID = 1L;
 
-  @Getter @Setter private Person personBean;
+  @Getter @Setter private transient Person personBean;
 
   @Override
   public void validate() {
-    if (personBean.getFirstName().length() == 0) {
+    if (personBean.getFirstName().isEmpty()) {
       addFieldError("personBean.firstName", "First name is required.");
     }
 
-    if (personBean.getEmail().length() == 0) {
+    if (personBean.getEmail().isEmpty()) {
       addFieldError("personBean.email", "Email is required.");
     }
 

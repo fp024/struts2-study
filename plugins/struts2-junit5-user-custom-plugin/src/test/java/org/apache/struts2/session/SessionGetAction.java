@@ -18,7 +18,7 @@
  */
 package org.apache.struts2.session;
 
-import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.ActionSupport;
 
 /**
  * An action which reads a value from the session. The value is previously set by SessionSetAction.
@@ -26,6 +26,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class SessionGetAction extends ActionSupport {
   private static final long serialVersionUID = 8366502863472148631L;
 
+  @Override
   public String execute() {
     return ActionSupport.SUCCESS;
   }

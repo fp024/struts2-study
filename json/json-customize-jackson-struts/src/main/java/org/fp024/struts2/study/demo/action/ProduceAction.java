@@ -1,20 +1,20 @@
 package org.fp024.struts2.study.demo.action;
 
-import com.opensymphony.xwork2.ActionSupport;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.Getter;
+import org.apache.struts2.ActionSupport;
 import org.fp024.struts2.study.demo.domain.Address;
 import org.fp024.struts2.study.demo.domain.Phone;
 import org.fp024.struts2.study.demo.domain.User;
 import org.fp024.struts2.study.demo.domain.Zipcode;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
 public class ProduceAction extends ActionSupport {
-  @Getter private User user;
+  @Getter private transient User user;
 
+  @Override
   public String execute() throws Exception {
     user = new User();
 

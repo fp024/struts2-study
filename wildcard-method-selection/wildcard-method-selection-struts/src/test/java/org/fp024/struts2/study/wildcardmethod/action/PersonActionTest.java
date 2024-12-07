@@ -1,24 +1,23 @@
 package org.fp024.struts2.study.wildcardmethod.action;
 
-import com.opensymphony.xwork2.Action;
-import com.opensymphony.xwork2.ActionProxy;
-import com.opensymphony.xwork2.config.ConfigurationException;
-import org.apache.struts2.StrutsSpringJUnit5TestCase;
-import org.apache.struts2.dispatcher.mapper.ActionMapping;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
-import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-
-import javax.transaction.Transactional;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import com.opensymphony.xwork2.config.ConfigurationException;
+import javax.transaction.Transactional;
+import org.apache.struts2.ActionProxy;
+import org.apache.struts2.StrutsSpringJUnit5TestCase;
+import org.apache.struts2.action.Action;
+import org.apache.struts2.dispatcher.mapper.ActionMapping;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 /** StrutsSpringJUnit5TestCase<테스트할 액션 클래스> 를 상속 받아 테스트 클래스를 만듦. */
 @SpringJUnitConfig(locations = {"classpath:applicationContext.xml"})
@@ -27,13 +26,7 @@ class PersonActionTest extends StrutsSpringJUnit5TestCase<PersonAction> {
   @DisplayName("와일드카드 설정에 의해 접근 가능한 모든 액션 테스트")
   @ParameterizedTest
   @ValueSource(
-      strings = {
-        "Person",
-        "createPerson",
-        "editPerson",
-        "saveOrUpdatePerson",
-        "deletePerson"
-      })
+      strings = {"Person", "createPerson", "editPerson", "saveOrUpdatePerson", "deletePerson"})
   void getActionMapping_Person_Action(String actionName) {
     ActionMapping mapping = getActionMapping("/" + actionName + ".action");
     assertThat(mapping, notNullValue());
@@ -78,7 +71,7 @@ class PersonActionTest extends StrutsSpringJUnit5TestCase<PersonAction> {
   */
   @ParameterizedTest
   @ValueSource(strings = {"person!runCreateThis"})
-  void getActionProxy_runCreateThis(String actionName) throws Exception {
+  void getActionProxy_runCreateThis(String actionName) {
     assertThrows(ConfigurationException.class, () -> getActionProxy("/" + actionName + ".action"));
   }
 

@@ -18,23 +18,23 @@
  */
 package org.apache.struts2;
 
-import com.opensymphony.xwork2.Action;
-import com.opensymphony.xwork2.ActionProxy;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.io.UnsupportedEncodingException;
+
+import javax.servlet.ServletException;
+
+import org.apache.struts2.action.Action;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-
-import javax.servlet.ServletException;
-import java.io.UnsupportedEncodingException;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringJUnitConfig(locations = {"classpath*:applicationContext.xml"})
 class StrutsSpringJUnit5TestCaseTest extends StrutsSpringJUnit5TestCase<JUnitTestAction> {
 
   @Test
-  public void getActionMapping() {
+  void getActionMapping() {
     ActionMapping mapping = getActionMapping("/test/testAction.action");
     assertNotNull(mapping);
     assertEquals("/test", mapping.getNamespace());
@@ -42,7 +42,7 @@ class StrutsSpringJUnit5TestCaseTest extends StrutsSpringJUnit5TestCase<JUnitTes
   }
 
   @Test
-  public void getActionProxy() throws Exception {
+  void getActionProxy() throws Exception {
     // set parameters before calling getActionProxy
     request.setParameter("name", "FD");
 
@@ -58,13 +58,13 @@ class StrutsSpringJUnit5TestCaseTest extends StrutsSpringJUnit5TestCase<JUnitTes
   }
 
   @Test
-  public void executeAction() throws ServletException, UnsupportedEncodingException {
+  void executeAction() throws ServletException, UnsupportedEncodingException {
     String output = executeAction("/test/testAction.action");
     assertEquals("Hello", output);
   }
 
   @Test
-  public void getValueFromStack() throws ServletException, UnsupportedEncodingException {
+  void getValueFromStack() throws ServletException, UnsupportedEncodingException {
     request.setParameter("name", "FD");
     executeAction("/test/testAction.action");
     String name = (String) findValueAfterExecute("name");

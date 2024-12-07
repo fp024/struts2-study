@@ -40,10 +40,10 @@ public class JasperInitializer {
 
   @PreDestroy
   public void destroy() throws Exception {
-    File templteFile = new File(compiledJasperFilePath);
+    File templateFile = new File(compiledJasperFilePath);
     LOGGER.info(
         "=== Compiled JasperReport file ({}) delete result: {} ===",
-        templteFile.getAbsolutePath(),
-        templteFile.delete());
+        templateFile.getAbsolutePath(),
+        templateFile.delete());
   }
 }

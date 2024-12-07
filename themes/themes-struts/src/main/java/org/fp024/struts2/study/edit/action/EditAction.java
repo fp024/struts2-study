@@ -1,14 +1,13 @@
 package org.fp024.struts2.study.edit.action;
 
-import com.opensymphony.xwork2.ActionSupport;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.struts2.ActionSupport;
 import org.fp024.struts2.study.edit.model.Person;
 import org.fp024.struts2.study.edit.model.State;
 import org.fp024.struts2.study.edit.service.EditService;
 import org.fp024.struts2.study.edit.service.EditServiceInMemory;
-
-import java.util.List;
 
 /**
  * Person 편집과 관련된 액션을 처리하는 컨트롤러 역할을 합니다.
@@ -18,16 +17,17 @@ import java.util.List;
 public class EditAction extends ActionSupport {
   private static final long serialVersionUID = 1L;
 
-  private final EditService editService = new EditServiceInMemory();
+  private final transient EditService editService = new EditServiceInMemory();
 
-  @Getter @Setter private Person personBean;
-
-  @Getter private final List<String> sports = List.of("football", "baseball", "basketball");
-
-  @Getter private final List<String> genders = List.of("male", "female", "not sure");
+  @Getter @Setter private transient Person personBean;
 
   @Getter
-  private final List<State> states =
+  private final transient List<String> sports = List.of("football", "baseball", "basketball");
+
+  @Getter private final transient List<String> genders = List.of("male", "female", "not sure");
+
+  @Getter
+  private final transient List<State> states =
       List.of(
           new State("AZ", "Arizona"),
           new State("CA", "California"),

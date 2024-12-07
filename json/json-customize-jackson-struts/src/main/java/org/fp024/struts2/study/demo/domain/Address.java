@@ -1,10 +1,9 @@
 package org.fp024.struts2.study.demo.domain;
 
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
-import java.util.List;
 
 @Getter
 @Setter

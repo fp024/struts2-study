@@ -3,10 +3,10 @@ package org.fp024.struts2.study.helloworld;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import com.opensymphony.xwork2.Action;
-import com.opensymphony.xwork2.ActionProxy;
 import java.util.Map;
+import org.apache.struts2.ActionProxy;
 import org.apache.struts2.StrutsSpringJUnit5TestCase;
+import org.apache.struts2.action.Action;
 import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
 import org.junit.jupiter.api.DisplayName;

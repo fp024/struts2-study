@@ -254,7 +254,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <compilerArgs>
-            <arg>-Xlint:all</arg>
+            <!-- 모든 경고를 활성화하되, 직렬화 및 애노테이션 처리와 관련된 경고는 비활성화 -->
+            <arg>-Xlint:all,-serial,-processing</arg>
           </compilerArgs>
           <parameters>true</parameters>
           <showWarnings>true</showWarnings>

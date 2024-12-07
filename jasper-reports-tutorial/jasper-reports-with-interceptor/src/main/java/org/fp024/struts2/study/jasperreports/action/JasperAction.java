@@ -1,15 +1,15 @@
 package org.fp024.struts2.study.jasperreports.action;
 
-import com.opensymphony.xwork2.ActionSupport;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
+import org.apache.struts2.ActionSupport;
 import org.fp024.struts2.study.jasperreports.model.Person;
 
 public class JasperAction extends ActionSupport {
   /** JasperReports 데이터 소스로 사용할 List. */
-  @Getter private List<Person> myList;
+  @Getter private transient List<Person> myList;
 
   @Override
   public String execute() {

@@ -1,13 +1,13 @@
 package org.fp024.struts2.study.register.action;
 
-import com.opensymphony.xwork2.ActionProxy;
-import com.opensymphony.xwork2.ActionSupport;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.apache.struts2.ActionProxy;
+import org.apache.struts2.ActionSupport;
 import org.apache.struts2.StrutsJUnit5TestCase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /** StrutsJUnit5TestCase<테스트할 액션 클래스> 를 상속 받아 테스트 클래스를 만듦. */
 class RegisterTest extends StrutsJUnit5TestCase<Register> {

@@ -1,10 +1,10 @@
 package org.fp024.struts2.study.register.action;
 
-import com.opensymphony.xwork2.ActionSupport;
 import java.io.Serial;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.struts2.ActionSupport;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 import org.fp024.struts2.study.register.model.Person;
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class RegisterAction extends ActionSupport {
-  private final RegisterService registerService;
+  private final transient RegisterService registerService;
 
   public RegisterAction(RegisterService registerService) {
     this.registerService = registerService;
@@ -26,8 +26,9 @@ public class RegisterAction extends ActionSupport {
 
   @Serial private static final long serialVersionUID = 1L;
 
-  @Getter @Setter private Person personBean;
+  @Getter @Setter private transient Person personBean;
 
+  @Override
   @Action(
       value = "/register-input",
       results = {@Result(name = INPUT, location = "register-input.jsp")})

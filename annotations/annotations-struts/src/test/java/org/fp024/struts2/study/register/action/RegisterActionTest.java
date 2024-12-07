@@ -1,17 +1,16 @@
 package org.fp024.struts2.study.register.action;
 
-import com.opensymphony.xwork2.ActionProxy;
-import com.opensymphony.xwork2.ActionSupport;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
+
+import javax.transaction.Transactional;
+import org.apache.struts2.ActionProxy;
+import org.apache.struts2.ActionSupport;
 import org.apache.struts2.StrutsSpringJUnit5TestCase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-
-import javax.transaction.Transactional;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.notNullValue;
 
 /** StrutsSpringJUnit5TestCase<테스트할 액션 클래스> 를 상속 받아 테스트 클래스를 만듦. */
 @SpringJUnitConfig(locations = {"classpath:applicationContext.xml"})

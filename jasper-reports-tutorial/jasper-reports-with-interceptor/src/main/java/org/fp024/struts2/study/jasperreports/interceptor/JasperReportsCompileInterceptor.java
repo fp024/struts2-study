@@ -1,12 +1,12 @@
 package org.fp024.struts2.study.jasperreports.interceptor;
 
-import com.opensymphony.xwork2.ActionInvocation;
-import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 import java.io.File;
 import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jasperreports.engine.JasperCompileManager;
+import org.apache.struts2.ActionInvocation;
 import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.interceptor.AbstractInterceptor;
 
 @Slf4j
 public class JasperReportsCompileInterceptor extends AbstractInterceptor {

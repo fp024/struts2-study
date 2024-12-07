@@ -1,13 +1,12 @@
 package org.fp024.struts2.study.demo.action;
 
-import com.opensymphony.xwork2.ActionSupport;
+import java.util.Arrays;
 import lombok.Getter;
+import org.apache.struts2.ActionSupport;
 import org.fp024.struts2.study.demo.domain.MyBean;
 
-import java.util.Arrays;
-
 public class ProduceAction extends ActionSupport {
-  @Getter private MyBean bean;
+  @Getter private transient MyBean bean;
 
   @Override
   public String execute() {

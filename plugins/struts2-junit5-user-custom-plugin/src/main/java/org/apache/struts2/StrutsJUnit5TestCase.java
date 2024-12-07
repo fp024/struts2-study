@@ -1,11 +1,9 @@
 package org.apache.struts2;
 
-import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionProxy;
 import com.opensymphony.xwork2.ActionProxyFactory;
 import com.opensymphony.xwork2.XWorkJUnit5UserCustomTestCase;
 import com.opensymphony.xwork2.config.Configuration;
-import com.opensymphony.xwork2.interceptor.ValidationAware;
+import  org.apache.struts2.interceptor.ValidationAware;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.dispatcher.Dispatcher;
 import org.apache.struts2.dispatcher.HttpParameters;
@@ -160,7 +158,7 @@ public abstract class StrutsJUnit5TestCase<T> extends XWorkJUnit5UserCustomTestC
 
   public void finishExecution() {
     HttpSession session = this.request.getSession();
-    Enumeration attributeNames = session.getAttributeNames();
+    Enumeration<?> attributeNames = session.getAttributeNames();
 
     MockHttpServletRequest nextRequest = new MockHttpServletRequest();
 
@@ -177,6 +175,7 @@ public abstract class StrutsJUnit5TestCase<T> extends XWorkJUnit5UserCustomTestC
 
   /** Sets up the configuration settings, XWork configuration, and message resources */
   @BeforeEach
+  @Override
   public void setUp() throws Exception {
     super.setUp();
     initServletMockObjects();
@@ -213,6 +212,7 @@ public abstract class StrutsJUnit5TestCase<T> extends XWorkJUnit5UserCustomTestC
   }
 
   @AfterEach
+  @Override
   public void tearDown() throws Exception {
     super.tearDown();
     if (dispatcher != null && dispatcher.getConfigurationManager() != null) {

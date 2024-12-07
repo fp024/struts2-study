@@ -1,10 +1,10 @@
 package org.fp024.struts2.study.helloworld;
 
-import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.interceptor.ParameterNameAware;
 import java.util.Map;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.struts2.ActionSupport;
+import org.apache.struts2.action.ParameterNameAware;
 import org.apache.struts2.action.SessionAware;
 import org.fp024.struts2.study.model.MessageStore;
 import org.springframework.context.annotation.Scope;
@@ -23,9 +23,9 @@ public class HelloWorldAction extends ActionSupport implements SessionAware, Par
   private static final long serialVersionUID = 1L;
 
   /** 뷰에 표시할 메시지를 저장하는 모델 클래스 */
-  @Getter @Setter private MessageStore messageStore;
+  @Getter @Setter private transient MessageStore messageStore;
 
-  private Map<String, Object> userSession;
+  private transient Map<String, Object> userSession;
 
   private static final String HELLO_COUNT = "helloCount";
 

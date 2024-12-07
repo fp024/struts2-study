@@ -1,9 +1,10 @@
 package org.fp024.struts2.study.wildcardmethod.action;
 
-import com.opensymphony.xwork2.ActionSupport;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.struts2.ActionSupport;
 import org.fp024.struts2.study.wildcardmethod.dto.PersonDTO;
 import org.fp024.struts2.study.wildcardmethod.model.Person;
 import org.fp024.struts2.study.wildcardmethod.service.PersonService;
@@ -11,14 +12,12 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 /** struts.xml에서 registerAction 빈이름으로 접근할 수 있다. */
 @Slf4j
 @Component
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class PersonAction extends ActionSupport {
-  private final PersonService personService;
+  private final transient PersonService personService;
 
   public PersonAction(PersonService personService) {
     this.personService = personService;
@@ -27,9 +26,9 @@ public class PersonAction extends ActionSupport {
 
   private static final long serialVersionUID = 1L;
 
-  @Getter @Setter private PersonDTO personDTO;
+  @Getter @Setter private transient PersonDTO personDTO;
 
-  @Getter private List<Person> personList;
+  @Getter private transient List<Person> personList;
 
   @Override
   public String execute() {

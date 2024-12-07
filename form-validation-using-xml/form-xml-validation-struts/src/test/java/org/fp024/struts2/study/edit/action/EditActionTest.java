@@ -6,16 +6,13 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.UnsupportedEncodingException;
-
 import javax.servlet.ServletException;
-
+import org.apache.struts2.ActionProxy;
 import org.apache.struts2.StrutsJUnit5TestCase;
+import org.apache.struts2.action.Action;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import com.opensymphony.xwork2.Action;
-import com.opensymphony.xwork2.ActionProxy;
 
 /** StrutsJUnit5TestCase<테스트할 액션 클래스> 를 상속 받아 테스트 클래스를 만듦. */
 class EditActionTest extends StrutsJUnit5TestCase<EditAction> {

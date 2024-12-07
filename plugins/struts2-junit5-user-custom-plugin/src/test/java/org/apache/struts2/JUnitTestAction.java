@@ -18,7 +18,6 @@
  */
 package org.apache.struts2;
 
-import com.opensymphony.xwork2.ActionSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class JUnitTestAction extends ActionSupport {

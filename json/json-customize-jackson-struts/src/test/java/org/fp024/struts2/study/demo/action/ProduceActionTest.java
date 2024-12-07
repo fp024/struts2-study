@@ -1,18 +1,17 @@
 package org.fp024.struts2.study.demo.action;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.mockStatic;
+
+import java.io.UnsupportedEncodingException;
+import java.time.LocalDateTime;
+import javax.servlet.ServletException;
 import org.apache.struts2.StrutsJUnit5TestCase;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
-
-import javax.servlet.ServletException;
-import java.io.UnsupportedEncodingException;
-import java.time.LocalDateTime;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.Mockito.mockStatic;
 
 class ProduceActionTest extends StrutsJUnit5TestCase<ProduceAction> {
   @Test
@@ -28,10 +27,11 @@ class ProduceActionTest extends StrutsJUnit5TestCase<ProduceAction> {
     // 액션에서 LocalDateTime.now()를 사용하기 때문에, now()에 대해 mock을 사용할 필요가 있다.
     LocalDateTime lastLogin = LocalDateTime.of(2021, 11, 21, 0, 0, 00, 0);
     String expect =
-        "{\"name\":\"William Shakespeare\",\"birthday\":\"04/26/1564\",\"addresses\":[{\"name\":\"home\",\"street\":\"Henley\",\"city\":\"Stratford-upon-Avon\",\"zipcodes\":[{\"code\":\"CV37\"}]}],\"phoneNumbers\":[{\"name\":\"cell\",\"number\":\"555-123-4567\"},{\"name\":\"home\",\"number\":\"555-987-6543\"},{\"name\":\"work\",\"number\":\"555-678-3542\"}],\"lastLogin\":\"11/21/2021\",\"password\":\"******\",\"username\":\"WillShak\"}";
+        "{\"name\":\"William"
+            + " Shakespeare\",\"birthday\":\"04/26/1564\",\"addresses\":[{\"name\":\"home\",\"street\":\"Henley\",\"city\":\"Stratford-upon-Avon\",\"zipcodes\":[{\"code\":\"CV37\"}]}],\"phoneNumbers\":[{\"name\":\"cell\",\"number\":\"555-123-4567\"},{\"name\":\"home\",\"number\":\"555-987-6543\"},{\"name\":\"work\",\"number\":\"555-678-3542\"}],\"lastLogin\":\"11/21/2021\",\"password\":\"******\",\"username\":\"WillShak\"}";
     try (MockedStatic<LocalDateTime> mockedJSONContext =
         mockStatic(LocalDateTime.class, Mockito.CALLS_REAL_METHODS); ) {
-      mockedJSONContext.when(() -> LocalDateTime.now()).thenReturn(lastLogin);
+      mockedJSONContext.when(LocalDateTime::now).thenReturn(lastLogin);
 
       String output = executeAction("/produce.action");
       assertEquals(expect, output);

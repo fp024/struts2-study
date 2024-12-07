@@ -18,7 +18,7 @@
  */
 package actions;
 
-import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.ActionSupport;
 
 /** Example action, which is called by the convention plugin test case */
 public class ViewAction extends ActionSupport {
@@ -28,6 +28,7 @@ public class ViewAction extends ActionSupport {
     return message;
   }
 
+  @Override
   public String execute() {
     message = "Hello World";
     return SUCCESS;

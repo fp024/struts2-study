@@ -1,18 +1,17 @@
 package org.fp024.struts2.study.edit.action;
 
-import com.opensymphony.xwork2.Action;
-import com.opensymphony.xwork2.ActionProxy;
-import org.apache.struts2.StrutsJUnit5TestCase;
-import org.apache.struts2.dispatcher.mapper.ActionMapping;
-import org.junit.jupiter.api.Test;
-
-import javax.servlet.ServletException;
-import java.io.UnsupportedEncodingException;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
+
+import java.io.UnsupportedEncodingException;
+import javax.servlet.ServletException;
+import org.apache.struts2.ActionProxy;
+import org.apache.struts2.StrutsJUnit5TestCase;
+import org.apache.struts2.action.Action;
+import org.apache.struts2.dispatcher.mapper.ActionMapping;
+import org.junit.jupiter.api.Test;
 
 /**
  * StrutsJUnit5TestCase<테스트할 액션 클래스> 를 상속 받아 테스트 클래스를 만듦. <br>

@@ -18,7 +18,6 @@
  */
 package org.apache.struts2;
 
-import com.opensymphony.xwork2.ActionProxy;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -27,13 +26,13 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 /** User: maurizio cucchiara Date: 8/15/11 Time: 7:04 PM */
 class StrutsJUnit5TestCaseTest extends StrutsJUnit5TestCase<JUnitTestAction> {
   @Test
-  public void testExecuteActionAgainstCustomStrutsConfigFile() throws Exception {
+  void testExecuteActionAgainstCustomStrutsConfigFile() throws Exception {
     String output = executeAction("/test/testAction-2.action");
     assertEquals("Test-2", output);
   }
 
   @Test
-  public void testSessionInitialized() throws Exception {
+  void testSessionInitialized() {
     ActionProxy proxy = getActionProxy("/test/testAction-2.action");
     assertNotNull(
         proxy.getInvocation().getInvocationContext().getSession(),

@@ -1,19 +1,18 @@
 package org.fp024.struts2.study.edit.action;
 
-import com.opensymphony.xwork2.Action;
-import com.opensymphony.xwork2.ActionProxy;
-import org.apache.struts2.StrutsSpringJUnit5TestCase;
-import org.apache.struts2.dispatcher.mapper.ActionMapping;
-import org.junit.jupiter.api.Test;
-import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-
-import javax.servlet.ServletException;
-import java.io.UnsupportedEncodingException;
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.io.UnsupportedEncodingException;
+import javax.servlet.ServletException;
+import org.apache.struts2.ActionProxy;
+import org.apache.struts2.StrutsSpringJUnit5TestCase;
+import org.apache.struts2.action.Action;
+import org.apache.struts2.dispatcher.mapper.ActionMapping;
+import org.junit.jupiter.api.Test;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 @SpringJUnitConfig(locations = "classpath:applicationContext.xml")
 class EditActionTest extends StrutsSpringJUnit5TestCase<EditAction> {
