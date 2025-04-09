@@ -11,8 +11,8 @@
     <Logger name="org.apache.struts2" level="info"/>
     <Logger name="org.fp024.struts2.study" level="debug"/>
     
-    <Logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE"/>
-    <Logger name="org.hibernate.type.descriptor.sql.BasicExtractor" level="TRACE"/>
+    <Logger name="org.hibernate.orm.jdbc.bind" level="TRACE"/>
+    <!-- <Logger name="org.hibernate.orm.jdbc.extract" level="TRACE"/> --><!-- NOSONAR -->
     
     <Root level="info">
       <AppenderRef ref="STDOUT"/>

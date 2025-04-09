@@ -1,7 +1,6 @@
 package org.fp024.struts2.study.register.action;
 
 import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.struts2.ActionSupport;
 import org.apache.struts2.convention.annotation.Action;
@@ -17,7 +16,7 @@ public class HelloAction extends ActionSupport {
 
   private static final long serialVersionUID = 1L;
 
-  @Getter @Setter private String message;
+  @Getter private String message;
 
   @Action(
       value = "/hello",

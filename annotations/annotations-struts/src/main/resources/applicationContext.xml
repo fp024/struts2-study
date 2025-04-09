@@ -29,7 +29,7 @@
   <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
 
   <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-    <property name="dataSource" ref="dataSource"></property>
+    <property name="dataSource" ref="dataSource" />
     <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
 
     <property name="packagesToScan">
@@ -54,19 +54,19 @@
         <!-- SQL 스크립트의 다중 라인 처리가 안되서 아래 내용 추가 -->
         <!-- https://softwarecave.org/2017/02/12/database-schema-creation-in-jpa-using-sql-scripts/ -->
         <prop key="hibernate.hbm2ddl.import_files_sql_extractor">
-          org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor
+          org.hibernate.tool.schema.internal.script.MultiLineSqlScriptExtractor
         </prop>
 
         <!-- https://docs.oracle.com/javaee/7/tutorial/persistence-intro005.htm -->
-        <prop key="javax.persistence.schema-generation.database.action">drop-and-create</prop>
+        <prop key="jakarta.persistence.schema-generation.database.action">drop-and-create</prop>
 
-        <prop key="javax.persistence.schema-generation.drop-source">script</prop>
-        <prop key="javax.persistence.schema-generation.drop-script-source">init-sql/drop-table.sql</prop>
+        <prop key="jakarta.persistence.schema-generation.drop-source">script</prop>
+        <prop key="jakarta.persistence.schema-generation.drop-script-source">init-sql/drop-table.sql</prop>
 
-        <prop key="javax.persistence.schema-generation.create-source">script</prop>
-        <prop key="javax.persistence.schema-generation.create-script-source">init-sql/create-table.sql</prop>
+        <prop key="jakarta.persistence.schema-generation.create-source">script</prop>
+        <prop key="jakarta.persistence.schema-generation.create-script-source">init-sql/create-table.sql</prop>
 
-        <prop key="javax.persistence.sql-load-script-source">init-sql/insert-data.sql</prop>
+        <prop key="jakarta.persistence.sql-load-script-source">init-sql/insert-data.sql</prop>
       </props>
     </property>
   </bean>

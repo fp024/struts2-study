@@ -1,12 +1,12 @@
 package org.fp024.struts2.study.register.action;
 
 import java.io.Serial;
-import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.struts2.ActionSupport;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.interceptor.parameter.StrutsParameter;
 import org.fp024.struts2.study.register.model.Person;
 import org.fp024.struts2.study.register.service.RegisterService;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -26,7 +26,12 @@ public class RegisterAction extends ActionSupport {
 
   @Serial private static final long serialVersionUID = 1L;
 
-  @Getter @Setter private transient Person personBean;
+  @Setter private transient Person personBean;
+
+  @StrutsParameter(depth = 1)
+  public Person getPersonBean() {
+    return personBean;
+  }
 
   @Override
   @Action(
