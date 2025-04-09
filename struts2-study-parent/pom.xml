@@ -22,14 +22,18 @@
         <jetty.version>${jetty11.version}</jetty.version>
         <jetty-plugin-group-id>${jetty11-plugin-group-id}</jetty-plugin-group-id>
         <jetty-plugin-artifact-id>${jetty11-plugin-artifact-id}</jetty-plugin-artifact-id>
-
-        <jetty-root-jstl-group-id>${jetty11-root-jstl-group-id}</jetty-root-jstl-group-id>
-        <jetty-root-jstl-artifact-id>${jetty11-root-jstl-artifact-id}</jetty-root-jstl-artifact-id>
-
-        <jetty-exclude-jstl-group-id>${jetty11-exclude-jstl-group-id}</jetty-exclude-jstl-group-id>
-        <jetty-exclude-jstl-artifact-id>${jetty11-exclude-jstl-artifact-id}</jetty-exclude-jstl-artifact-id>
-        <jetty-exclude-jstl-version>${jetty11-exclude-jstl-version}</jetty-exclude-jstl-version>
       </properties>
+    </profile>
+    <profile>
+      <id>deploy-was</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.glassfish.web</groupId>
+          <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+          <version>${jakarta.servlet.jsp.jstl.version}</version>
+          <scope>runtime</scope>
+        </dependency>
+      </dependencies>
     </profile>
   </profiles>
 
@@ -109,13 +113,6 @@
       <scope>provided</scope>
     </dependency>
 
-    <dependency>
-      <groupId>${jetty-exclude-jstl-group-id}</groupId>
-      <artifactId>${jetty-exclude-jstl-artifact-id}</artifactId>
-      <version>${jetty-exclude-jstl-version}</version>
-      <scope>runtime</scope>
-    </dependency>
-    
   </dependencies>
 
 
@@ -156,19 +153,6 @@
             </scanTargetPattern>
           </scanTargetPatterns>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>${jetty-root-jstl-group-id}</groupId>
-            <artifactId>${jetty-root-jstl-artifact-id}</artifactId>
-            <version>${jetty.version}</version>
-            <exclusions>
-              <exclusion>
-                <groupId>${jetty-exclude-jstl-group-id}</groupId>
-                <artifactId>${jetty-exclude-jstl-artifact-id}</artifactId>
-              </exclusion>
-            </exclusions>
-          </dependency>
-        </dependencies>
       </plugin>
     </plugins>
   </build>

@@ -22,6 +22,7 @@
     <!-- Servlet 버전 -->
     <jakarta.servlet-api.version>6.0.0</jakarta.servlet-api.version>
     <jakarta.servlet.jsp-api.version>3.1.0</jakarta.servlet.jsp-api.version>
+    <jakarta.servlet.jsp.jstl.version>3.0.1</jakarta.servlet.jsp.jstl.version>
 
 
     <struts2.version>7.0.3</struts2.version>
@@ -60,27 +61,10 @@
     <jetty.version>12.0.19</jetty.version>
     <jetty-plugin-group-id>org.eclipse.jetty.ee10</jetty-plugin-group-id>
     <jetty-plugin-artifact-id>jetty-ee10-maven-plugin</jetty-plugin-artifact-id>
-    
-    <jetty-root-jstl-group-id>org.eclipse.jetty.ee10</jetty-root-jstl-group-id>
-    <jetty-root-jstl-artifact-id>jetty-ee10-glassfish-jstl</jetty-root-jstl-artifact-id>
-    
-    <jetty-exclude-jstl-group-id>org.glassfish.web</jetty-exclude-jstl-group-id>
-    <jetty-exclude-jstl-artifact-id>jakarta.servlet.jsp.jstl</jetty-exclude-jstl-artifact-id>
-    <!-- https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl -->
-    <jetty-exclude-jstl-version>3.0.1</jetty-exclude-jstl-version>
-
 
     <jetty11.version>11.0.25</jetty11.version>
     <jetty11-plugin-group-id>org.eclipse.jetty</jetty11-plugin-group-id>
     <jetty11-plugin-artifact-id>jetty-maven-plugin</jetty11-plugin-artifact-id>
-    
-    <jetty11-root-jstl-group-id>org.eclipse.jetty</jetty11-root-jstl-group-id>
-    <jetty11-root-jstl-artifact-id>glassfish-jstl</jetty11-root-jstl-artifact-id>
-    
-    <jetty11-exclude-jstl-group-id>org.glassfish.web</jetty11-exclude-jstl-group-id>
-    <jetty11-exclude-jstl-artifact-id>jakarta.servlet.jsp.jstl</jetty11-exclude-jstl-artifact-id>
-    <jetty11-exclude-jstl-version>2.0.0</jetty11-exclude-jstl-version>
-
 
     <!-- <jettyContextPath>/${project.build.finalName}</jettyContextPath>-->
     <!-- 예제 프로젝트로서 개별 실행하므로 경로를 ContextPath로 나눌 필요는 없다. -->
@@ -287,6 +271,6 @@
     <module>plugins/struts2-junit5-user-custom-plugin</module>
 
     <!-- 예제 프로젝트의 부모 pom : 로컬 레파지토리 설치는 struts2-study와 struts2-junit5-user-custom-plugin 만 설치하면 되므로 아래는 포함하지 말자.. -->
-    <!-- <module>struts2-study-parent</module> -->
+    <!-- <module>struts2-study-parent</module> --> <!-- NOSONAR -->
   </modules>
 </project>
