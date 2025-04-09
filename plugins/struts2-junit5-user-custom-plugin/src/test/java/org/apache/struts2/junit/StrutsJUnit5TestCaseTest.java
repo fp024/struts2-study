@@ -16,12 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.struts2;
-
-import org.junit.jupiter.api.Test;
+package org.apache.struts2.junit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.apache.struts2.ActionProxy;
+import org.junit.jupiter.api.Test;
 
 /** User: maurizio cucchiara Date: 8/15/11 Time: 7:04 PM */
 class StrutsJUnit5TestCaseTest extends StrutsJUnit5TestCase<JUnitTestAction> {

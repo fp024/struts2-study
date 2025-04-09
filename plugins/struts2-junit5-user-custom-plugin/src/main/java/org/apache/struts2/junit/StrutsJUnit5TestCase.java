@@ -1,14 +1,44 @@
-package org.apache.struts2;
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+package org.apache.struts2.junit;
 
-import com.opensymphony.xwork2.ActionProxyFactory;
-import com.opensymphony.xwork2.XWorkJUnit5UserCustomTestCase;
-import com.opensymphony.xwork2.config.Configuration;
-import  org.apache.struts2.interceptor.ValidationAware;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import java.io.UnsupportedEncodingException;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.struts2.ActionContext;
+import org.apache.struts2.ActionProxy;
+import org.apache.struts2.ActionProxyFactory;
+import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.config.Configuration;
 import org.apache.struts2.dispatcher.Dispatcher;
 import org.apache.struts2.dispatcher.HttpParameters;
 import org.apache.struts2.dispatcher.mapper.ActionMapper;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
+import org.apache.struts2.interceptor.ValidationAware;
 import org.apache.struts2.util.StrutsTestCaseHelper;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,18 +49,8 @@ import org.springframework.mock.web.MockHttpSession;
 import org.springframework.mock.web.MockPageContext;
 import org.springframework.mock.web.MockServletContext;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.io.UnsupportedEncodingException;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 public abstract class StrutsJUnit5TestCase<T> extends XWorkJUnit5UserCustomTestCase {
+
   protected MockHttpServletResponse response;
   protected MockHttpServletRequest request;
   protected MockPageContext pageContext;
@@ -111,7 +131,7 @@ public abstract class StrutsJUnit5TestCase<T> extends XWorkJUnit5UserCustomTestC
     ServletActionContext.setRequest(request);
     ServletActionContext.setResponse(response);
 
-    ServletActionContext.getContext().put(ServletActionContext.ACTION_MAPPING, mapping);
+    ServletActionContext.getActionContext().put(ServletActionContext.ACTION_MAPPING, mapping);
 
     return proxy;
   }
@@ -158,12 +178,12 @@ public abstract class StrutsJUnit5TestCase<T> extends XWorkJUnit5UserCustomTestC
 
   public void finishExecution() {
     HttpSession session = this.request.getSession();
-    Enumeration<?> attributeNames = session.getAttributeNames();
+    Enumeration<String> attributeNames = session.getAttributeNames();
 
     MockHttpServletRequest nextRequest = new MockHttpServletRequest();
 
     while (attributeNames.hasMoreElements()) {
-      String key = (String) attributeNames.nextElement();
+      String key = attributeNames.nextElement();
       Object attribute = session.getAttribute(key);
       nextRequest.getSession().setAttribute(key, attribute);
     }
@@ -174,10 +194,9 @@ public abstract class StrutsJUnit5TestCase<T> extends XWorkJUnit5UserCustomTestC
   }
 
   /** Sets up the configuration settings, XWork configuration, and message resources */
-  @BeforeEach
   @Override
+  @BeforeEach
   public void setUp() throws Exception {
-    super.setUp();
     initServletMockObjects();
     setupBeforeInitDispatcher();
     initDispatcherParams();
@@ -211,14 +230,9 @@ public abstract class StrutsJUnit5TestCase<T> extends XWorkJUnit5UserCustomTestC
     return null;
   }
 
-  @AfterEach
   @Override
+  @AfterEach
   public void tearDown() throws Exception {
-    super.tearDown();
-    if (dispatcher != null && dispatcher.getConfigurationManager() != null) {
-      dispatcher.cleanup();
-      dispatcher = null;
-    }
-    StrutsTestCaseHelper.tearDown();
+    StrutsTestCaseHelper.tearDown(dispatcher);
   }
 }

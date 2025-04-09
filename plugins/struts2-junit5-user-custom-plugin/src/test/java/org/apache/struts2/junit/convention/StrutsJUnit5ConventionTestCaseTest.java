@@ -16,14 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.struts2.convention;
-
-import actions.ViewAction;
-import org.apache.struts2.StrutsJUnit5TestCase;
-import org.junit.jupiter.api.Test;
+package org.apache.struts2.junit.convention;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import actions.ViewAction;
+import org.apache.struts2.junit.StrutsJUnit5TestCase;
+import org.junit.jupiter.api.Test;
 
 /** Uses the convention plugin to execute actions */
 class StrutsJUnit5ConventionTestCaseTest extends StrutsJUnit5TestCase<ViewAction> {

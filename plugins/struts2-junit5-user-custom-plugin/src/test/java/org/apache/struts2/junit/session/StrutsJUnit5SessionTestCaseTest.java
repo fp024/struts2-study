@@ -16,13 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.struts2.session;
-
-import org.apache.struts2.JUnitTestAction;
-import org.apache.struts2.StrutsJUnit5TestCase;
-import org.junit.jupiter.api.Test;
+package org.apache.struts2.junit.session;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.apache.struts2.junit.JUnitTestAction;
+import org.apache.struts2.junit.StrutsJUnit5TestCase;
+import org.junit.jupiter.api.Test;
 
 /**
  * Calls SessionSet which sets a value into the session and afterwards calls SessionGet, which

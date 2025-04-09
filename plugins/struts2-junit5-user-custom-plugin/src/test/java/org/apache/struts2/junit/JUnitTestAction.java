@@ -16,18 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.struts2.session;
+package org.apache.struts2.junit;
 
 import org.apache.struts2.ActionSupport;
+import org.apache.struts2.interceptor.parameter.StrutsParameter;
+import org.springframework.beans.factory.annotation.Autowired;
 
-/**
- * An action which reads a value from the session. The value is previously set by SessionSetAction.
- */
-public class SessionGetAction extends ActionSupport {
-  private static final long serialVersionUID = 8366502863472148631L;
+public class JUnitTestAction extends ActionSupport {
+  private static final long serialVersionUID = 1629266238339053546L;
 
-  @Override
-  public String execute() {
-    return ActionSupport.SUCCESS;
+  private String name;
+
+  @Autowired private MySessionBean mySessionBean;
+
+  public String getName() {
+    return name;
+  }
+
+  @StrutsParameter
+  public void setName(String name) {
+    this.name = name;
   }
 }

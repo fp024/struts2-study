@@ -16,16 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.struts2;
+package org.apache.struts2.junit;
 
+import java.net.URL;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
-
-import java.net.URL;
 
 public class ConventionPluginResourceLoader extends DefaultResourceLoader {
   private static final Logger log = LogManager.getLogger(ConventionPluginResourceLoader.class);

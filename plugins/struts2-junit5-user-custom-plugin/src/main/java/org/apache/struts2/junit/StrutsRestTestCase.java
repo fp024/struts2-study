@@ -16,24 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.struts2;
+package org.apache.struts2.junit;
 
-import com.opensymphony.xwork2.ActionProxyFactory;
-import com.opensymphony.xwork2.config.Configuration;
-import org.apache.struts2.dispatcher.Dispatcher;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import org.apache.struts2.ActionContext;
+import org.apache.struts2.ActionProxy;
+import org.apache.struts2.ActionProxyFactory;
+import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.config.Configuration;
 import org.apache.struts2.dispatcher.HttpParameters;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.mock.web.MockPageContext;
 import org.springframework.mock.web.MockServletContext;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletResponse;
-import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
-
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class StrutsRestTestCase<T> extends StrutsJUnit5TestCase<T> {
 
@@ -73,7 +74,7 @@ public class StrutsRestTestCase<T> extends StrutsJUnit5TestCase<T> {
     ActionMapping mapping = getActionMapping(request);
 
     assertNotNull(mapping);
-    Dispatcher.getInstance().serviceAction(request, response, mapping);
+    dispatcher.serviceAction(request, response, mapping);
 
     if (response.getStatus() != HttpServletResponse.SC_OK)
       throw new ServletException(
