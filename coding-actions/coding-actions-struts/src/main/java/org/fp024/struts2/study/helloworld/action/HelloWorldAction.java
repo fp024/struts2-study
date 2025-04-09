@@ -1,8 +1,8 @@
 package org.fp024.struts2.study.helloworld.action;
 
 import lombok.Getter;
-import lombok.Setter;
 import org.apache.struts2.ActionSupport;
+import org.apache.struts2.interceptor.parameter.StrutsParameter;
 import org.fp024.struts2.study.helloworld.model.MessageStore;
 
 /**
@@ -19,7 +19,12 @@ public class HelloWorldAction extends ActionSupport {
 
   @Getter private transient MessageStore messageStore;
 
-  @Getter @Setter private String userName;
+  @Getter private String userName;
+
+  @StrutsParameter
+  public void setUserName(String userName) {
+    this.userName = userName;
+  }
 
   private static int helloCount = 0;
 
