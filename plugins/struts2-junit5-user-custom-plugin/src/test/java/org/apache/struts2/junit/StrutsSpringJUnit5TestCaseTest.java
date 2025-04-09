@@ -16,15 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.struts2;
+package org.apache.struts2.junit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import jakarta.servlet.ServletException;
 import java.io.UnsupportedEncodingException;
-
-import javax.servlet.ServletException;
-
+import org.apache.struts2.ActionProxy;
 import org.apache.struts2.action.Action;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
 import org.junit.jupiter.api.Test;

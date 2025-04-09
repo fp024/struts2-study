@@ -16,22 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.struts2;
+package org.apache.struts2.junit;
 
-import org.springframework.beans.factory.annotation.Autowired;
+public class MySessionBean {
 
-public class JUnitTestAction extends ActionSupport {
-  private static final long serialVersionUID = 1629266238339053546L;
-
-  private String name;
-
-  @Autowired private MySessionBean mySessionBean;
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
+  public void doSomething() {
+    // do Something
   }
 }
