@@ -5,12 +5,12 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 
+import jakarta.servlet.ServletException;
 import java.io.UnsupportedEncodingException;
-import javax.servlet.ServletException;
 import org.apache.struts2.ActionProxy;
-import org.apache.struts2.StrutsJUnit5TestCase;
 import org.apache.struts2.action.Action;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
+import org.apache.struts2.junit.StrutsJUnit5TestCase;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -47,7 +47,7 @@ class EditActionTest extends StrutsJUnit5TestCase<EditAction> {
     assertThat(action.getPersonBean().getSport(), is("football"));
     assertThat(action.getPersonBean().getGender(), is("male"));
     assertThat(action.getPersonBean().getResidency(), is("FL"));
-    assertThat(action.getPersonBean().isOver21(), is(true));
+    assertThat(action.getPersonBean().isOver21(), is(false));
     assertThat(action.getPersonBean().getCarModels(), is(new String[] {"Ford", "Nissan"}));
     assertThat(action.getPersonBean().getEmail(), is("noreply@apache.org"));
     assertThat(action.getPersonBean().getPhoneNumber(), is("012-123-1234"));
@@ -88,7 +88,7 @@ class EditActionTest extends StrutsJUnit5TestCase<EditAction> {
     request.setParameter("personBean.sport", "football");
     request.setParameter("personBean.gender", "male");
     request.setParameter("personBean.residency", "FL");
-    request.setParameter("personBean.over21", "true");
+    request.setParameter("personBean.over21", "false");
     request.setParameter("personBean.carModels", "Ford", "Nissan");
     request.setParameter("personBean.email", "noreply@apache.org");
     request.setParameter("personBean.phoneNumber", "012-123-1234"); // [\d{3}-\d{3}-\d{4}]
