@@ -5,8 +5,8 @@
 
 <struts>
   <constant name="struts.devMode" value="true"/>
-
   <constant name="struts.custom.i18n.resources" value="global"/>
+  <constant name="struts.allowlist.packageNames" value="org.fp024.struts2.study.helloworld.model" />
 
   <package name="basicstruts2" extends="struts-default">
 
