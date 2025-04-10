@@ -4,6 +4,7 @@ import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.struts2.ActionSupport;
+import org.apache.struts2.interceptor.parameter.StrutsParameter;
 import org.fp024.struts2.study.edit.model.Person;
 import org.fp024.struts2.study.edit.model.State;
 import org.fp024.struts2.study.edit.service.EditService;
@@ -19,7 +20,9 @@ public class EditAction extends ActionSupport {
 
   private final transient EditService editService = new EditServiceInMemory();
 
-  @Getter @Setter private transient Person personBean;
+  @Getter(onMethod_ = {@StrutsParameter(depth = 1)})
+  @Setter
+  private transient Person personBean;
 
   @Getter private final List<String> sports = List.of("football", "baseball", "basketball");
 
