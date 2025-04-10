@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.apache.struts2.ActionSupport;
 import org.apache.struts2.action.ParameterNameAware;
 import org.apache.struts2.action.SessionAware;
+import org.apache.struts2.interceptor.parameter.StrutsParameter;
 import org.fp024.struts2.study.model.MessageStore;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -29,7 +30,9 @@ public class HelloWorldAction extends ActionSupport implements SessionAware, Par
 
   private static final String HELLO_COUNT = "helloCount";
 
-  @Getter @Setter private String userName;
+  @Getter
+  @Setter(onMethod_ = @StrutsParameter)
+  private String userName;
 
   /**
    * MessageStore 모델 객체를 생성하고 HTTP 세션에 저장된 helloCount를 1만큼 증가시키고 성공을 반환합니다.<br>
