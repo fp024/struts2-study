@@ -1,11 +1,10 @@
 package org.fp024.struts2.study.register.service;
 
+import java.time.LocalDateTime;
 import org.fp024.struts2.study.register.model.Person;
 import org.fp024.struts2.study.register.repository.PersonRepository;
 import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
-import java.time.LocalDateTime;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class RegisterService {
