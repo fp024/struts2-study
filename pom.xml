@@ -58,6 +58,10 @@
 
     <byte-buddy.version>1.17.5</byte-buddy.version>
 
+    <!-- WebJars-->
+    <webjars-locator-core.version>0.59</webjars-locator-core.version>
+    <webjars.jquery.version>3.7.1</webjars.jquery.version>
+
     <jetty.version>12.0.19</jetty.version>
     <jetty-plugin-group-id>org.eclipse.jetty.ee10</jetty-plugin-group-id>
     <jetty-plugin-artifact-id>jetty-ee10-maven-plugin</jetty-plugin-artifact-id>
