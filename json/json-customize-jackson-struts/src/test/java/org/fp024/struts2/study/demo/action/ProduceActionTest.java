@@ -4,11 +4,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.mockStatic;
 
+import jakarta.servlet.ServletException;
 import java.io.UnsupportedEncodingException;
 import java.time.LocalDateTime;
-import javax.servlet.ServletException;
-import org.apache.struts2.StrutsJUnit5TestCase;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
+import org.apache.struts2.junit.StrutsJUnit5TestCase;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;

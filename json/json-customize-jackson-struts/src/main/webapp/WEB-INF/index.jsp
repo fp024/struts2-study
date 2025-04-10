@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<html>
+<html lang="en">
 <head>
     <title>Customized JSON Result</title>
 </head>
