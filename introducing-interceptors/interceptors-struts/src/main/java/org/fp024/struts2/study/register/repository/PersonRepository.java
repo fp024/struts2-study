@@ -1,11 +1,10 @@
 package org.fp024.struts2.study.register.repository;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import java.util.List;
 import org.fp024.struts2.study.register.model.Person;
 import org.springframework.stereotype.Repository;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.util.List;
 
 @Repository
 public class PersonRepository {
