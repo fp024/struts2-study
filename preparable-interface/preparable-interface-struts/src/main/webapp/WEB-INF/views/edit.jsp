@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <s:head/>
   <meta charset="UTF-8">
@@ -20,7 +20,7 @@
   <s:select key="personBean.sport" list="sports" />
   <s:radio key="personBean.gender" list="genders" />
   <s:select key="personBean.residency" list="states" listKey="stateAbbr" listValue="stateName" />
-  <s:checkbox key="personBean.over21" />
+  <s:checkbox key="personBean.over21" value="false" />
   <s:checkboxlist key="personBean.carModels" list="carModelsAvailable" />
   <s:submit key="submit" name=""/>
 </s:form>
