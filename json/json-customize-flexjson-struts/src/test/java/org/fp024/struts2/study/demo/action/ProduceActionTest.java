@@ -4,11 +4,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.mockStatic;
 
+import jakarta.servlet.ServletException;
 import java.io.UnsupportedEncodingException;
 import java.time.LocalDateTime;
-import javax.servlet.ServletException;
-import org.apache.struts2.StrutsJUnit5TestCase;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
+import org.apache.struts2.junit.StrutsJUnit5TestCase;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
@@ -31,7 +31,7 @@ class ProduceActionTest extends StrutsJUnit5TestCase<ProduceAction> {
             + " Shakespeare\",\"password\":\"******\",\"phoneNumbers\":[{\"name\":\"cell\",\"number\":\"555-123-4567\"},{\"name\":\"home\",\"number\":\"555-987-6543\"},{\"name\":\"work\",\"number\":\"555-678-3542\"}]}";
     try (MockedStatic<LocalDateTime> mockedJSONContext =
         mockStatic(LocalDateTime.class, Mockito.CALLS_REAL_METHODS); ) {
-      mockedJSONContext.when(() -> LocalDateTime.now()).thenReturn(lastLogin);
+      mockedJSONContext.when(LocalDateTime::now).thenReturn(lastLogin);
 
       String output = executeAction("/produce.action");
       assertEquals(expect, output);
