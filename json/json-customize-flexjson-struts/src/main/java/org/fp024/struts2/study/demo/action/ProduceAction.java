@@ -12,7 +12,7 @@ import org.fp024.struts2.study.demo.domain.User;
 import org.fp024.struts2.study.demo.domain.Zipcode;
 
 public class ProduceAction extends ActionSupport {
-  @Getter private User user;
+  @Getter private transient User user;
 
   @Override
   public String execute() throws Exception {
