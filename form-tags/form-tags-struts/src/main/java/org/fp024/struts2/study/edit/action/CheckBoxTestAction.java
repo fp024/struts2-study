@@ -6,11 +6,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.struts2.ActionContext;
 import org.apache.struts2.ActionSupport;
 import org.apache.struts2.action.Action;
+import org.apache.struts2.interceptor.parameter.StrutsParameter;
 
 /** checkbox에 체크를 안하고 폼전송할 때, 제출을 하면 아예전송이 안되는지? */
 @Slf4j
 public class CheckBoxTestAction extends ActionSupport {
-  @Getter @Setter private boolean aaaChecked = true;
+  @Getter
+  @Setter(onMethod_ = {@StrutsParameter})
+  private boolean aaaChecked = true;
 
   @Override
   public String execute() {

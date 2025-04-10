@@ -274,6 +274,14 @@ checkboxlist 태그의 key 속성 값은 Struts 2 프레임워크에 체크된(c
     2021-12-06 10:09:59,326 INFO  [qtp2134194703-35] action.CheckBoxTestAction (CheckBoxTestAction.java:18) - param aaaChecked: Empty{name='aaaChecked'}, field aaaChecked true
     ```
 
+    * checkbox의 요소의 value로는 true또는 false로 지정해야 제대로 인식이 된다.
+
+      ```html
+      <input type="checkbox" name="aaaChecked" id="aaaChecked" value="false" />
+      ```
+
+      ✨ value 값을 true 또는 false가 아닌 값으로 전달하면, 액션 필드에서 false로 처리된다.
+
 * [x] Struts 2 checkboxlist 태그
 
 * [x] 요약
