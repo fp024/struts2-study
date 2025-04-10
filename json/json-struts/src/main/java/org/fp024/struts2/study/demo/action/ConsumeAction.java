@@ -1,6 +1,6 @@
 package org.fp024.struts2.study.demo.action;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.Getter;
 import org.apache.struts2.ActionSupport;
 import org.apache.struts2.action.ServletRequestAware;

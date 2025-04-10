@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>JSON 요청을 사용하는 방법</title>
-    <script src="js/jquery-3.6.0.min.js"></script>
-</head>
-<body>
+    <script src="/webjars_locator?webjar=jquery&path=jquery.min.js"></script>
+  </head>
+  <body>
+    <form>
+      <div>카운터: <input type="number" name="counter" /></div>
+      <div>이름 1: <input type="text" name="names" /></div>
+      <div>이름 2: <input type="text" name="names" /></div>
+      <button type="button" onclick="performSubmit('json'); return false;">
+        JSON으로 제출, JSON으로 응답
+      </button>
+      <button type="button" onclick="performSubmit('html'); return false;">
+        JSON으로 제출, HTML로 응답
+      </button>
+    </form>
 
-<form>
-    <div>카운터: <input type="number" name="counter"></div>
-    <div>이름 1: <input type="text" name="names"></div>
-    <div>이름 2: <input type="text" name="names"></div>
-    <button type="button" onclick="performSubmit('json'); return false;">JSON으로 제출, JSON으로 응답</button>
-    <button type="button" onclick="performSubmit('html'); return false;">JSON으로 제출, HTML로 응답</button>
-</form>
+    <textarea rows="20" cols="60" id="response"></textarea>
 
-<textarea rows="20" cols="60" id="response"></textarea>
-
-<script type="application/javascript">
-    function performSubmit(responseAs) {
+    <script type="application/javascript">
+      function performSubmit(responseAs) {
         let arrNames = [];
 
         $("[name='names']").each(function () {
-            arrNames.push($(this).val());
+          arrNames.push($(this).val());
         });
 
         let params = {
-            counter: $("[name='counter']").val(),
-            names: arrNames
+          counter: $("[name='counter']").val(),
+          names: arrNames,
         };
 
-        let acceptHeader = 'application/json';
-        if (responseAs === 'html') {
-            acceptHeader = 'text/html';
+        let acceptHeader = "application/json";
+        if (responseAs === "html") {
+          acceptHeader = "text/html";
         }
 
         $.ajax({
-            url: 'consume.action',
-            type: 'POST',
-            data: JSON.stringify(params),
-            headers: {
-                Accept: acceptHeader,
-                "Content-Type": "application/json; charset=UTF-8"
-            },
-            dataType: 'json'
+          url: "consume.action",
+          type: "POST",
+          data: JSON.stringify(params),
+          headers: {
+            Accept: acceptHeader,
+            "Content-Type": "application/json; charset=UTF-8",
+          },
+          dataType: "json",
         }).always(function (data) {
-                $("#response").text(JSON.stringify(data));
+          $("#response").text(JSON.stringify(data));
         });
-    }
-</script>
-</body>
+      }
+    </script>
+  </body>
 </html>

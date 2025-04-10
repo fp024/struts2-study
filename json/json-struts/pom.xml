@@ -50,6 +50,16 @@
       <version>${flexjson.version}</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>webjars-locator-core</artifactId>
+      <version>${webjars-locator-core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>jquery</artifactId>
+      <version>${webjars.jquery.version}</version>
+    </dependency>
 
     <!-- JUnit 5를 사용하기 위해 https://github.com/apache/struts/tree/master/plugins/junit 프로젝트를 수정했다. -->
     <dependency>
@@ -68,12 +78,6 @@
       <artifactId>spring-web</artifactId>
       <scope>test</scope>
     </dependency>
-    <!--
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-    </dependency>
-    -->
 
     <dependency>
       <groupId>org.mockito</groupId>

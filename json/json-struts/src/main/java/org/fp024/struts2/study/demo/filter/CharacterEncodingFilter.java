@@ -1,14 +1,13 @@
 package org.fp024.struts2.study.demo.filter;
 
-import lombok.extern.slf4j.Slf4j;
-
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.FilterConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 import java.io.IOException;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class CharacterEncodingFilter implements Filter {
