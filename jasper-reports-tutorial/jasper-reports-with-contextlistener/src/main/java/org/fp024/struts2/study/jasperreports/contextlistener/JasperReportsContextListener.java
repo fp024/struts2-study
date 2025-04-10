@@ -1,9 +1,9 @@
 package org.fp024.struts2.study.jasperreports.contextlistener;
 
+import jakarta.servlet.ServletContextEvent;
+import jakarta.servlet.ServletContextListener;
 import java.io.File;
 import java.util.Optional;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jasperreports.engine.JasperCompileManager;
 

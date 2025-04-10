@@ -29,18 +29,18 @@
       <artifactId>jasperreports</artifactId>
       <version>${jasperreports.version}</version>
       <exclusions>
-        <!-- spring-jcl 5.3.22에 commons-logging이 포함되어있다. jasperreports 에 있는 디펜던시를 제외했을 때도 문제가 없어서 이대로 유지하자. -->
+        <!-- spring-jcl에 commons-logging이 포함되어있다. jasperreports 에 있는 디펜던시를 제외했을 때도 문제가 없어서 이대로 유지하자. -->
         <exclusion>
           <groupId>commons-logging</groupId>
           <artifactId>commons-logging</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
-    <!-- @PostConstruct, @PreDestory 사용을 위해서 추가, Java 9부터 모듈로 분리됨 -->
+    <!-- @PostConstruct, @PreDestroy 사용을 위해서 추가, Java 9부터 모듈로 분리됨 -->
     <dependency>
-      <groupId>javax.annotation</groupId>
-      <artifactId>javax.annotation-api</artifactId>
-      <version>${javax.annotation-api.version}</version>
+      <groupId>jakarta.annotation</groupId>
+      <artifactId>jakarta.annotation-api</artifactId>
+      <version>${jakarta.annotation-api.version}</version>
     </dependency>
   </dependencies>
 </project>
