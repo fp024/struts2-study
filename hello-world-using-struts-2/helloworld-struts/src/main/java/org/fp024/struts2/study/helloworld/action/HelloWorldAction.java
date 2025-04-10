@@ -18,7 +18,7 @@ public class HelloWorldAction extends ActionSupport {
 
   @Override
   public String execute() {
-    messageStore = new MessageStore();
+    this.messageStore = new MessageStore();
     return SUCCESS;
   }
 }

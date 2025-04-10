@@ -1,11 +1,13 @@
 package org.fp024.struts2.study.helloworld.model;
 
 import lombok.Getter;
+import lombok.ToString;
 
+@ToString
 public class MessageStore {
   @Getter private String message;
 
   public MessageStore() {
-    message = "Hello Struts User";
+    this.message = "Hello Struts User";
   }
 }
