@@ -3,6 +3,7 @@ package org.fp024.struts2.study.helloworld.action;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.struts2.ActionSupport;
+import org.apache.struts2.interceptor.parameter.StrutsParameter;
 import org.fp024.struts2.study.helloworld.model.MessageStore;
 
 /**
@@ -20,9 +21,11 @@ public class HelloWorldAction extends ActionSupport {
 
   private static final long serialVersionUID = 1L;
 
-  @Getter private MessageStore messageStore;
+  @Getter private transient MessageStore messageStore;
 
-  @Getter @Setter private String userName;
+  @Getter
+  @Setter(onMethod_ = {@StrutsParameter})
+  private String userName;
 
   private static int helloCount = 0;
 
