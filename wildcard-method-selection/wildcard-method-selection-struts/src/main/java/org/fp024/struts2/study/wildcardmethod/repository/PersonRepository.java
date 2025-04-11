@@ -1,31 +1,30 @@
 package org.fp024.struts2.study.wildcardmethod.repository;
 
-import org.fp024.struts2.study.wildcardmethod.model.Person;
-import org.springframework.stereotype.Repository;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.util.List;
+import org.fp024.struts2.study.wildcardmethod.model.PersonEntity;
+import org.springframework.stereotype.Repository;
 
 @Repository
 public class PersonRepository {
   @PersistenceContext private EntityManager entityManager;
 
-  public void save(Person person) {
+  public void save(PersonEntity person) {
     entityManager.persist(person);
   }
 
-  public Person findById(int id) {
-    return entityManager.find(Person.class, id);
+  public PersonEntity findById(int id) {
+    return entityManager.find(PersonEntity.class, id);
   }
 
-  public void remove(Person person) {
+  public void remove(PersonEntity person) {
     entityManager.remove(person);
   }
 
-  public List<Person> list() {
+  public List<PersonEntity> list() {
     return entityManager
-        .createQuery("SELECT p FROM Person p ORDER BY p.id", Person.class)
+        .createQuery("SELECT p FROM PersonEntity p ORDER BY p.id", PersonEntity.class)
         .getResultList();
   }
 }

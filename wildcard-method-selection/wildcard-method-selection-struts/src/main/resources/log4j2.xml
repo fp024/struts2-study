@@ -6,9 +6,13 @@
     </Console>
   </Appenders>
   <Loggers>
-    <Logger name="com.opensymphony.xwork2" level="debug"/>
-    <Logger name="org.apache.struts2" level="debug"/>
+    <Logger name="com.opensymphony.xwork2" level="warn"/>
+    <Logger name="org.apache.struts2" level="warn"/>
     <Logger name="org.fp024.struts2.study" level="debug"/>
+
+    <Logger name="org.hibernate.orm.jdbc.bind" level="trace"/>
+    <!-- <Logger name="org.hibernate.orm.jdbc.extract" level="TRACE"/> --><!-- NOSONAR -->
+
     <Root level="info">
       <AppenderRef ref="STDOUT"/>
     </Root>

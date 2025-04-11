@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import org.fp024.struts2.study.wildcardmethod.model.Person;
+import org.fp024.struts2.study.wildcardmethod.model.PersonEntity;
 
 /** 엔티티를 외부에 직접 노출하지 않기위해 DTO 모델을 별도로 만듦. */
 @Getter
@@ -14,7 +14,7 @@ import org.fp024.struts2.study.wildcardmethod.model.Person;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PersonDTO {
-  public PersonDTO(Person person) {
+  public PersonDTO(PersonEntity person) {
     this.id = person.getId();
     this.firstName = person.getFirstName();
     this.lastName = person.getLastName();

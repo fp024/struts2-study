@@ -5,8 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.struts2.ActionSupport;
+import org.apache.struts2.interceptor.parameter.StrutsParameter;
 import org.fp024.struts2.study.wildcardmethod.dto.PersonDTO;
-import org.fp024.struts2.study.wildcardmethod.model.Person;
 import org.fp024.struts2.study.wildcardmethod.service.PersonService;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
@@ -26,9 +26,11 @@ public class PersonAction extends ActionSupport {
 
   private static final long serialVersionUID = 1L;
 
-  @Getter @Setter private transient PersonDTO personDTO;
+  @Getter(onMethod_ = {@StrutsParameter(depth = 1)})
+  @Setter
+  private transient PersonDTO personDTO;
 
-  @Getter private transient List<Person> personList;
+  @Getter private transient List<PersonDTO> personList;
 
   @Override
   public String execute() {
@@ -50,7 +52,7 @@ public class PersonAction extends ActionSupport {
 
   public String edit() {
     LOGGER.debug("In edit method");
-    personDTO = new PersonDTO(personService.getPerson(personDTO));
+    personDTO = personService.getPerson(personDTO);
     return INPUT;
   }
 
