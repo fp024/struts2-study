@@ -12,7 +12,6 @@
     <default-action-ref name="index" />
   
     <action name="index">
-      <!--<result>/index.jsp</result>-->
       <result type="freemarker">/freemarker/index-template.ftl</result>
     </action>
 
