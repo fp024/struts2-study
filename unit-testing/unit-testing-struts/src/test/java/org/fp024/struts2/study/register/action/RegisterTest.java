@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.apache.struts2.ActionProxy;
 import org.apache.struts2.ActionSupport;
-import org.apache.struts2.StrutsJUnit5TestCase;
+import org.apache.struts2.junit.StrutsJUnit5TestCase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
