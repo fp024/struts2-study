@@ -5,6 +5,7 @@
 * 부모 POM과의 연결성을 제거하고 완전히 독립적으로 동작하게 해도 되기는 되는데, 그렇게 까지 할 필요는 없을 것 같음. 😅
 * 예전에 작성한 예제를 확인하도록 Git에서 Tag를 따로 만들어서 내용을 추가해야겠다.
   * ✨ Git Tag: https://github.com/fp024/struts2-study/tree/Struts2-6.x-Javax
+    * https://github.com/fp024/struts2-study/tree/Struts2-6.x-Javax/struts-double-evaluation-test
 
 ---
 
