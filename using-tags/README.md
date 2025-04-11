@@ -253,3 +253,8 @@ HelloWorldAction 클래스의 getMessageStore는 MessageStore 객체를 반환�
 
 * [x] Struts 2 프로퍼티 태그
 
+---
+
+### 예제 변경
+
+💡 Struts 7로 마이그레이션 하면서 예제의 동작을 좀 의미있게 바꿨다. 😅
