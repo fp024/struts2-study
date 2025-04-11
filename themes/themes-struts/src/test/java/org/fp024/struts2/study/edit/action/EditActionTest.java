@@ -5,12 +5,12 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 
+import jakarta.servlet.ServletException;
 import java.io.UnsupportedEncodingException;
-import javax.servlet.ServletException;
 import org.apache.struts2.ActionProxy;
-import org.apache.struts2.StrutsJUnit5TestCase;
 import org.apache.struts2.action.Action;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
+import org.apache.struts2.junit.StrutsJUnit5TestCase;
 import org.junit.jupiter.api.Test;
 
 /**
