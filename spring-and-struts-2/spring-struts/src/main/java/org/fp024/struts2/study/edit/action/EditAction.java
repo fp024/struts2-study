@@ -3,14 +3,17 @@ package org.fp024.struts2.study.edit.action;
 import java.util.Arrays;
 import java.util.List;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.apache.struts2.ActionSupport;
+import org.apache.struts2.interceptor.parameter.StrutsParameter;
 import org.fp024.struts2.study.edit.model.Person;
 import org.fp024.struts2.study.edit.model.State;
 import org.fp024.struts2.study.edit.service.EditService;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+@RequiredArgsConstructor
 @Component
 @Scope("prototype")
 public class EditAction extends ActionSupport {
@@ -20,13 +23,11 @@ public class EditAction extends ActionSupport {
    * XML 설정에서 빈을 명시적으로 설정하면 액션에서 Setter만 만들어주면 되는데,<br>
    * Component-scan 할 경우는 @Autowired를 필드에 지정하거나 생성자로 받아야한다.
    */
-  private transient EditService editService;
+  private final transient EditService editService;
 
-  public EditAction(EditService editService) {
-    this.editService = editService;
-  }
-
-  @Getter @Setter private transient Person personBean;
+  @Getter(onMethod_ = {@StrutsParameter(depth = 1)})
+  @Setter
+  private transient Person personBean;
 
   private String[] sports = {"football", "baseball", "basketball"};
 

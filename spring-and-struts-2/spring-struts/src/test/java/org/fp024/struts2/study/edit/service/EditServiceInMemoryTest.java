@@ -1,12 +1,11 @@
 package org.fp024.struts2.study.edit.service;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-
-import javax.annotation.Resource;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringJUnitConfig(locations = "classpath:applicationContext.xml")
 class EditServiceInMemoryTest {

@@ -5,12 +5,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import jakarta.servlet.ServletException;
 import java.io.UnsupportedEncodingException;
-import javax.servlet.ServletException;
 import org.apache.struts2.ActionProxy;
-import org.apache.struts2.StrutsSpringJUnit5TestCase;
 import org.apache.struts2.action.Action;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
+import org.apache.struts2.junit.StrutsSpringJUnit5TestCase;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
@@ -54,18 +54,20 @@ class EditActionTest extends StrutsSpringJUnit5TestCase<EditAction> {
   @Test
   void executeAction() throws ServletException, UnsupportedEncodingException {
     String expect =
-        "<!DOCTYPE html>\n"
-            + "<html>\n"
-            + "<head>\n"
-            + "    <meta charset=\"UTF-8\">\n"
-            + "    <title>Basic Struts 2 Application - Welcome</title>\n"
-            + "</head>\n"
-            + "<body>\n"
-            + "<h1>Welcome To Struts 2!</h1>\n"
-            + "\n"
-            + "<p><a href='edit.action' >Edit your information</a></p>\n"
-            + "</body>\n"
-            + "</html>";
+        """
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Basic Struts 2 Application - Welcome</title>
+        </head>
+        <body>
+        <h1>Welcome To Struts 2!</h1>
+
+        <p><a href='edit.action' >Edit your information</a></p>
+        </body>
+        </html>\
+        """; // 💡 택스트 블록에서 줄끝의 \는 마지막 개행이 없다는 의미로 해석된다.
 
     String output = executeAction("/index.action");
     assertEquals(expect, output.replace("\r", ""));
