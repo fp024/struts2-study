@@ -93,8 +93,6 @@
     <module>../json/json-customize-jackson-struts</module>
     <!-- 27. JSON 튜토리얼 - Struts 2 JSON Plugin 예제 (x) -->
     <module>../json/json-struts</module>
-    <!-- 28. 이중 평가 테스트 ( AliasInterceptor ) (v) -->
-    <module>../struts-double-evaluation-test</module>
   </modules>
 
 
