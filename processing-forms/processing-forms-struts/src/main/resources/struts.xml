@@ -26,8 +26,14 @@
       <result name="success">/WEB-INF/views/HelloWorld.jsp</result>
     </action>
 
-    <action name="register" class="org.fp024.struts2.study.register.action.Register" method="execute">
-      <result name="success">/WEB-INF/views/thankyou.jsp</result>
+    <action name="register" class="org.fp024.struts2.study.register.action.Register" method="input">
+      <result name="input">/WEB-INF/views/register.jsp</result>
+    </action>
+    <action name="register-cancel" class="org.fp024.struts2.study.register.action.Register" method="cancel2">
+      <result type="redirectAction">index</result>
+    </action>
+    <action name="register-submit" class="org.fp024.struts2.study.register.action.Register" method="execute2">
+      <result>/WEB-INF/views/thankyou.jsp</result>
     </action>
   </package>
 
