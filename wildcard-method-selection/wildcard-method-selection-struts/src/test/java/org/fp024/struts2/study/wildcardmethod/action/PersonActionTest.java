@@ -7,12 +7,12 @@ import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import com.opensymphony.xwork2.config.ConfigurationException;
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 import org.apache.struts2.ActionProxy;
-import org.apache.struts2.StrutsSpringJUnit5TestCase;
 import org.apache.struts2.action.Action;
+import org.apache.struts2.config.ConfigurationException;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
+import org.apache.struts2.junit.StrutsSpringJUnit5TestCase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

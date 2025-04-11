@@ -1,25 +1,24 @@
 package org.fp024.struts2.study.wildcardmethod.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.fp024.struts2.study.wildcardmethod.dto.PersonDTO;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 @Getter
 @Setter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "person")
-public class Person {
-  public Person(PersonDTO personDTO) {
+public class PersonEntity {
+  public PersonEntity(PersonDTO personDTO) {
     setByPersonDTO(personDTO);
   }
 

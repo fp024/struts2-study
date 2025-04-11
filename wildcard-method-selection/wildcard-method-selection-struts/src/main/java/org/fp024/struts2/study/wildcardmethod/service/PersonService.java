@@ -1,11 +1,11 @@
 package org.fp024.struts2.study.wildcardmethod.service;
 
 import java.util.List;
-import javax.transaction.Transactional;
 import org.fp024.struts2.study.wildcardmethod.dto.PersonDTO;
-import org.fp024.struts2.study.wildcardmethod.model.Person;
+import org.fp024.struts2.study.wildcardmethod.model.PersonEntity;
 import org.fp024.struts2.study.wildcardmethod.repository.PersonRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class PersonService {
@@ -19,9 +19,9 @@ public class PersonService {
   @Transactional
   public void save(PersonDTO personDTO) {
     if (personDTO.getId() == null) {
-      personRepository.save(new Person(personDTO));
+      personRepository.save(new PersonEntity(personDTO));
     } else {
-      Person person = personRepository.findById(personDTO.getId());
+      PersonEntity person = personRepository.findById(personDTO.getId());
       if (person == null) {
         return;
       }
@@ -30,8 +30,8 @@ public class PersonService {
     }
   }
 
-  public List<Person> getPersons() {
-    return personRepository.list();
+  public List<PersonDTO> getPersons() {
+    return personRepository.list().stream().map(PersonDTO::new).toList();
   }
 
   @Transactional
@@ -39,7 +39,8 @@ public class PersonService {
     personRepository.remove(personRepository.findById(personDTO.getId()));
   }
 
-  public Person getPerson(PersonDTO personDTO) {
-    return personRepository.findById(personDTO.getId());
+  public PersonDTO getPerson(PersonDTO personDTO) {
+    PersonEntity personEntity = personRepository.findById(personDTO.getId());
+    return personEntity == null ? null : new PersonDTO(personEntity);
   }
 }
