@@ -41,7 +41,7 @@ public class JacksonJSONWriter implements JSONWriter {
     // Flexjson 의 경우처럼 아무일도 하지 않는 ExcludeTransformer 를 따로 만들필요는 없는 것 같다.
     // https://www.baeldung.com/jackson-ignore-null-fields
     if (excludeNullProperties) {
-      mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+      mapper.setDefaultPropertyInclusion(JsonInclude.Include.NON_NULL);
     }
 
     if (dateFormatter != null) {

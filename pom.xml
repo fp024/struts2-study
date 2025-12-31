@@ -25,48 +25,48 @@
     <jakarta.servlet.jsp.jstl.version>3.0.1</jakarta.servlet.jsp.jstl.version>
 
 
-    <struts2.version>7.0.3</struts2.version>
-    <spring.platformVersion>6.2.5</spring.platformVersion>
+    <struts2.version>7.1.1</struts2.version>
+    <spring.platformVersion>6.2.15</spring.platformVersion>
     
     <struts2-junit5-user-custom-plugin.version>${project.version}</struts2-junit5-user-custom-plugin.version>
 
 
-    <log4j2.version>2.24.3</log4j2.version>
+    <log4j2.version>2.25.3</log4j2.version>
 
     <!-- Jackson 버전이 뒤섞이는 경우가 있어서 jackson-bom을 추가했다. -->
-    <jackson.version>2.18.3</jackson.version>
+    <jackson.version>2.20.1</jackson.version>
 
     <flexjson.version>3.3</flexjson.version>
 
-    <hikaricp.version>6.3.0</hikaricp.version>
-    <hibernate.version>6.6.13.Final</hibernate.version>
+    <hikaricp.version>7.0.2</hikaricp.version>
+    <hibernate.version>6.6.40.Final</hibernate.version>
     <hsqldb.version>2.7.4</hsqldb.version>
 
     <jakarta.annotation-api.version>2.1.1</jakarta.annotation-api.version>
 
-    <jasperreports.version>6.21.4</jasperreports.version>
+    <jasperreports.version>6.21.5</jasperreports.version>
 
-    <lombok.version>1.18.38</lombok.version>
+    <lombok.version>1.18.42</lombok.version>
 
-    <junit.version>5.12.1</junit.version>
-    <mockito.version>5.17.0</mockito.version>
+    <junit.version>5.14.1</junit.version>
+    <mockito.version>5.21.0</mockito.version>
     <hamcrest.version>3.0</hamcrest.version>
-    <assertj.version>3.27.3</assertj.version>
+    <assertj.version>3.27.6</assertj.version>
 
     <!-- struts2-convention-plugin에서 Java 17 바이트 코드 해석을 못해서, 버전을 올렸다. -->
-    <asm.version>9.8</asm.version>
+    <asm.version>9.9.1</asm.version>
 
-    <byte-buddy.version>1.17.5</byte-buddy.version>
+    <byte-buddy.version>1.18.3</byte-buddy.version>
 
     <!-- WebJars-->
     <webjars-locator-core.version>0.59</webjars-locator-core.version>
     <webjars.jquery.version>3.7.1</webjars.jquery.version>
 
-    <jetty.version>12.0.19</jetty.version>
+    <jetty.version>12.1.5</jetty.version>
     <jetty-plugin-group-id>org.eclipse.jetty.ee10</jetty-plugin-group-id>
     <jetty-plugin-artifact-id>jetty-ee10-maven-plugin</jetty-plugin-artifact-id>
 
-    <jetty11.version>11.0.25</jetty11.version>
+    <jetty11.version>11.0.26</jetty11.version>
     <jetty11-plugin-group-id>org.eclipse.jetty</jetty11-plugin-group-id>
     <jetty11-plugin-artifact-id>jetty-maven-plugin</jetty11-plugin-artifact-id>
 
@@ -79,18 +79,18 @@
     <jettyAutoDeploy>-1</jettyAutoDeploy>
 
     <!-- Maven Plugin 버전 -->
-    <maven-clean-plugin.version>3.4.1</maven-clean-plugin.version>
-    <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-    <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
-    <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
-    <maven-failsafe-plugin.version>3.5.3</maven-failsafe-plugin.version>
-    <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
+    <maven-clean-plugin.version>3.5.0</maven-clean-plugin.version>
+    <maven-resources-plugin.version>3.4.0</maven-resources-plugin.version>
+    <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+    <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
+    <maven-failsafe-plugin.version>3.5.4</maven-failsafe-plugin.version>
+    <maven-war-plugin.version>3.5.1</maven-war-plugin.version>
     <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
     <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
     <maven-toolchains-plugin.version>3.2.0</maven-toolchains-plugin.version>
 
     <!-- Struts JUnit Plugin -->
-    <commons-compress.version>1.27.1</commons-compress.version>
+    <commons-compress.version>1.28.0</commons-compress.version>
     <portlet-api.version>3.0.1</portlet-api.version>
   </properties>
 

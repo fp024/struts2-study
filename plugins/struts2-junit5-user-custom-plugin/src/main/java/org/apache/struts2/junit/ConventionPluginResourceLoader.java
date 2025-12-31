@@ -19,7 +19,6 @@
 package org.apache.struts2.junit;
 
 import java.net.URL;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.core.io.DefaultResourceLoader;
@@ -31,7 +30,7 @@ public class ConventionPluginResourceLoader extends DefaultResourceLoader {
 
   @Override
   public Resource getResource(String location) {
-    if (StringUtils.startsWith(location, "/WEB-INF/")) {
+    if (location != null && location.startsWith("/WEB-INF/")) {
       try {
         URL url =
             new URL("file:/" + System.getProperty("user.dir") + "/src/main/webapp" + location);
