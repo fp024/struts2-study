@@ -1,0 +1,12 @@
+version: "0.2"
+ignorePaths: 
+  - mvnw.cmd
+  - mvnw
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  - setlocal
+  - endlocal
+  - ERRORLEVEL
+ignoreWords: []
+import: []
