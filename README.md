@@ -60,7 +60,24 @@
     $ mvnw clean test
     ```
 
-     
+  
+  
+  
+  * 모든 하위 프로젝트 빌드 테스트 배치 파일
+  
+    ```bash
+    # linux
+    $ build-test.sh
+    ```
+  
+    ```bat
+    :: windows
+    build-test.bat
+    ```
+  
+    위에 언급한 내용 한번에 실행해주는 배치 파일입니다.
+  
+  
 
 ## 시작하기
 
