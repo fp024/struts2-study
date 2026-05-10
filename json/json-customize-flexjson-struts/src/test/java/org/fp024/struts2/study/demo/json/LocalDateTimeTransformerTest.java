@@ -36,7 +36,7 @@ class LocalDateTimeTransformerTest {
 
     try (MockedStatic<JSONContext> mockedJSONContext =
         mockStatic(JSONContext.class, Mockito.CALLS_REAL_METHODS); ) {
-      mockedJSONContext.when(() -> JSONContext.get()).thenReturn(context);
+      mockedJSONContext.when(JSONContext::get).thenReturn(context);
 
       transformer.transform(LocalDateTime.of(2021, 11, 21, 15, 53, 50, 0));
       verify(context, times(1)).writeQuoted("2021-11-21 15:53:50");

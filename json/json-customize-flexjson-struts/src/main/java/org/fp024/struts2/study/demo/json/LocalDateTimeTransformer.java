@@ -43,7 +43,7 @@ public class LocalDateTimeTransformer extends AbstractTransformer implements Obj
 
   @Override
   public Object instantiate(
-      ObjectBinder context, Object value, Type targetType, Class targetClass) {
+      ObjectBinder context, Object value, Type targetType, @SuppressWarnings("rawtypes") Class targetClass) {
     try {
       return LocalDateTime.parse(value.toString(), formatter);
     } catch (Exception e) {
