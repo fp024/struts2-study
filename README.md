@@ -14,7 +14,7 @@
 
 * [struts2-study-parent](struts2-study-parent) 디렉토리 경로를 계층구조로 대신 상대적인 경로로 정의했습니다.
 
-* 우선 JUnit 5가 실행가능하게 만든 [커스텀 플러그인](plugins/struts2-junit5-user-custom-plugin)을 로컬 레파지토리에 설치해야하므로 스터디 프로젝트 루트에서 다음을 실행합니다.
+* 우선 JUnit 5 이상 버전을 사용 가능하게 만든 [커스텀 플러그인](plugins/struts2-junit-plugin)을 로컬 레파지토리에 설치해야하므로 스터디 프로젝트 루트에서 다음을 실행합니다.
 
   ```
   $ mvnw install
@@ -113,9 +113,10 @@
 
 ### 플러그인 프로젝트
 
-* [JUnit 플러그인](plugins/struts2-junit5-user-custom-plugin/junit-plugin.md)
-  * [Struts 2 JUnit 5 사용자 커스텀 플러그인](plugins/struts2-junit5-user-custom-plugin)
-
+* [JUnit 플러그인](plugins/struts2-junit-plugin/junit-plugin.md)
+  * [Struts 2 JUnit 사용자 커스텀 플러그인](plugins/struts2-junit-plugin)
+    * JUnit 5 이상 버전 지원
+  
 * [스프링 플러그인](plugins/spring-plugin)
 * [Bean Validation 플러그인](plugins/bean-validation-plugin)
 * [JSON 플러그인](plugins/json-plugin/)

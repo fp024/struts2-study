@@ -30,7 +30,7 @@ jobs:
           17
         mvn-toolchain-id: |
           17
-    - name: Build with Maven (struts2-junit5-user-custom-plugin install)
+    - name: Build with Maven (struts2-junit-plugin install)
       run: mvn -B clean install --file pom.xml -t toolchains.xml
 
     - name: Build with Maven (all projects build test)

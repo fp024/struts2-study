@@ -1,9 +1,9 @@
 @echo off
 setlocal
 
-echo ==============================================================================
-echo  [1/2] Root install (Parent-POM + Struts2 JUnit 5 Plugin to local repository)
-echo ==============================================================================
+echo =============================================================================
+echo  [1/2] Root install (Parent-POM + Struts2 JUnit Plugin to local repository)
+echo =============================================================================
 call mvnw.cmd clean install
 if %ERRORLEVEL% neq 0 (
     echo.

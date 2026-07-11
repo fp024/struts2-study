@@ -19,11 +19,11 @@
   <url>https://github.com/fp024/struts2-study/tree/master/exclude-parameters</url>
 
   <dependencies>
-    <!-- JUnit 5를 사용하기 위해 https://github.com/apache/struts/tree/master/plugins/junit 프로젝트를 수정했다. -->
+    <!-- JUnit 5 이상 버전을 사용하기 위해 https://github.com/apache/struts/tree/master/plugins/junit 프로젝트를 수정했다. -->
     <dependency>
       <groupId>org.fp024.struts2.study</groupId>
-      <artifactId>struts2-junit5-user-custom-plugin</artifactId>
-      <version>${struts2-junit5-user-custom-plugin.version}</version>
+      <artifactId>struts2-junit-plugin</artifactId>
+      <version>${struts2-junit-plugin.version}</version>
       <scope>test</scope>
     </dependency>
     

@@ -43,7 +43,7 @@ git에서 그냥 받으면 `2.6.0-SNAPSHOT` 버전이기 때문에, 최신 Curre
 
 ### 2. 플러그인 프로젝트 복사 및 IDE 등에서 불러온다.
 
-`/plugins/junit`  경로의 Maven 프로젝트를 여기 `{스트럿츠 스터티 홈}/unit-testing/struts2-junit5-plugin` 으로 복사하고, IDE 등에서 Maven 프로젝트로 연다.
+`/plugins/junit`  경로의 Maven 프로젝트를 여기 `{스트럿츠 스터티 홈}/unit-testing/struts2-junit-plugin` 으로 복사하고, IDE 등에서 Maven 프로젝트로 연다.
 
 
 
@@ -55,9 +55,9 @@ git에서 그냥 받으면 `2.6.0-SNAPSHOT` 버전이기 때문에, 최신 Curre
 
    ```xml
      <groupId>org.fp024.struts2.study</groupId>
-     <artifactId>struts2-junit5-user-custom-plugin</artifactId>
+     <artifactId>struts2-junit-custom-plugin</artifactId>
      <packaging>jar</packaging>
-     <name>Struts 2 JUnit 5 User Custom Plugin</name>
+     <name>Struts 2 JUnit Custom Plugin</name>
      <version>1.0.0-SNAPSHOT</version>
    ```
 

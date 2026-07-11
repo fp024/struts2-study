@@ -1,9 +1,9 @@
 #!/bin/sh
 set -e
 
-echo "=============================================================================="
-echo " [1/2] Root install (Parent-POM + Struts2 JUnit 5 Plugin to local repository)"
-echo "=============================================================================="
+echo "============================================================================="
+echo " [1/2] Root install (Parent-POM + Struts2 JUnit Plugin to local repository)"
+echo "============================================================================="
 ./mvnw clean install
 
 echo ""
