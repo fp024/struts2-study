@@ -47,18 +47,16 @@
       https://github.com/FasterXML/jackson-databind
     -->    
     <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
+      <groupId>tools.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
     </dependency>
 
     <!--
       Java 8 date/time 처리를 위해서는 아래 모듈 추가 후 등록해야한다.
       JacksonJSONWriter 클래스 참조
-    -->
-    <dependency>
-      <groupId>com.fasterxml.jackson.datatype</groupId>
-      <artifactId>jackson-datatype-jsr310</artifactId>
-    </dependency>
+
+      jackson-datatype-jsr310는 Jackson 3.2.0에서는 jackson-databind에 기본 포함되어있다.
+    -->    
 
     <!-- JUnit 5를 사용하기 위해 https://github.com/apache/struts/tree/master/plugins/junit 프로젝트를 수정했다. -->
     <dependency>

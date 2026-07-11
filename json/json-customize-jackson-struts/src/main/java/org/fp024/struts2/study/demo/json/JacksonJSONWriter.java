@@ -2,9 +2,6 @@ package org.fp024.struts2.study.demo.json;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -13,6 +10,10 @@ import java.util.regex.Pattern;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.struts2.json.JSONException;
 import org.apache.struts2.json.JSONWriter;
+import tools.jackson.databind.MapperFeature;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectWriter;
+import tools.jackson.databind.cfg.MapperBuilder;
 
 @Slf4j
 public class JacksonJSONWriter implements JSONWriter {
@@ -34,30 +35,34 @@ public class JacksonJSONWriter implements JSONWriter {
     // https://github.com/FasterXML/jackson-modules-java8
     // https://github.com/FasterXML/jackson-modules-java8/tree/2.14/datetime
 
-    ObjectMapper mapper = new ObjectMapper();
-    JavaTimeModule javaTimeModule = new JavaTimeModule();
+    MapperBuilder<ObjectMapper, ?> builder = new ObjectMapper().rebuild();
+
+    // 💡Jackson 3는 알파벳 순서로 프로퍼티를 정렬하기 때문에, Jackson 2처럼 일단은 꺼보자!
+    builder.disable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY);
 
     // null 인 필드 제외
     // Flexjson 의 경우처럼 아무일도 하지 않는 ExcludeTransformer 를 따로 만들필요는 없는 것 같다.
     // https://www.baeldung.com/jackson-ignore-null-fields
     if (excludeNullProperties) {
-      mapper.setDefaultPropertyInclusion(JsonInclude.Include.NON_NULL);
+      builder.changeDefaultPropertyInclusion(
+          handler -> //
+          handler.withValueInclusion(JsonInclude.Include.NON_NULL));
     }
 
     if (dateFormatter != null) {
       DateFormat dateFormat = new SimpleDateFormat(dateFormatter);
       // 날짜 형식 지정, Date 타입에 대해서만 적용된다.
-      mapper.setDateFormat(dateFormat);
+      builder.defaultDateFormat(dateFormat);
 
       // LocalDateTime의 포멧은 별도 지정해줘야한다.
-      mapper
-          .configOverride(LocalDateTime.class)
-          .setFormat(JsonFormat.Value.forPattern("MM/dd/yyyy"));
+      builder.withConfigOverride(
+          LocalDateTime.class, //
+          cfg -> cfg.setFormat(JsonFormat.Value.forPattern("MM/dd/yyyy")));
     }
     // dateFormatter를 지정하지 않았을 때, LocalDateTime 기본 형식은 2011-12-03T10:15:30 이런 모양이 된다.
     // (DateTimeFormatter.ISO_LOCAL_DATE_TIME)
-    mapper.registerModule(javaTimeModule);
 
+    ObjectMapper mapper = builder.build();
     ObjectWriter writer = mapper.writer();
 
     // 제외 프로퍼티 설정

@@ -1,11 +1,14 @@
 package org.fp024.struts2.study.demo.domain;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import tools.jackson.databind.annotation.JsonSerialize;
+
 import org.fp024.struts2.study.demo.json.PasswordConverter;
 
 import java.time.LocalDateTime;

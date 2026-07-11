@@ -34,7 +34,7 @@
     <log4j2.version>2.26.1</log4j2.version>
 
     <!-- Jackson 버전이 뒤섞이는 경우가 있어서 jackson-bom을 추가했다. -->
-    <jackson.version>2.22.0</jackson.version>
+    <jackson.version>3.2.0</jackson.version>
 
     <flexjson.version>3.3</flexjson.version>
 
@@ -118,11 +118,11 @@
         <type>pom</type>
       </dependency>      
       <dependency>
-        <groupId>com.fasterxml.jackson</groupId>
+        <groupId>tools.jackson</groupId>
         <artifactId>jackson-bom</artifactId>
         <version>${jackson.version}</version>
-        <scope>import</scope>
         <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>net.bytebuddy</groupId>
