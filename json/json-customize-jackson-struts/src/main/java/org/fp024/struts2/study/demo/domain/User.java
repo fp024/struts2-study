@@ -1,17 +1,12 @@
 package org.fp024.struts2.study.demo.domain;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import tools.jackson.databind.annotation.JsonSerialize;
-
 import org.fp024.struts2.study.demo.json.PasswordConverter;
-
-import java.time.LocalDateTime;
+import tools.jackson.databind.annotation.JsonSerialize;
 
 @Getter
 @Setter
@@ -20,7 +15,7 @@ public class User extends Person {
   @JsonProperty("username")
   private String login;
 
-  @JsonIgnore private String hashedPassword;
+  private String hashedPassword;
 
   private LocalDateTime lastLogin;
 

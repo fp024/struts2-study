@@ -21,11 +21,8 @@
 
     <action name="produce" class="org.fp024.struts2.study.demo.action.ProduceAction">
       <result type="json">
-        <!-- Jackson에서 아래 기능을 어떻게 표현해야할지 잘 모르겠음, 설정하면 UnsupportedOperationException 예외가 던져지는 상태 -->
-        <!-- 그런데 필요성이 있는지도 좀 해깔린다. -->
-        <!--<param name="includeProperties">addresses</param>-->
-        <!-- Jackson에서 아래 기능을 어떻게 표현해야할지 잘 모르겠음, 설정하면 UnsupportedOperationException 예외가 던져지는 상태 -->
-        <!--<param name="excludeProperties">addresses.name</param>-->
+        <!-- <param name="includeProperties">addresses</param> -->
+        <param name="excludeProperties">hashedPassword,addresses.name</param>
         <param name="excludeNullProperties">true</param>
         <param name="root">user</param>
       </result>

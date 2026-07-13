@@ -52,6 +52,7 @@
     <mockito.version>5.23.0</mockito.version>
     <hamcrest.version>3.0</hamcrest.version>
     <assertj.version>3.27.7</assertj.version>
+    <json-unit-assertj.version>5.1.2</json-unit-assertj.version>
 
     <!-- struts2-convention-plugin에서 Java 17 바이트 코드 해석을 못해서, 버전을 올렸다. -->
     <asm.version>9.10.1</asm.version>

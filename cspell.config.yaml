@@ -1,12 +1,18 @@
 version: "0.2"
-ignorePaths: 
+ignorePaths:
   - mvnw.cmd
   - mvnw
 dictionaryDefinitions: []
 dictionaries: []
 words:
-  - setlocal
+  - databind
   - endlocal
   - ERRORLEVEL
+  - flexjson
+  - setlocal
+  - shak
+  - Stratford
+  - WillShak
+  - zipcodes
 ignoreWords: []
 import: []

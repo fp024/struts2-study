@@ -1,22 +1,32 @@
 package org.fp024.struts2.study.demo.json;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.ArrayDeque;
 import java.util.Collection;
+import java.util.Deque;
 import java.util.regex.Pattern;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.struts2.json.JSONException;
 import org.apache.struts2.json.JSONWriter;
+import tools.jackson.core.JsonGenerator;
 import tools.jackson.databind.MapperFeature;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.ObjectWriter;
+import tools.jackson.databind.SerializationContext;
 import tools.jackson.databind.cfg.MapperBuilder;
+import tools.jackson.databind.ser.PropertyFilter;
+import tools.jackson.databind.ser.PropertyWriter;
+import tools.jackson.databind.ser.std.SimpleFilterProvider;
 
 @Slf4j
 public class JacksonJSONWriter implements JSONWriter {
+  private static final String RUNTIME_PROPERTY_FILTER_ID = "runtimePropertyFilter";
+
   private String dateFormatter;
 
   @Override
@@ -37,11 +47,11 @@ public class JacksonJSONWriter implements JSONWriter {
 
     MapperBuilder<ObjectMapper, ?> builder = new ObjectMapper().rebuild();
 
-    // 💡Jackson 3는 알파벳 순서로 프로퍼티를 정렬하기 때문에, Jackson 2처럼 일단은 꺼보자!
+    // 💡Jackson 3.x는 알파벳 순서로 프로퍼티를 정렬하기 때문에, Jackson 2처럼 일단은 꺼보자!
     builder.disable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY);
 
     // null 인 필드 제외
-    // Flexjson 의 경우처럼 아무일도 하지 않는 ExcludeTransformer 를 따로 만들필요는 없는 것 같다.
+    // Flexjson의 경우처럼 아무일도 하지 않는 ExcludeTransformer 를 따로 만들필요는 없는 것 같다.
     // https://www.baeldung.com/jackson-ignore-null-fields
     if (excludeNullProperties) {
       builder.changeDefaultPropertyInclusion(
@@ -62,23 +72,9 @@ public class JacksonJSONWriter implements JSONWriter {
     // dateFormatter를 지정하지 않았을 때, LocalDateTime 기본 형식은 2011-12-03T10:15:30 이런 모양이 된다.
     // (DateTimeFormatter.ISO_LOCAL_DATE_TIME)
 
+    builder.addMixIn(Object.class, DynamicPropertyFilterMixIn.class);
     ObjectMapper mapper = builder.build();
-    ObjectWriter writer = mapper.writer();
-
-    // 제외 프로퍼티 설정
-    // TODO: 이름으로 런타임에 효율적으로 제외시키는 방법을 모르겠으니 일단 UnsupportedOperationException를 던지도록 하자
-    if (excludeProperties != null) {
-      for (Pattern p : excludeProperties) {
-        LOGGER.info("pattern: {}", p.pattern());
-        throw new UnsupportedOperationException("'excludeProperties' is unsupported properties.");
-      }
-    }
-
-    // 포함 규칙을 코드 로직으로 설정할 때는, jackson 으로 어떻게 설정을 해야할지 애매해서
-    // struts.xml에 includeProperties 설정할 때는 예외를 던지게 했다.
-    if (includeProperties != null) {
-      throw new UnsupportedOperationException("'includeProperties' is unsupported properties.");
-    }
+    ObjectWriter writer = mapper.writer(createFilterProvider(excludeProperties, includeProperties));
 
     try {
       return writer.writeValueAsString(object);
@@ -103,4 +99,124 @@ public class JacksonJSONWriter implements JSONWriter {
 
   @Override
   public void setExcludeProxyProperties(boolean excludeProxyProperties) {}
+
+  private SimpleFilterProvider createFilterProvider(
+      Collection<Pattern> excludeProperties, Collection<Pattern> includeProperties) {
+    return new SimpleFilterProvider()
+        .setFailOnUnknownId(false)
+        .addFilter(
+            RUNTIME_PROPERTY_FILTER_ID,
+            new RuntimePropertyFilter(excludeProperties, includeProperties));
+  }
+
+  @JsonFilter(RUNTIME_PROPERTY_FILTER_ID)
+  private interface DynamicPropertyFilterMixIn {}
+
+  private static final class RuntimePropertyFilter implements PropertyFilter {
+    private final Collection<Pattern> excludeProperties;
+    private final Collection<Pattern> includeProperties;
+    private final Deque<String> propertyPath = new ArrayDeque<>();
+
+    private RuntimePropertyFilter(
+        Collection<Pattern> excludeProperties, Collection<Pattern> includeProperties) {
+      this.excludeProperties = excludeProperties;
+      this.includeProperties = includeProperties;
+    }
+
+    @Override
+    public void serializeAsProperty(
+        Object pojo, JsonGenerator generator, SerializationContext provider, PropertyWriter writer)
+        throws Exception {
+
+      String currentPath = toPropertyPath(writer.getName());
+      if (!shouldSerialize(currentPath)) {
+        writer.serializeAsOmittedProperty(pojo, generator, provider);
+        return;
+      }
+
+      propertyPath.addLast(writer.getName());
+      try {
+        writer.serializeAsProperty(pojo, generator, provider);
+      } finally {
+        propertyPath.removeLast();
+      }
+    }
+
+    @Override
+    public void serializeAsElement(
+        Object elementValue,
+        JsonGenerator generator,
+        SerializationContext provider,
+        PropertyWriter writer)
+        throws Exception {
+      writer.serializeAsElement(elementValue, generator, provider);
+    }
+
+    @Override
+    public void depositSchemaProperty(
+        PropertyWriter writer,
+        tools.jackson.databind.jsonFormatVisitors.JsonObjectFormatVisitor visitor,
+        SerializationContext provider) {
+      writer.depositSchemaProperty(visitor, provider);
+    }
+
+    @Override
+    public PropertyFilter snapshot() {
+      return new RuntimePropertyFilter(excludeProperties, includeProperties);
+    }
+
+    private boolean shouldSerialize(String propertyPath) {
+      if (matches(excludeProperties, propertyPath)) {
+        return false;
+      }
+
+      if (includeProperties == null || includeProperties.isEmpty()) {
+        return true;
+      }
+
+      return matches(includeProperties, propertyPath) || hasIncludedDescendant(propertyPath);
+    }
+
+    private boolean matches(Collection<Pattern> patterns, String propertyPath) {
+      if (patterns == null || patterns.isEmpty()) {
+        return false;
+      }
+
+      for (Pattern pattern : patterns) {
+        if (pattern.matcher(propertyPath).matches()) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    private boolean hasIncludedDescendant(String propertyPath) {
+      for (Pattern pattern : includeProperties) {
+        String candidate = pattern.pattern();
+        if (candidate.startsWith(propertyPath + ".")
+            || candidate.startsWith(propertyPath + "\\.")
+            || candidate.startsWith(propertyPath + "[")
+            || candidate.startsWith(propertyPath + "\\[")) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    private String toPropertyPath(String propertyName) {
+      if (propertyPath.isEmpty()) {
+        return propertyName;
+      }
+
+      StringBuilder builder = new StringBuilder();
+      for (String pathSegment : propertyPath) {
+        if (!builder.isEmpty()) {
+          builder.append('.');
+        }
+        builder.append(pathSegment);
+      }
+      builder.append('.').append(propertyName);
+      return builder.toString();
+    }
+  }
 }
