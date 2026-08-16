@@ -2,7 +2,7 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.fp024.struts2.study</groupId>
@@ -25,7 +25,7 @@
     <jakarta.servlet.jsp.jstl.version>3.0.1</jakarta.servlet.jsp.jstl.version>
 
 
-    <struts2.version>7.2.1</struts2.version>
+    <struts2.version>7.3.0</struts2.version>
     <spring.platformVersion>6.2.19</spring.platformVersion>
     
     <struts2-junit-plugin.version>${project.version}</struts2-junit-plugin.version>
@@ -39,7 +39,7 @@
     <flexjson.version>3.3</flexjson.version>
 
     <hikaricp.version>7.1.0</hikaricp.version>
-    <hibernate.version>6.6.54.Final</hibernate.version>
+    <hibernate.version>6.6.55.Final</hibernate.version>
     <hsqldb.version>2.7.4</hsqldb.version>
 
     <jakarta.annotation-api.version>2.1.1</jakarta.annotation-api.version>
@@ -48,11 +48,11 @@
 
     <lombok.version>1.18.46</lombok.version>
 
-    <junit.version>6.1.1</junit.version>
+    <junit.version>6.1.3</junit.version>
     <mockito.version>5.23.0</mockito.version>
     <hamcrest.version>3.0</hamcrest.version>
     <assertj.version>3.27.7</assertj.version>
-    <json-unit-assertj.version>5.1.2</json-unit-assertj.version>
+    <json-unit-assertj.version>6.1.0</json-unit-assertj.version>
 
     <!-- struts2-convention-plugin에서 Java 17 바이트 코드 해석을 못해서, 버전을 올렸다. -->
     <asm.version>9.10.1</asm.version>
@@ -63,7 +63,7 @@
     <webjars-locator-core.version>0.59</webjars-locator-core.version>
     <webjars.jquery.version>3.7.1</webjars.jquery.version>
 
-    <jetty.version>12.1.10</jetty.version>
+    <jetty.version>12.1.12</jetty.version>
     <jetty-plugin-group-id>org.eclipse.jetty.ee10</jetty-plugin-group-id>
     <jetty-plugin-artifact-id>jetty-ee10-maven-plugin</jetty-plugin-artifact-id>
 
@@ -88,7 +88,7 @@
     <maven-war-plugin.version>3.5.1</maven-war-plugin.version>
     <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
     <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
-    <maven-toolchains-plugin.version>3.2.0</maven-toolchains-plugin.version>
+    <maven-toolchains-plugin.version>3.3.0</maven-toolchains-plugin.version>
 
     <!-- Struts JUnit Plugin -->
     <commons-compress.version>1.28.0</commons-compress.version>
